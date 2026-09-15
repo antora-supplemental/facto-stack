@@ -8,6 +8,7 @@ It documents and templates what DevCentr / antora-supplemental already reuse tog
 * **Lunr** (`@antora/lunr-extension`) — site search
 * **STEM / KaTeX** — `stem: latexmath` (+ supplemental math JS/CSS until in-bundle)
 * **Kroki diagrams** (`asciidoctor-kroki`) — Mermaid + PlantUML → SVG at build time
+* **Theme-aware diagram SVGs** (recommended compose, not forks) — post-process Kroki/renderer SVG with https://github.com/dev-centr/mermaid-svg-css-vars[`@dev-centr/mermaid-svg-css-vars`] and https://github.com/dev-centr/plantuml-svg-css-vars[`@dev-centr/plantuml-svg-css-vars`] into https://github.com/dev-centr/themed-svg[Themed SVG] adaptive + host artifacts; serve with a `[.themed-svg]` image role so the site dark-mode toggle can recolor host-inlined figures. Raw Kroki `<img>` embeds stay fixed-color.
 * **Page context** (`@antora-supplemental/page-context`) — audience / author / rights metadata from `page-*` attributes
 * **Page edit** (`@antora-supplemental/page-edit`) — bake Edit + VCS provider mark into the page-context lead (no runtime icon JS)
 * **Build stack footer** (`@antora-supplemental/build-stack`) — publish playbook extensions + UI bundle to `site.keys` for footer attribution

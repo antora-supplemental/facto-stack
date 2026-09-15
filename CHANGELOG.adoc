@@ -1,5 +1,10 @@
 = Changelog
 
+== 2026-09-15 — Theme-aware diagram adapters (compose)
+
+* Document `@dev-centr/mermaid-svg-css-vars` and `@dev-centr/plantuml-svg-css-vars` as the recommended post-Kroki Themed SVG path for dark-mode figures.
+* Emphasize compose/recommend — do not fork those adapters into antora-supplemental.
+
 == 2026-09-11 — page-context 0.6.6 lead spacing
 
 * Pin `@antora-supplemental/page-context` to `#v0.6.6` so the lead name, avatar, and `via` sit 0.4rem apart.
