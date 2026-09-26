@@ -1,0 +1,33 @@
+= Diagram lightbox
+:description: Zoom / pan / lightbox for figures via diagram-lightbox.
+:navtitle: Diagram lightbox
+
+`@antora-supplemental/diagram-lightbox` injects zoom/pan/lightbox JS+CSS for baked SVG figures and client Mermaid hosts.
+It replaces older hub mirrors of chassis `diagram-zoom` for Facto stack demos.
+
+== Baked PlantUML figure (Kroki)
+
+Mermaid stays on the client path.
+PlantUML still uses Kroki so you can mix formats in one playbook:
+
+[plantuml]
+----
+@startuml
+skinparam backgroundColor transparent
+actor User
+participant "Valentus UI" as UI
+participant "Facto stack" as Stack
+User -> UI : lean chrome
+UI -> Stack : compose extensions
+Stack --> User : Mermaid client + lightbox + SoftNav
+@enduml
+----
+
+TIP: Click the PlantUML SVG (or a Mermaid host on xref:mermaid.adoc[Client Mermaid]) to open the lightbox.
+Ctrl/Cmd+wheel zooms in-article where supported.
+
+== Regular image block
+
+image::https://antora-supplemental.github.io/valentus-theme/_/img/logo.svg[Valentus logo,width=120]
+
+Lightbox targets diagram hosts and `.imageblock` figures the extension registers — theme demo chrome stays out of Valentus core either way.

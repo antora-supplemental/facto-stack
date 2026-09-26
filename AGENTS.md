@@ -1,7 +1,9 @@
-# Agent notes — antora-facto
+# Agent notes - antora-facto
 
-Compose pack (de-facto Antora stack): Valentus UI + Lunr + STEM/math + Kroki (Mermaid + PlantUML → SVG).
+Compose pack (de-facto Antora stack): Valentus UI + Lunr + STEM/math + diagrams + page-context.
 
-- **Do not** fold these defaults into `valentus-theme` core / `v2` rolling tag.
+- **Do not** fold mermaid-client / diagram-lightbox / SoftNav into `valentus-theme` core / `v2` rolling tag.
+- **Published demos:** Valentus theme Pages = lean chrome; this repo's `demo/` = Facto stack (client Mermaid + lightbox + SoftNav).
+- Bake-path smoke: `examples/` (`pnpm build:example`). Stack demo: `pnpm build` / `pnpm serve`.
 - Machine/env facts: `$CODE_ROOT/MEMORIES.md` only.
-- Org: `antora-supplemental`. Docs hub may link this pack from DevCentr publishing pages.
+- Org: `antora-supplemental`.

@@ -1,0 +1,27 @@
+= SoftNav
+:description: Same-origin soft navigation from antora-ui-chassis soft-nav.
+:navtitle: SoftNav
+
+SoftNav is a chassis UI component (`antora-ui-chassis/packages/soft-nav`).
+Facto stack demos vendor `soft-nav.js` into supplemental UI and load it **before** consumer scripts (Mermaid, lightbox).
+
+== What it does
+
+* Intercepts in-article links within the **same Antora component**
+* Fetches the next page and swaps registered regions (mast / nav / article)
+* Emits `soft-nav:loaded` so Mermaid and lightbox rebind without SoftNav naming them
+* Cross-component links still do a full document load
+
+== Try it
+
+Use the sidebar (or these links) to move around this component — SoftNav should soft-swap instead of a full reload:
+
+* xref:index.adoc[Stack home]
+* xref:mermaid.adoc[Client Mermaid]
+* xref:lightbox.adoc[Diagram lightbox]
+
+[NOTE]
+====
+SoftNav is **not** part of Valentus core.
+Copy `js/soft-nav.js` from chassis (as this demo does) or consume it via chassis slots when your UI bundle supports them.
+====

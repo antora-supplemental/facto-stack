@@ -1,0 +1,38 @@
+= Client Mermaid
+:description: Mermaid rendered in the browser via mermaid-client (not Kroki bake).
+:navtitle: Client Mermaid
+
+Facto defaults can bake Mermaid through Kroki.
+This demo proves the **client** path: `@antora-supplemental/mermaid-client` keeps the source in the HTML and loads a pinned CDN Mermaid runtime so light/dark can re-theme without rebuilding SVGs.
+
+[NOTE]
+====
+Valentus core does **not** ship mermaid-client.
+Theme-only sites stay lean; stack adopters require the package (as this playbook does).
+====
+
+== Flowchart (client)
+
+[source,mermaid]
+----
+flowchart LR
+  A[AsciiDoc mermaid listing] --> B[mermaid-client Asciidoctor]
+  B --> C[pre.mermaid host in HTML]
+  C --> D[CDN Mermaid runtime]
+  D --> E[SVG in page + dark re-theme]
+----
+
+== Sequence (client)
+
+[source,mermaid]
+----
+sequenceDiagram
+  participant Author
+  participant Antora
+  participant Browser
+  Author->>Antora: [source,mermaid]
+  Antora->>Browser: host markup + site-mermaid.js
+  Browser->>Browser: mermaid.run() / theme sync
+----
+
+Click the rendered diagram (or use the lightbox controls) — `diagram-lightbox` attaches to these client hosts as well as baked `.imageblock` figures.

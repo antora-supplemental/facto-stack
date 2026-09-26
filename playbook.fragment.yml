@@ -7,6 +7,13 @@ urls:
 
 antora:
   extensions:
+
+    # Option B (stack demo path): client Mermaid + lightbox instead of / alongside Kroki bake.
+    # See demo/playbook.yml and https://antora-supplemental.github.io/antora-facto/
+    # - require: '@antora-supplemental/mermaid-client/antora'
+    #   injectAssets: true
+    # - require: '@antora-supplemental/diagram-lightbox'
+    #   injectAssets: true
     - '@antora/lunr-extension'
     # Multi-component hubs: curated sidebar forest (keeps default nav-tree JS).
     # Prefer `include` allowlist — content.sources ≠ forest roots.

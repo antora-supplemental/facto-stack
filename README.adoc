@@ -48,21 +48,76 @@ CI needs network access to `kroki-server-url` during `antora` when `kroki-fetch-
 
 The fragment sets `page-context-active` so page bodies can keep `ifndef::page-context-active[]` fallbacks that stay hidden under Facto.
 
-== Client Mermaid and diagram zoom (supported options)
+== Published demos (theme vs stack)
 
-Facto defaults to **bake** (Kroki). Client Mermaid and diagram zoom are supported supplemental options — not Valentus core.
+[cols="1,2,2"]
+|===
+| Demo | URL | What it proves
 
-=== Client Mermaid (Option B / hybrid)
+| **Valentus theme**
+| https://antora-supplemental.github.io/valentus-theme/[valentus-theme Pages]
+| Lean chrome only (layout, dark mode, omnibox). No mermaid-client / lightbox / SoftNav in core.
 
-. Copy hub-style `site-mermaid.js` + `site-mermaid.css` into `supplemental-ui/` and load them (footer after SoftNav; CSS in head).
-. For figures that must stay source-in-HTML (DeepWiki-style theming), author `[.mermaid-client]` + `[source,text]` (or `pre.mermaid`) so Kroki does not bake them while PlantUML can still use `[plantuml]`.
-. Full how-to: https://docs.devcentr.org/home/publishing/antora-diagram-formats/[DevCentr — Antora diagram formats] and the org portal `diagram-engines` page.
+| **Facto stack** (this repo)
+| https://antora-supplemental.github.io/antora-facto/[antora-facto Pages]
+| Valentus UI + `@antora-supplemental/mermaid-client` (client mode) + `@antora-supplemental/diagram-lightbox` + SoftNav (+ Lunr / page-context / build-stack). Mermaid is **not** Kroki-baked here.
+|===
 
-=== Diagram zoom / lightbox
+Local stack demo:
 
-. Vendor https://github.com/antora-supplemental/antora-ui-chassis/tree/main/packages/diagram-zoom[`antora-ui-chassis/packages/diagram-zoom`] into `supplemental-ui/js` + `css`.
-. Attachments: baked `.imageblock` figures and client Mermaid hosts; SoftNav-safe; Ctrl/Cmd+wheel in-article.
+[source,shell]
+----
+pnpm install
+pnpm build          # antora demo/playbook.yml → build/site
+pnpm serve          # http-server on :8082
+----
 
+Bake-path smoke (Kroki Mermaid + themed SVG artifacts) remains under `examples/` (`pnpm build:example`).
+
+GitHub Pages:: workflow `.github/workflows/deploy.yml` publishes `demo/`.
+**One-time:** repo Settings → Pages → Source = **GitHub Actions** (same pattern as valentus-theme).
+
+== Client Mermaid and diagram lightbox (supported options)
+
+Facto fragment defaults still document **bake** (Kroki) for hubs that want build-time SVG.
+The **published stack demo** uses the client path below — preferred when you want source-in-HTML + CDN runtime + lightbox without folding those into Valentus.
+
+=== Client Mermaid (`@antora-supplemental/mermaid-client`)
+
+. `pnpm add github:antora-supplemental/antora-diagram-engines#main&path:packages/mermaid-client`
+. Playbook:
++
+[source,yaml]
+----
+antora:
+  extensions:
+    - require: '@antora-supplemental/mermaid-client/antora'
+      injectAssets: true
+asciidoc:
+  attributes:
+    mermaid-client: ''
+    mermaid-client-mode: client
+----
+. Include once in supplemental UI (after SoftNav for scripts):
++
+----
+{{> mermaid-client-styles}}
+{{> mermaid-client-scripts}}
+----
+. Author ordinary `[source,mermaid]` listings (or `[.mermaid-client]`). PlantUML can still use `asciidoctor-kroki`.
+
+Package tip includes the `register({ config })` fix so `injectAssets` keeps Antora's this-binding (`f5c293c`+).
+
+=== Diagram lightbox (`@antora-supplemental/diagram-lightbox`)
+
+. `pnpm add github:antora-supplemental/antora-diagram-engines#main&path:packages/diagram-lightbox`
+. Playbook: `- require: '@antora-supplemental/diagram-lightbox'` (`injectAssets: true` default).
+. Partials: `{{> diagram-lightbox-styles}}` / `{{> diagram-lightbox-scripts}}` (scripts after SoftNav).
+. Prefer this over vendoring chassis `diagram-zoom` into hubs for new Facto demos.
+
+=== SoftNav (chassis)
+
+Copy https://github.com/antora-supplemental/antora-ui-chassis/tree/main/packages/soft-nav[`soft-nav.js`] into `supplemental-ui/js/` and load it **before** Mermaid / lightbox scripts (see `demo/supplemental-ui`).
 
 == Not in scope
 
@@ -72,6 +127,8 @@ Facto defaults to **bake** (Kroki). Client Mermaid and diagram zoom are supporte
 
 == Related
 
+* https://antora-supplemental.github.io/antora-facto/[Facto stack demo (Pages)]
+* https://antora-supplemental.github.io/valentus-theme/[Valentus theme demo (Pages)]
 * https://github.com/antora-supplemental/valentus-theme[valentus-theme]
 * https://github.com/antora-supplemental/page-context[page-context]
 * https://docs.devcentr.org/home/publishing/antora-diagram-formats.html[DevCentr — Antora diagram formats]

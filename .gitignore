@@ -10,3 +10,7 @@
 !scripts/**
 !examples/
 !examples/**
+!demo/
+!demo/**
+!.github/
+!.github/**

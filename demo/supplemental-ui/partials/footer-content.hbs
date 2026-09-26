@@ -1,0 +1,20 @@
+<footer class="footer">
+  <p>
+    Built with <a href="https://antora.org" target="_blank" rel="noopener">Antora</a>{{#if antoraVersion}} <span class="antora-version">({{antoraVersion}})</span>{{/if}}.
+    UI:
+    {{#if site.keys.uiBundleName}}
+    <a href="{{site.keys.uiBundleUrl}}" target="_blank" rel="noopener">{{site.keys.uiBundleName}}</a>
+    {{else}}
+    <a href="https://github.com/antora-supplemental/valentus-theme" target="_blank" rel="noopener">valentus-theme</a>
+    {{/if}}
+    (MIT).
+    <a href="https://antora-supplemental.github.io/valentus-theme/" rel="noopener">Valentus theme demo</a>
+    (lean chrome) ·
+    <strong>Facto stack demo</strong> (this site).
+    {{#if site.keys.footerNote}}<span class="site-footer-note">{{{site.keys.footerNote}}}</span>{{/if}}
+  </p>
+</footer>
+{{!-- SoftNav before Mermaid / lightbox so they can subscribe to soft-nav:loaded --}}
+<script src="{{{uiRootPath}}}/js/soft-nav.js" defer></script>
+{{> mermaid-client-scripts}}
+{{> diagram-lightbox-scripts}}

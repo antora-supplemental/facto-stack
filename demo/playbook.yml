@@ -1,0 +1,58 @@
+# Facto stack demo - Valentus (lean) + client Mermaid + diagram-lightbox + SoftNav.
+# Published: https://antora-supplemental.github.io/antora-facto/
+site:
+  title: Facto stack demo
+  url: https://antora-supplemental.github.io/antora-facto
+  start_page: facto-stack::index.adoc
+  robots: |
+    User-agent: *
+    Allow: /
+    Sitemap: https://antora-supplemental.github.io/antora-facto/sitemap.xml
+  keys:
+    footerNote: 'Facto stack demo (Mermaid client, lightbox, SoftNav) — not Valentus core.'
+
+urls:
+  html_extension_style: indexify
+
+content:
+  sources:
+    - url: ./..
+      start_path: demo/docs
+      branches: HEAD
+
+ui:
+  bundle:
+    url: https://github.com/antora-supplemental/valentus-theme/releases/download/v2/ui-bundle.zip
+    snapshot: true
+  supplemental_files: ./supplemental-ui
+
+antora:
+  extensions:
+    - '@antora/lunr-extension'
+    - require: '@antora-supplemental/mermaid-client/antora'
+      # CDN Mermaid runtime (default). Assets injected into UI catalog.
+      injectAssets: true
+    - require: '@antora-supplemental/diagram-lightbox'
+      injectAssets: true
+    - '@antora-supplemental/build-stack'
+
+asciidoc:
+  extensions:
+    # PlantUML / non-Mermaid bake only — Mermaid stays client via mermaid-client
+    - asciidoctor-kroki
+    - '@antora-supplemental/page-context'
+  attributes:
+    source-highlighter: highlight.js
+    icons: font
+    stem: latexmath
+    mermaid-client: ''
+    mermaid-client-mode: client
+    kroki-server-url: https://kroki.io
+    kroki-fetch-diagram: true
+    page-context-active: ''
+
+output:
+  dir: build/site
+
+runtime:
+  fetch: true

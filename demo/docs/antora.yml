@@ -1,0 +1,6 @@
+name: facto-stack
+title: Facto stack
+version: ~
+start_page: ROOT:index.adoc
+nav:
+  - modules/ROOT/nav.adoc

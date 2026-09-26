@@ -1,0 +1,60 @@
+= Facto stack demo
+:description: Valentus UI plus Facto compose defaults — client Mermaid, diagram lightbox, SoftNav.
+:page-audience: Authors evaluating the Facto compose pack
+:page-doc-type: explanation
+:page-orig-author: Ryan Johnson
+:page-last-author: Cursor agent on behalf of Ryan Johnson
+:page-last-edited: 2026-09-25
+:navtitle: Stack home
+
+ifndef::page-context-active[]
+[.page-context.page-context-lead]
+****
+Audience:: {page-audience}
+****
+endif::[]
+
+This site is the **Facto stack** demo: lean https://antora-supplemental.github.io/valentus-theme/[Valentus theme^] chrome composed with the extensions that belong in Facto — not in Valentus core.
+
+[NOTE]
+====
+Want theme-only chrome (typography, layout, dark mode, search omnibox)?
+See the https://antora-supplemental.github.io/valentus-theme/[Valentus theme demo^].
+This stack demo proves the compose path on top of that lean UI.
+====
+
+== What this demo composes
+
+[cols="2,3"]
+|===
+| Piece | Role here
+
+| **Valentus** (`v2` UI bundle)
+| Lean doc-site chrome only
+
+| `@antora-supplemental/mermaid-client`
+| Mermaid stays **source-in-HTML**; CDN runtime + light/dark re-theme (not Kroki bake)
+
+| `@antora-supplemental/diagram-lightbox`
+| Zoom / pan / lightbox for baked figures and client Mermaid hosts
+
+| **SoftNav** (chassis `soft-nav`)
+| Same-origin soft navigation between pages in this component
+
+| `asciidoctor-kroki` (optional)
+| PlantUML (and other non-Mermaid) bake when needed — Mermaid stays client
+
+| Lunr + page-context + build-stack
+| Search, metadata lead, footer attribution (Facto defaults)
+|===
+
+== Try the stack pieces
+
+* xref:mermaid.adoc[Client Mermaid] — diagram source rendered in the browser
+* xref:lightbox.adoc[Diagram lightbox] — click a figure to zoom / pan
+* xref:soft-nav.adoc[SoftNav] — in-component links swap regions without a full reload
+
+== Source
+
+* Pack: https://github.com/antora-supplemental/antora-facto[`antora-facto`^]
+* Diagram engines: https://github.com/antora-supplemental/antora-diagram-engines[`antora-diagram-engines`^] (`mermaid-client`, `diagram-lightbox`)

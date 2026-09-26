@@ -1,9 +1,16 @@
 = Changelog
 
+== 2026-09-25 -- Facto stack demo (client Mermaid + lightbox + SoftNav)
+
+* Add published `demo/` site: Valentus UI + `@antora-supplemental/mermaid-client` (client) + `@antora-supplemental/diagram-lightbox` + chassis SoftNav.
+* Mermaid stays client (not Kroki bake); optional PlantUML via `asciidoctor-kroki` on the lightbox page.
+* GH Pages workflow `.github/workflows/deploy.yml` → `https://antora-supplemental.github.io/antora-facto/` (enable Actions source once).
+* README: explicit Valentus theme demo vs Facto stack demo split; document package partials over hub-style mirrors.
+* Keep `examples/` as bake/themed-SVG smoke (`pnpm build:example`).
 == 2026-09-25 -- Client Mermaid + diagram-zoom as supported options
 
 * Document Option B (client Mermaid) and hybrid `[.mermaid-client]` / `pre.mermaid` alongside Kroki bake.
-* Point adopters at chassis `diagram-zoom` for in-article zoom + lightbox; keep Valentus lean.
+* Point adopters at chassis `diagram-zoom` for in-article zoom + lightbox; keep Valentus lean. (Superseded for new demos by `@antora-supplemental/diagram-lightbox` — see entry above.)
 == 2026-09-15 -- page-edit 0.2.4 component-home Source
 
 * Pin `@antora-supplemental/page-edit` to `v0.2.4` so Antora component start pages get the Source | View | Edit row (empty lead shells no longer false-positive on page-context CSS).

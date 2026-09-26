@@ -1,0 +1,4 @@
+* xref:index.adoc[Stack home]
+* xref:mermaid.adoc[Client Mermaid]
+* xref:lightbox.adoc[Diagram lightbox]
+* xref:soft-nav.adoc[SoftNav]

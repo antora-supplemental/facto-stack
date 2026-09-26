@@ -2,10 +2,15 @@
   "name": "antora-facto",
   "version": "0.1.0",
   "private": true,
-  "description": "De-facto Antora stack composer: Valentus + Lunr + STEM + Kroki diagrams (not Valentus core)",
+  "description": "De-facto Antora stack composer + published stack demo: Valentus (lean) + Lunr + STEM + diagrams (client Mermaid / lightbox / SoftNav; Kroki optional)",
   "license": "MPL-2.0",
   "scripts": {
+    "build": "antora demo/playbook.yml",
+    "build:demo": "antora demo/playbook.yml",
     "build:example": "antora examples/minimal-playbook.yml",
+    "serve": "pnpm build && npx http-server build/site -p 8082 -o",
+    "serve:demo": "pnpm build:demo && npx http-server build/site -p 8082 -o",
+    "preview": "antora demo/playbook.yml",
     "diagrams:generate": "node scripts/generate-themed-diagrams.mjs",
     "diagrams:check": "node scripts/generate-themed-diagrams.mjs --check"
   },
@@ -15,12 +20,15 @@
     "@antora-supplemental/page-context": "github:antora-supplemental/page-context#v0.6.6",
     "@antora-supplemental/page-edit": "github:antora-supplemental/page-edit#v0.2.4",
     "antora": "^3.1.14",
-    "asciidoctor-kroki": "^0.18.1"
+    "asciidoctor-kroki": "^0.18.1",
+    "@antora-supplemental/mermaid-client": "github:antora-supplemental/antora-diagram-engines#eee9e35&path:packages/mermaid-client",
+    "@antora-supplemental/diagram-lightbox": "github:antora-supplemental/antora-diagram-engines#eee9e35&path:packages/diagram-lightbox"
   },
   "devDependencies": {
     "@dev-centr/mermaid-svg-css-vars": "0.1.2",
     "@dev-centr/themed-svg": "0.1.1",
-    "@mermaid-js/mermaid-cli": "11.17.0"
+    "@mermaid-js/mermaid-cli": "11.17.0",
+    "http-server": "^14.1.1"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
