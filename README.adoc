@@ -106,7 +106,7 @@ asciidoc:
 ----
 . Author ordinary `[source,mermaid]` listings (or `[.mermaid-client]`). PlantUML can still use `asciidoctor-kroki`.
 
-Package tip includes the `register({ config })` fix so `injectAssets` keeps Antora's this-binding (`f5c293c`+).
+Package tip includes the `register({ config })` fix so `injectAssets` keeps Antora's this-binding (`eee9e35`+: stem on injected partials; includes `register({ config })`).
 
 === Diagram lightbox (`@antora-supplemental/diagram-lightbox`)
 
