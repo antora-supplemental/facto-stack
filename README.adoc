@@ -48,6 +48,22 @@ CI needs network access to `kroki-server-url` during `antora` when `kroki-fetch-
 
 The fragment sets `page-context-active` so page bodies can keep `ifndef::page-context-active[]` fallbacks that stay hidden under Facto.
 
+== Client Mermaid and diagram zoom (supported options)
+
+Facto defaults to **bake** (Kroki). Client Mermaid and diagram zoom are supported supplemental options — not Valentus core.
+
+=== Client Mermaid (Option B / hybrid)
+
+. Copy hub-style `site-mermaid.js` + `site-mermaid.css` into `supplemental-ui/` and load them (footer after SoftNav; CSS in head).
+. For figures that must stay source-in-HTML (DeepWiki-style theming), author `[.mermaid-client]` + `[source,text]` (or `pre.mermaid`) so Kroki does not bake them while PlantUML can still use `[plantuml]`.
+. Full how-to: https://docs.devcentr.org/home/publishing/antora-diagram-formats/[DevCentr — Antora diagram formats] and the org portal `diagram-engines` page.
+
+=== Diagram zoom / lightbox
+
+. Vendor https://github.com/antora-supplemental/antora-ui-chassis/tree/main/packages/diagram-zoom[`antora-ui-chassis/packages/diagram-zoom`] into `supplemental-ui/js` + `css`.
+. Attachments: baked `.imageblock` figures and client Mermaid hosts; SoftNav-safe; Ctrl/Cmd+wheel in-article.
+
+
 == Not in scope
 
 * Changing Valentus default `v2` to force Lunr/Kroki/math/page-context

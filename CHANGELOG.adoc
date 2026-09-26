@@ -1,5 +1,9 @@
 = Changelog
 
+== 2026-09-25 -- Client Mermaid + diagram-zoom as supported options
+
+* Document Option B (client Mermaid) and hybrid `[.mermaid-client]` / `pre.mermaid` alongside Kroki bake.
+* Point adopters at chassis `diagram-zoom` for in-article zoom + lightbox; keep Valentus lean.
 == 2026-09-15 -- page-edit 0.2.4 component-home Source
 
 * Pin `@antora-supplemental/page-edit` to `v0.2.4` so Antora component start pages get the Source | View | Edit row (empty lead shells no longer false-positive on page-context CSS).
