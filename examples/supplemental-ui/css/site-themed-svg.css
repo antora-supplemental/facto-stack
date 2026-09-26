@@ -2,45 +2,46 @@
    Adaptive SVGs embed light+dark; host mode needs these on the document after runtime upgrade. */
 
 :root {
-  /* antora-facto-facto-composition */
-  --themed-svg-antora-facto-facto-composition-color-canvas: #ffffff;
-  --themed-svg-antora-facto-facto-composition-color-surface-primary: #eef2ff;
-  --themed-svg-antora-facto-facto-composition-color-surface-secondary: #f8fafc;
-  --themed-svg-antora-facto-facto-composition-color-text-primary: #172033;
-  --themed-svg-antora-facto-facto-composition-color-border-primary: #5b6475;
-  --themed-svg-antora-facto-facto-composition-color-edge: #475569;
-  --themed-svg-antora-facto-facto-composition-color-edge-label: #334155;
-  --themed-svg-antora-facto-facto-composition-color-accent-primary: #4f46e5;
+  /* facto-stack-facto-composition */
+  --themed-svg-facto-stack-facto-composition-color-canvas: #ffffff;
+  --themed-svg-facto-stack-facto-composition-color-surface-primary: #eef2ff;
+  --themed-svg-facto-stack-facto-composition-color-surface-secondary: #f8fafc;
+  --themed-svg-facto-stack-facto-composition-color-text-primary: #172033;
+  --themed-svg-facto-stack-facto-composition-color-border-primary: #5b6475;
+  --themed-svg-facto-stack-facto-composition-color-edge: #475569;
+  --themed-svg-facto-stack-facto-composition-color-edge-label: #334155;
+  --themed-svg-facto-stack-facto-composition-color-accent-primary: #4f46e5;
 
-  /* antora-facto-citation-round-trip */
-  --themed-svg-antora-facto-citation-round-trip-color-canvas: #ffffff;
-  --themed-svg-antora-facto-citation-round-trip-color-surface-primary: #eef2ff;
-  --themed-svg-antora-facto-citation-round-trip-color-surface-secondary: #f8fafc;
-  --themed-svg-antora-facto-citation-round-trip-color-text-primary: #172033;
-  --themed-svg-antora-facto-citation-round-trip-color-border-primary: #5b6475;
-  --themed-svg-antora-facto-citation-round-trip-color-edge: #475569;
-  --themed-svg-antora-facto-citation-round-trip-color-edge-label: #334155;
-  --themed-svg-antora-facto-citation-round-trip-color-accent-primary: #4f46e5;
+  /* facto-stack-citation-round-trip */
+  --themed-svg-facto-stack-citation-round-trip-color-canvas: #ffffff;
+  --themed-svg-facto-stack-citation-round-trip-color-surface-primary: #eef2ff;
+  --themed-svg-facto-stack-citation-round-trip-color-surface-secondary: #f8fafc;
+  --themed-svg-facto-stack-citation-round-trip-color-text-primary: #172033;
+  --themed-svg-facto-stack-citation-round-trip-color-border-primary: #5b6475;
+  --themed-svg-facto-stack-citation-round-trip-color-edge: #475569;
+  --themed-svg-facto-stack-citation-round-trip-color-edge-label: #334155;
+  --themed-svg-facto-stack-citation-round-trip-color-accent-primary: #4f46e5;
+
 }
 
 html.dark-theme {
-  --themed-svg-antora-facto-facto-composition-color-canvas: #111827;
-  --themed-svg-antora-facto-facto-composition-color-surface-primary: #273449;
-  --themed-svg-antora-facto-facto-composition-color-surface-secondary: #1f2937;
-  --themed-svg-antora-facto-facto-composition-color-text-primary: #f8fafc;
-  --themed-svg-antora-facto-facto-composition-color-border-primary: #a5b4c7;
-  --themed-svg-antora-facto-facto-composition-color-edge: #cbd5e1;
-  --themed-svg-antora-facto-facto-composition-color-edge-label: #e2e8f0;
-  --themed-svg-antora-facto-facto-composition-color-accent-primary: #a5b4fc;
+  --themed-svg-facto-stack-facto-composition-color-canvas: #111827;
+  --themed-svg-facto-stack-facto-composition-color-surface-primary: #273449;
+  --themed-svg-facto-stack-facto-composition-color-surface-secondary: #1f2937;
+  --themed-svg-facto-stack-facto-composition-color-text-primary: #f8fafc;
+  --themed-svg-facto-stack-facto-composition-color-border-primary: #a5b4c7;
+  --themed-svg-facto-stack-facto-composition-color-edge: #cbd5e1;
+  --themed-svg-facto-stack-facto-composition-color-edge-label: #e2e8f0;
+  --themed-svg-facto-stack-facto-composition-color-accent-primary: #a5b4fc;
 
-  --themed-svg-antora-facto-citation-round-trip-color-canvas: #111827;
-  --themed-svg-antora-facto-citation-round-trip-color-surface-primary: #273449;
-  --themed-svg-antora-facto-citation-round-trip-color-surface-secondary: #1f2937;
-  --themed-svg-antora-facto-citation-round-trip-color-text-primary: #f8fafc;
-  --themed-svg-antora-facto-citation-round-trip-color-border-primary: #a5b4c7;
-  --themed-svg-antora-facto-citation-round-trip-color-edge: #cbd5e1;
-  --themed-svg-antora-facto-citation-round-trip-color-edge-label: #e2e8f0;
-  --themed-svg-antora-facto-citation-round-trip-color-accent-primary: #a5b4fc;
+  --themed-svg-facto-stack-citation-round-trip-color-canvas: #111827;
+  --themed-svg-facto-stack-citation-round-trip-color-surface-primary: #273449;
+  --themed-svg-facto-stack-citation-round-trip-color-surface-secondary: #1f2937;
+  --themed-svg-facto-stack-citation-round-trip-color-text-primary: #f8fafc;
+  --themed-svg-facto-stack-citation-round-trip-color-border-primary: #a5b4c7;
+  --themed-svg-facto-stack-citation-round-trip-color-edge: #cbd5e1;
+  --themed-svg-facto-stack-citation-round-trip-color-edge-label: #e2e8f0;
+  --themed-svg-facto-stack-citation-round-trip-color-accent-primary: #a5b4fc;
 }
 
 .imageblock.themed-svg themed-svg,

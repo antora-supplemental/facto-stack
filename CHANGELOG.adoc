@@ -1,5 +1,10 @@
-﻿= Changelog
+= Changelog
 
+== 2026-09-26 -- Themed SVG namespaces `facto-stack-*`
+
+* Regenerate example diagrams with Themed SVG namespaces `facto-stack-<diagram>` (was `antora-facto-*`); host CSS vars are now `--themed-svg-facto-stack-*`.
+* `scripts/generate-themed-diagrams.mjs` also writes `examples/supplemental-ui/css/site-themed-svg.css` so host CSS stays in sync with manifests.
+* Composition diagram node label `antora-facto` -> `facto-stack`.
 == 2026-09-25 -- Rename to facto-stack / `@antora-supplemental/facto-stack`
 
 * GitHub repo renamed `antora-supplemental/antora-facto` -> `antora-supplemental/facto-stack` (old URL redirects).

@@ -1,7 +1,7 @@
 {
   "$schema": "https://docs.devcentr.org/themed-svg/schemas/themed-svg-manifest-v1.schema.json",
   "schemaVersion": 1,
-  "namespace": "antora-facto-citation-round-trip",
+  "namespace": "facto-stack-citation-round-trip",
   "source": {
     "kind": "diagram-generator",
     "uri": "citation-round-trip.mmd",

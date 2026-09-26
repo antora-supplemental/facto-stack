@@ -1,7 +1,7 @@
 {
   "$schema": "https://docs.devcentr.org/themed-svg/schemas/themed-svg-manifest-v1.schema.json",
   "schemaVersion": 1,
-  "namespace": "antora-facto-facto-composition",
+  "namespace": "facto-stack-facto-composition",
   "source": {
     "kind": "diagram-generator",
     "uri": "facto-composition.mmd",

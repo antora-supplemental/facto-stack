@@ -1,4 +1,4 @@
-﻿import { execFileSync } from 'node:child_process'
+import { execFileSync } from 'node:child_process'
 import { existsSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { basename, join, resolve } from 'node:path'
@@ -51,7 +51,7 @@ function manifestFor(name) {
   return {
     $schema: 'https://docs.devcentr.org/themed-svg/schemas/themed-svg-manifest-v1.schema.json',
     schemaVersion: 1,
-    namespace: `antora-facto-${name}`,
+    namespace: `facto-stack-${name}`,
     source: { kind: 'diagram-generator', uri: `${name}.mmd`, generator: 'mermaid' },
     tokens: Object.keys(palettes.light).map((id) => ({ id })),
     defaultPreset: 'light',
@@ -105,6 +105,50 @@ function assertSafeSvg(path, mode) {
   if (mode === 'host' && !svg.includes('--themed-svg-')) throw new Error(`${basename(path)} lacks host variables`)
 }
 
+
+function cssVarName(namespace, tokenId) {
+  return `--themed-svg-${namespace}-${tokenId.replaceAll('.', '-')}`
+}
+
+function hostCss() {
+  const lines = [
+    '/* Host CSS vars for example Themed SVG namespaces (match *.theme.json presets).',
+    '   Adaptive SVGs embed light+dark; host mode needs these on the document after runtime upgrade. */',
+    '',
+    ':root {',
+  ]
+  for (const diagram of diagrams) {
+    const namespace = `facto-stack-${diagram.name}`
+    lines.push(`  /* ${namespace} */`)
+    for (const [id, value] of Object.entries(palettes.light)) {
+      lines.push(`  ${cssVarName(namespace, id)}: ${value};`)
+    }
+    lines.push('')
+  }
+  lines.push('}')
+  lines.push('')
+  lines.push('html.dark-theme {')
+  for (const diagram of diagrams) {
+    const namespace = `facto-stack-${diagram.name}`
+    for (const [id, value] of Object.entries(palettes.dark)) {
+      lines.push(`  ${cssVarName(namespace, id)}: ${value};`)
+    }
+    lines.push('')
+  }
+  // drop trailing blank inside block before closing
+  if (lines[lines.length - 1] === '') lines.pop()
+  lines.push('}')
+  lines.push('')
+  lines.push('.imageblock.themed-svg themed-svg,')
+  lines.push('.imageblock.themed-svg img {')
+  lines.push('  display: block;')
+  lines.push('  width: 100%;')
+  lines.push('  height: auto;')
+  lines.push('}')
+  lines.push('')
+  return lines.join('\n')
+}
+
 try {
   const mermaidConfig = JSON.parse(readFileSync(config, 'utf8'))
   if (mermaidConfig.htmlLabels !== false || mermaidConfig.flowchart?.htmlLabels !== false) {
@@ -143,6 +187,13 @@ try {
     ], { stdio: 'inherit' })
     assertSafeSvg(adaptive, 'standalone-adaptive')
     assertSafeSvg(host, 'host')
+  }
+  const hostCssPath = resolve('examples/supplemental-ui/css/site-themed-svg.css')
+  const hostCssText = hostCss()
+  if (check) {
+    if (!existsSync(hostCssPath) || readFileSync(hostCssPath, 'utf8') !== hostCssText) throw new Error(`${basename(hostCssPath)} is stale`)
+  } else {
+    writeFileSync(hostCssPath, hostCssText, 'utf8')
   }
 } finally {
   rmSync(temporary, { recursive: true, force: true })
