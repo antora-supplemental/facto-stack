@@ -1,4 +1,4 @@
-= Facto stack demo
+﻿= Facto stack demo
 :description: Valentus UI plus Facto compose defaults — client Mermaid, diagram lightbox, SoftNav.
 :page-audience: Authors evaluating the Facto compose pack
 :page-doc-type: explanation
@@ -56,5 +56,5 @@ This stack demo proves the compose path on top of that lean UI.
 
 == Source
 
-* Pack: https://github.com/antora-supplemental/antora-facto[`antora-facto`^]
+* Pack: https://github.com/antora-supplemental/facto-stack[`facto-stack`^]
 * Diagram engines: https://github.com/antora-supplemental/antora-diagram-engines[`antora-diagram-engines`^] (`mermaid-client`, `diagram-lightbox`)

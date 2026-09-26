@@ -1,6 +1,6 @@
-# Minimal example — content is stubs under examples/docs
+﻿# Minimal example — content is stubs under examples/docs
 site:
-  title: antora-facto example
+  title: facto-stack example
   url: https://example.local
   start_page: facto-example::index.adoc
 antora:

@@ -1,4 +1,4 @@
-# Agent notes - antora-facto
+﻿# Agent notes - facto-stack
 
 Compose pack (de-facto Antora stack): Valentus UI + Lunr + STEM/math + diagrams + page-context.
 

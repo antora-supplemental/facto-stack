@@ -1,6 +1,6 @@
-{
+﻿{
   "deterministicIds": true,
-  "deterministicIDSeed": "antora-facto-diagrams",
+  "deterministicIDSeed": "facto-stack-diagrams",
   "htmlLabels": false,
   "flowchart": {
     "htmlLabels": false

@@ -1,4 +1,4 @@
-import { execFileSync } from 'node:child_process'
+﻿import { execFileSync } from 'node:child_process'
 import { existsSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { basename, join, resolve } from 'node:path'
@@ -9,8 +9,8 @@ const check = process.argv.includes('--check')
 const diagrams = [
   {
     name: 'facto-composition',
-    title: 'antora-facto composition',
-    description: 'Valentus, Lunr, Kroki, STEM, and page context compose the antora-facto documentation stack.',
+    title: 'facto-stack composition',
+    description: 'Valentus, Lunr, Kroki, STEM, and page context compose the facto-stack documentation stack.',
   },
   {
     name: 'citation-round-trip',
@@ -22,7 +22,7 @@ const tools = {
   mmdc: resolve('node_modules/@mermaid-js/mermaid-cli/src/cli.js'),
   adapter: resolve('node_modules/@dev-centr/mermaid-svg-css-vars/bin/mermaid-svg-css-vars.js'),
 }
-const temporary = mkdtempSync(join(tmpdir(), 'antora-facto-diagrams-'))
+const temporary = mkdtempSync(join(tmpdir(), 'facto-stack-diagrams-'))
 
 const palettes = {
   light: {

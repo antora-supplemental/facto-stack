@@ -1,10 +1,16 @@
-= Changelog
+﻿= Changelog
 
+== 2026-09-25 -- Rename to facto-stack / `@antora-supplemental/facto-stack`
+
+* GitHub repo renamed `antora-supplemental/antora-facto` -> `antora-supplemental/facto-stack` (old URL redirects).
+* Package identity `name`: `@antora-supplemental/facto-stack` (still `private`; publish when ready: `pnpm publish --access public` after clearing private).
+* Demo / Pages URLs: https://antora-supplemental.github.io/facto-stack/ (canonical site also at https://antora-supplemental.org/facto-stack/).
+* `repository` / `homepage` / `bugs` fields point at the new repo.
 == 2026-09-25 -- Facto stack demo (client Mermaid + lightbox + SoftNav)
 
 * Add published `demo/` site: Valentus UI + `@antora-supplemental/mermaid-client` (client) + `@antora-supplemental/diagram-lightbox` + chassis SoftNav.
 * Mermaid stays client (not Kroki bake); optional PlantUML via `asciidoctor-kroki` on the lightbox page.
-* GH Pages workflow `.github/workflows/deploy.yml` → `https://antora-supplemental.github.io/antora-facto/` (enable Actions source once).
+* GH Pages workflow `.github/workflows/deploy.yml` → `https://antora-supplemental.github.io/facto-stack/` (enable Actions source once).
 * README: explicit Valentus theme demo vs Facto stack demo split; document package partials over hub-style mirrors.
 * Keep `examples/` as bake/themed-SVG smoke (`pnpm build:example`).
 == 2026-09-25 -- Client Mermaid + diagram-zoom as supported options

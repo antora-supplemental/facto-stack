@@ -1,7 +1,7 @@
-= antora-facto
+﻿= facto-stack
 :description: De-facto Antora playbook composition — Valentus UI plus search, math, diagrams, and page-context metadata. Not Valentus core.
 
-*antora-facto* is the **compose pack** for a sensible Antora site stack.
+*facto-stack* (`@antora-supplemental/facto-stack`) is the **compose pack** for a sensible Antora site stack.
 It documents and templates what DevCentr / antora-supplemental already reuse together:
 
 * **Valentus** UI bundle (`v2` rolling tag) — lean theme only
@@ -59,7 +59,7 @@ The fragment sets `page-context-active` so page bodies can keep `ifndef::page-co
 | Lean chrome only (layout, dark mode, omnibox). No mermaid-client / lightbox / SoftNav in core.
 
 | **Facto stack** (this repo)
-| https://antora-supplemental.github.io/antora-facto/[antora-facto Pages]
+| https://antora-supplemental.github.io/facto-stack/[facto-stack Pages]
 | Valentus UI + `@antora-supplemental/mermaid-client` (client mode) + `@antora-supplemental/diagram-lightbox` + SoftNav (+ Lunr / page-context / build-stack). Mermaid is **not** Kroki-baked here.
 |===
 
@@ -127,7 +127,7 @@ Copy https://github.com/antora-supplemental/antora-ui-chassis/tree/main/packages
 
 == Related
 
-* https://antora-supplemental.github.io/antora-facto/[Facto stack demo (Pages)]
+* https://antora-supplemental.github.io/facto-stack/[Facto stack demo (Pages)]
 * https://antora-supplemental.github.io/valentus-theme/[Valentus theme demo (Pages)]
 * https://github.com/antora-supplemental/valentus-theme[valentus-theme]
 * https://github.com/antora-supplemental/page-context[page-context]

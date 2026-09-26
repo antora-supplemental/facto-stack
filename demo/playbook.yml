@@ -1,13 +1,13 @@
-# Facto stack demo - Valentus (lean) + client Mermaid + diagram-lightbox + SoftNav.
-# Published: https://antora-supplemental.github.io/antora-facto/
+﻿# Facto stack demo - Valentus (lean) + client Mermaid + diagram-lightbox + SoftNav.
+# Published: https://antora-supplemental.github.io/facto-stack/
 site:
   title: Facto stack demo
-  url: https://antora-supplemental.github.io/antora-facto
+  url: https://antora-supplemental.github.io/facto-stack
   start_page: facto-stack::index.adoc
   robots: |
     User-agent: *
     Allow: /
-    Sitemap: https://antora-supplemental.github.io/antora-facto/sitemap.xml
+    Sitemap: https://antora-supplemental.github.io/facto-stack/sitemap.xml
   keys:
     footerNote: 'Facto stack demo (Mermaid client, lightbox, SoftNav) — not Valentus core.'
 

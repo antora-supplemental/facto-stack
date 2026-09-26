@@ -1,5 +1,5 @@
-# Fragment - paste under your playbook root (merge with existing keys).
-# antora-facto: Valentus stays the UI bundle; this file is the extras composer.
+﻿# Fragment - paste under your playbook root (merge with existing keys).
+# facto-stack: Valentus stays the UI bundle; this file is the extras composer.
 
 # Folder URLs: index.adoc → …/email/ (canonical + sitemap follow Antora page URL).
 urls:
@@ -9,7 +9,7 @@ antora:
   extensions:
 
     # Option B (stack demo path): client Mermaid + lightbox instead of / alongside Kroki bake.
-    # See demo/playbook.yml and https://antora-supplemental.github.io/antora-facto/
+    # See demo/playbook.yml and https://antora-supplemental.github.io/facto-stack/
     # - require: '@antora-supplemental/mermaid-client/antora'
     #   injectAssets: true
     # - require: '@antora-supplemental/diagram-lightbox'

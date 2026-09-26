@@ -1,7 +1,7 @@
-= antora-facto example
+﻿= facto-stack example
 :description: Smoke page for canonical Mermaid and themed SVG delivery.
 :page-audience: Maintainers verifying the Facto compose pack
-:page-usage-context: Example site under antora-facto
+:page-usage-context: Example site under facto-stack
 :page-doc-type: explanation
 :page-orig-author: Ryan Johnson
 :page-last-author: Cursor agent on behalf of Ryan Johnson
@@ -21,10 +21,10 @@ Last updated:: {page-last-edited}
 ****
 endif::[]
 
-This site uses the *antora-facto* composition: Valentus UI + Lunr + STEM + Kroki + page-context.
+This site uses the *facto-stack* composition: Valentus UI + Lunr + STEM + Kroki + page-context.
 
 [.themed-svg]
-image::diagrams/facto-composition.svg[antora-facto composition]
+image::diagrams/facto-composition.svg[facto-stack composition]
 
 [source,mermaid]
 ----
