@@ -36,6 +36,9 @@ antora:
     # List installed supplemental extensions (footer layout)
     - require: '@antora-supplemental/extension-lister'
       layouts: [footer]
+    - require: '@antora-supplemental/orphan-finder/extension'
+      reportEmail: support@devcentr.org
+      failOnUnresolved: false
     # Keyword / tag listing pages: /{component}/keywords/{slug}/
     - require: '@antora-supplemental/page-context/antora'
       component: home

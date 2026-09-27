@@ -14,6 +14,8 @@ It documents and templates what DevCentr / antora-supplemental already reuse tog
 * **Link Validator** (`@antora-supplemental/link-validator`) - outbound http(s) checks + triage page (core CLI: asciidoc-link-validator)
 * **Link-inator** (`@antora-supplemental/linkinator`) - click-time validity chrome + Wayback button
 * **Extension Lister** (`@antora-supplemental/extension-lister`) - footer / purpose / layer listing of installed supplemental extensions
+* **Orphan Finder** (@antora-supplemental/orphan-finder) - unresolved xrefs / orphan pages triage
+* **Maint CLIs** (optional scripts): nav-drift, stale-page, playbook-pin-auditor, deep-link-contracts; shared UX via triage-ux-kit
 * **Build stack footer** (`@antora-supplemental/build-stack`) � publish playbook extensions + UI bundle to `site.keys` for footer attribution
 * Optional neighbors: alias-to-latest / unversioned component URLs, search-chat omnibox, **site-nav-tree** (multi-component sidebar forest with an **`include` allowlist**; keeps default nav-tree)
 * Playbook default: `urls.html_extension_style: indexify` (folder URLs; `index.adoc` ? trailing-slash path)
