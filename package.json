@@ -21,8 +21,8 @@
     "@antora-supplemental/page-edit": "github:antora-supplemental/page-edit#v0.2.4",
     "antora": "^3.1.14",
     "asciidoctor-kroki": "^0.18.1",
-    "@antora-supplemental/mermaid-client": "github:antora-supplemental/antora-diagram-engines#eee9e35&path:packages/mermaid-client",
-    "@antora-supplemental/diagram-lightbox": "github:antora-supplemental/antora-diagram-engines#eee9e35&path:packages/diagram-lightbox",
+    "@antora-supplemental/mermaid-client": "github:antora-supplemental/antora-diagram-engines#dbdca5920074ef1559bdd263f874270292df9558&path:packages/mermaid-client",
+    "@antora-supplemental/diagram-lightbox": "github:antora-supplemental/antora-diagram-engines#dbdca5920074ef1559bdd263f874270292df9558&path:packages/diagram-lightbox",
     "@antora-supplemental/link-validator": "github:antora-supplemental/link-validator#v0.2.0",
     "@antora-supplemental/linkinator": "github:antora-supplemental/linkinator#v0.1.0",
     "@antora-supplemental/extension-lister": "github:antora-supplemental/extension-lister#v0.1.0"
