@@ -1,7 +1,7 @@
-﻿# Fragment - paste under your playbook root (merge with existing keys).
+# Fragment - paste under your playbook root (merge with existing keys).
 # facto-stack: Valentus stays the UI bundle; this file is the extras composer.
 
-# Folder URLs: index.adoc → …/email/ (canonical + sitemap follow Antora page URL).
+# Folder URLs: index.adoc ? �/email/ (canonical + sitemap follow Antora page URL).
 urls:
   html_extension_style: indexify
 
@@ -16,7 +16,7 @@ antora:
     #   injectAssets: true
     - '@antora/lunr-extension'
     # Multi-component hubs: curated sidebar forest (keeps default nav-tree JS).
-    # Prefer `include` allowlist — content.sources ≠ forest roots.
+    # Prefer `include` allowlist � content.sources ? forest roots.
     # - require: '@antora-supplemental/site-nav-tree'
     #   include: [home, general-knowledge, business-bootstrap]
     #   order: [home, general-knowledge, business-bootstrap]
@@ -25,6 +25,17 @@ antora:
     - '@antora-supplemental/build-stack'
     # Bake View | Edit into page-context lead table (no runtime icon JS).
     - '@antora-supplemental/page-edit'
+    # Outbound http(s) link validation + triage page under /link-validator/
+    - require: '@antora-supplemental/link-validator'
+      reportEmail: support@devcentr.org
+      softFail403: true
+      failLevel: none
+    # Click-time link UX (Wayback + optional live probe)
+    - require: '@antora-supplemental/linkinator'
+      statusDefault: unchecked
+    # List installed supplemental extensions (footer layout)
+    - require: '@antora-supplemental/extension-lister'
+      layouts: [footer]
     # Keyword / tag listing pages: /{component}/keywords/{slug}/
     - require: '@antora-supplemental/page-context/antora'
       component: home
