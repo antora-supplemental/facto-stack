@@ -9,7 +9,7 @@ site:
     Allow: /
     Sitemap: https://antora-supplemental.github.io/facto-stack/sitemap.xml
   keys:
-    footerNote: 'Facto stack demo (Mermaid client, lightbox, SoftNav) � not Valentus core.'
+    footerNote: 'Facto stack demo (Mermaid client, lightbox, SoftNav) — not Valentus core.'
 
 urls:
   html_extension_style: indexify
@@ -49,7 +49,7 @@ antora:
 
 asciidoc:
   extensions:
-    # PlantUML / non-Mermaid bake only � Mermaid stays client via mermaid-client
+    # PlantUML / non-Mermaid bake only — Mermaid stays client via mermaid-client
     - asciidoctor-kroki
     - '@antora-supplemental/page-context'
   attributes:

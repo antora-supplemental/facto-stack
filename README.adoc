@@ -1,39 +1,39 @@
 = facto-stack
-:description: De-facto Antora playbook composition � Valentus UI plus search, math, diagrams, and page-context metadata. Not Valentus core.
+:description: De-facto Antora playbook composition — Valentus UI plus search, math, diagrams, and page-context metadata. Not Valentus core.
 
 *facto-stack* (`@antora-supplemental/facto-stack`) is the **compose pack** for a sensible Antora site stack.
 It documents and templates what DevCentr / antora-supplemental already reuse together:
 
-* **Valentus** UI bundle (`v2` rolling tag) � lean theme only
-* **Lunr** (`@antora/lunr-extension`) � site search
-* **STEM / KaTeX** � `stem: latexmath` (+ supplemental math JS/CSS until in-bundle)
-* **Kroki diagrams** (`asciidoctor-kroki`) � Mermaid + PlantUML ? SVG at build time
-* **Theme-aware diagram SVGs** (recommended compose, not forks) � post-process Kroki/renderer SVG with https://github.com/dev-centr/mermaid-svg-css-vars[`@dev-centr/mermaid-svg-css-vars`] and https://github.com/dev-centr/plantuml-svg-css-vars[`@dev-centr/plantuml-svg-css-vars`] into https://github.com/dev-centr/themed-svg[Themed SVG] adaptive + host artifacts; serve with a `[.themed-svg]` image role so the site dark-mode toggle can recolor host-inlined figures. Raw Kroki `<img>` embeds stay fixed-color.
-* **Page context** (`@antora-supplemental/page-context`) � audience / author / rights metadata from `page-*` attributes
-* **Page edit** (`@antora-supplemental/page-edit`) � bake Edit + VCS provider mark into the page-context lead (no runtime icon JS)
+* **Valentus** UI bundle (`v2` rolling tag) — lean theme only
+* **Lunr** (`@antora/lunr-extension`) — site search
+* **STEM / KaTeX** — `stem: latexmath` (+ supplemental math JS/CSS until in-bundle)
+* **Kroki diagrams** (`asciidoctor-kroki`) — Mermaid + PlantUML → SVG at build time
+* **Theme-aware diagram SVGs** (recommended compose, not forks) — post-process Kroki/renderer SVG with https://github.com/dev-centr/mermaid-svg-css-vars[`@dev-centr/mermaid-svg-css-vars`] and https://github.com/dev-centr/plantuml-svg-css-vars[`@dev-centr/plantuml-svg-css-vars`] into https://github.com/dev-centr/themed-svg[Themed SVG] adaptive + host artifacts; serve with a `[.themed-svg]` image role so the site dark-mode toggle can recolor host-inlined figures. Raw Kroki `<img>` embeds stay fixed-color.
+* **Page context** (`@antora-supplemental/page-context`) — audience / author / rights metadata from `page-*` attributes
+* **Page edit** (`@antora-supplemental/page-edit`) — bake Edit + VCS provider mark into the page-context lead (no runtime icon JS)
 * **Link Validator** (`@antora-supplemental/link-validator`) - outbound http(s) checks + triage page (core CLI: asciidoc-link-validator)
 * **Link-inator** (`@antora-supplemental/linkinator`) - click-time validity chrome + Wayback button
 * **Extension Lister** (`@antora-supplemental/extension-lister`) - footer / purpose / layer listing of installed supplemental extensions
 * **Orphan Finder** (@antora-supplemental/orphan-finder) - unresolved xrefs / orphan pages triage
 * **Maint CLIs** (optional scripts): nav-drift, stale-page, playbook-pin-auditor, deep-link-contracts; shared UX via triage-ux-kit
-* **Build stack footer** (`@antora-supplemental/build-stack`) � publish playbook extensions + UI bundle to `site.keys` for footer attribution
+* **Build stack footer** (`@antora-supplemental/build-stack`) — publish playbook extensions + UI bundle to `site.keys` for footer attribution
 * Optional neighbors: alias-to-latest / unversioned component URLs, search-chat omnibox, **site-nav-tree** (multi-component sidebar forest with an **`include` allowlist**; keeps default nav-tree)
-* Playbook default: `urls.html_extension_style: indexify` (folder URLs; `index.adoc` ? trailing-slash path)
+* Playbook default: `urls.html_extension_style: indexify` (folder URLs; `index.adoc` → trailing-slash path)
 
-Wiring a product repo under `content.sources` publishes pages and xrefs � it does **not** mean the component belongs in the sidebar forest. Thin tools: hub portal under `home` only, or register the source but omit it from site-nav-tree `include`.
+Wiring a product repo under `content.sources` publishes pages and xrefs — it does **not** mean the component belongs in the sidebar forest. Thin tools: hub portal under `home` only, or register the source but omit it from site-nav-tree `include`.
 
 == Recommended pairing (multi-component hubs)
 
-**nav-typology is optional on its own** � you can use typology icons without site-nav-tree.
+**nav-typology is optional on its own** — you can use typology icons without site-nav-tree.
 
 When you **do** enable `@antora-supplemental/site-nav-tree`, also ship:
 
-* `@antora-supplemental/nav-typology` + its **companion UI** (`nav-tree.hbs`, helpers, CSS, sprite � Antora does not auto-merge extension UI)
-* `@antora-supplemental/nav-typology-diataxis` when the hub follows Di�taxis nav buckets
+* `@antora-supplemental/nav-typology` + its **companion UI** (`nav-tree.hbs`, helpers, CSS, sprite — Antora does not auto-merge extension UI)
+* `@antora-supplemental/nav-typology-diataxis` when the hub follows Diátaxis nav buckets
 
 Register typology **after** site-nav-tree. Detail: https://github.com/antora-supplemental/site-nav-tree[site-nav-tree] and https://github.com/antora-supplemental/nav-typology[nav-typology] READMEs.
 
-== Why a separate pack (not Valentus �full�)
+== Why a separate pack (not Valentus “full”)
 
 Valentus stays lightweight so theme-only adopters are not scared off.
 Facto is discovered **by pack name** (like a VS Code extension pack): theme + the other extensions you usually want, without folding those extras into Valentus core.
@@ -73,19 +73,19 @@ Local stack demo:
 [source,shell]
 ----
 pnpm install
-pnpm build          # antora demo/playbook.yml ? build/site
+pnpm build          # antora demo/playbook.yml → build/site
 pnpm serve          # http-server on :8082
 ----
 
 Bake-path smoke (Kroki Mermaid + themed SVG artifacts) remains under `examples/` (`pnpm build:example`).
 
 GitHub Pages:: workflow `.github/workflows/deploy.yml` publishes `demo/`.
-**One-time:** repo Settings ? Pages ? Source = **GitHub Actions** (same pattern as valentus-theme).
+**One-time:** repo Settings → Pages → Source = **GitHub Actions** (same pattern as valentus-theme).
 
 == Client Mermaid and diagram lightbox (supported options)
 
 Facto fragment defaults still document **bake** (Kroki) for hubs that want build-time SVG.
-The **published stack demo** uses the client path below � preferred when you want source-in-HTML + CDN runtime + lightbox without folding those into Valentus.
+The **published stack demo** uses the client path below — preferred when you want source-in-HTML + CDN runtime + lightbox without folding those into Valentus.
 
 === Client Mermaid (`@antora-supplemental/mermaid-client`)
 
@@ -136,5 +136,5 @@ Copy https://github.com/antora-supplemental/antora-ui-chassis/tree/main/packages
 * https://antora-supplemental.github.io/valentus-theme/[Valentus theme demo (Pages)]
 * https://github.com/antora-supplemental/valentus-theme[valentus-theme]
 * https://github.com/antora-supplemental/page-context[page-context]
-* https://docs.devcentr.org/home/publishing/antora-diagram-formats.html[DevCentr � Antora diagram formats]
-* https://docs.devcentr.org/home/publishing/antora-essential-extensions.html[DevCentr � Antora essential extensions]
+* https://docs.devcentr.org/home/publishing/antora-diagram-formats.html[DevCentr — Antora diagram formats]
+* https://docs.devcentr.org/home/publishing/antora-essential-extensions.html[DevCentr — Antora essential extensions]

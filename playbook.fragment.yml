@@ -1,7 +1,7 @@
 # Fragment - paste under your playbook root (merge with existing keys).
 # facto-stack: Valentus stays the UI bundle; this file is the extras composer.
 
-# Folder URLs: index.adoc ? �/email/ (canonical + sitemap follow Antora page URL).
+# Folder URLs: index.adoc → …/email/ (canonical + sitemap follow Antora page URL).
 urls:
   html_extension_style: indexify
 
@@ -16,7 +16,7 @@ antora:
     #   injectAssets: true
     - '@antora/lunr-extension'
     # Multi-component hubs: curated sidebar forest (keeps default nav-tree JS).
-    # Prefer `include` allowlist � content.sources ? forest roots.
+    # Prefer `include` allowlist — content.sources ≠ forest roots.
     # - require: '@antora-supplemental/site-nav-tree'
     #   include: [home, general-knowledge, business-bootstrap]
     #   order: [home, general-knowledge, business-bootstrap]
