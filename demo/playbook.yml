@@ -51,6 +51,7 @@ antora:
 
 asciidoc:
   extensions:
+    - '@antora-supplemental/asciidoctor-emoji-literals'
     - asciidoctor-emoji
     # PlantUML / non-Mermaid bake only — Mermaid stays client via mermaid-client
     - asciidoctor-kroki

@@ -20,6 +20,7 @@
     "maint:deep-links": "deep-link-contracts --config deep-link-contracts.yml --site-dir ./build/site"
   },
   "dependencies": {
+    "@antora-supplemental/asciidoctor-emoji-literals": "github:antora-supplemental/asciidoctor-emoji-literals#main",
     "@antora-supplemental/build-stack": "github:antora-supplemental/build-stack#main",
     "@antora-supplemental/deep-link-contracts": "github:antora-supplemental/deep-link-contracts#v0.1.1",
     "@antora-supplemental/diagram-lightbox": "github:antora-supplemental/antora-diagram-engines#dbdca5920074ef1559bdd263f874270292df9558&path:packages/diagram-lightbox",

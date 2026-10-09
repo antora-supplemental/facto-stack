@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@antora-supplemental/asciidoctor-emoji-literals':
+        specifier: github:antora-supplemental/asciidoctor-emoji-literals#main
+        version: https://codeload.github.com/antora-supplemental/asciidoctor-emoji-literals/tar.gz/353b32fba85bcced2c635fa96b59348f45d43315(@asciidoctor/core@2.2.9)(asciidoctor-emoji@0.5.0(@asciidoctor/core@2.2.9))
       '@antora-supplemental/build-stack':
         specifier: github:antora-supplemental/build-stack#main
         version: https://codeload.github.com/antora-supplemental/build-stack/tar.gz/b692315ea9c5bcea7c1d7a3fc181a537ea36a72e(@antora/site-generator@3.1.15)
@@ -89,6 +92,13 @@ packages:
     version: 0.2.1
     engines: {node: '>=18'}
     hasBin: true
+
+  '@antora-supplemental/asciidoctor-emoji-literals@https://codeload.github.com/antora-supplemental/asciidoctor-emoji-literals/tar.gz/353b32fba85bcced2c635fa96b59348f45d43315':
+    resolution: {tarball: https://codeload.github.com/antora-supplemental/asciidoctor-emoji-literals/tar.gz/353b32fba85bcced2c635fa96b59348f45d43315}
+    version: 0.1.0
+    peerDependencies:
+      '@asciidoctor/core': '>=2.2 <4.0'
+      asciidoctor-emoji: '>=0.5.0 <1.0.0'
 
   '@antora-supplemental/build-stack@https://codeload.github.com/antora-supplemental/build-stack/tar.gz/b692315ea9c5bcea7c1d7a3fc181a537ea36a72e':
     resolution: {tarball: https://codeload.github.com/antora-supplemental/build-stack/tar.gz/b692315ea9c5bcea7c1d7a3fc181a537ea36a72e}
@@ -1848,6 +1858,11 @@ snapshots:
   '@antora-supplemental/asciidoc-link-validator@https://codeload.github.com/antora-supplemental/asciidoc-link-validator/tar.gz/2595ec4f2a3c9a136ccfb94a15919e69798f9247':
     dependencies:
       js-yaml: 4.1.1
+
+  '@antora-supplemental/asciidoctor-emoji-literals@https://codeload.github.com/antora-supplemental/asciidoctor-emoji-literals/tar.gz/353b32fba85bcced2c635fa96b59348f45d43315(@asciidoctor/core@2.2.9)(asciidoctor-emoji@0.5.0(@asciidoctor/core@2.2.9))':
+    dependencies:
+      '@asciidoctor/core': 2.2.9
+      asciidoctor-emoji: 0.5.0(@asciidoctor/core@2.2.9)
 
   '@antora-supplemental/build-stack@https://codeload.github.com/antora-supplemental/build-stack/tar.gz/b692315ea9c5bcea7c1d7a3fc181a537ea36a72e(@antora/site-generator@3.1.15)':
     dependencies:

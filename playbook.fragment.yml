@@ -59,6 +59,8 @@ ui:
 
 asciidoc:
   extensions:
+    # Interim until Antora + asciidoctor-emoji 1.x on @asciidoctor/core 4
+    - '@antora-supplemental/asciidoctor-emoji-literals'
     - asciidoctor-emoji
     - asciidoctor-kroki
     - '@antora-supplemental/page-context'
