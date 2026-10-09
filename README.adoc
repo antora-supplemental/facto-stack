@@ -6,7 +6,7 @@ It documents and templates what DevCentr / antora-supplemental already reuse tog
 
 * **Valentus** UI bundle (`v2` rolling tag) — lean theme only
 * **Lunr** (`@antora/lunr-extension`) — site search
-* **Emoji shortcodes** (`asciidoctor-emoji`) — `:name:` in AsciiDoc becomes the emoji character
+* **Emoji** — `@antora-supplemental/asciidoctor-emoji-literals` (interim: pasted Unicode → `emoji:name[]`) + official npm `asciidoctor-emoji` 0.5.x (Twemoji for `emoji:name[]` macros). Drop literals when upstream 1.x runs on core 4.
 * **Unversioned component URLs** (`@antora-supplemental/unversioned-component-urls`) — bare `/component/` is a version chooser for numbered components (`mode: selector`)
 * **STEM / KaTeX** — `stem: latexmath` (+ supplemental math JS/CSS until in-bundle)
 * **Kroki diagrams** (`asciidoctor-kroki`) — Mermaid + PlantUML → SVG at build time
