@@ -1,5 +1,10 @@
 = Changelog
 
+== 2026-10-09 -- Emoji shortcodes and unversioned component URLs
+
+* `asciidoctor-emoji` is part of the default AsciiDoc extensions so `:shortcode:` emoji works on every Facto site.
+* `@antora-supplemental/unversioned-component-urls` `v2.1.2` is a default Antora extension (`mode: selector`). A component with one numbered version still aliases `/component/` to that version unless the playbook sets `short_circuit_single: false`.
+
 == 2026-09-26 -- Themed SVG namespaces `facto-stack-*`
 
 * Regenerate example diagrams with Themed SVG namespaces `facto-stack-<diagram>` (was `antora-facto-*`); host CSS vars are now `--themed-svg-facto-stack-*`.

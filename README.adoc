@@ -6,6 +6,8 @@ It documents and templates what DevCentr / antora-supplemental already reuse tog
 
 * **Valentus** UI bundle (`v2` rolling tag) — lean theme only
 * **Lunr** (`@antora/lunr-extension`) — site search
+* **Emoji shortcodes** (`asciidoctor-emoji`) — `:name:` in AsciiDoc becomes the emoji character
+* **Unversioned component URLs** (`@antora-supplemental/unversioned-component-urls`) — bare `/component/` is a version chooser for numbered components (`mode: selector`)
 * **STEM / KaTeX** — `stem: latexmath` (+ supplemental math JS/CSS until in-bundle)
 * **Kroki diagrams** (`asciidoctor-kroki`) — Mermaid + PlantUML → SVG at build time
 * **Theme-aware diagram SVGs** (recommended compose, not forks) — post-process Kroki/renderer SVG with https://github.com/dev-centr/mermaid-svg-css-vars[`@dev-centr/mermaid-svg-css-vars`] and https://github.com/dev-centr/plantuml-svg-css-vars[`@dev-centr/plantuml-svg-css-vars`] into https://github.com/dev-centr/themed-svg[Themed SVG] adaptive + host artifacts; serve with a `[.themed-svg]` image role so the site dark-mode toggle can recolor host-inlined figures. Raw Kroki `<img>` embeds stay fixed-color.
@@ -17,7 +19,7 @@ It documents and templates what DevCentr / antora-supplemental already reuse tog
 * **Orphan Finder** (@antora-supplemental/orphan-finder) - unresolved xrefs / orphan pages triage
 * **Maint CLIs** (optional scripts): nav-drift, stale-page, playbook-pin-auditor, deep-link-contracts; shared UX via triage-ux-kit
 * **Build stack footer** (`@antora-supplemental/build-stack`) — publish playbook extensions + UI bundle to `site.keys` for footer attribution
-* Optional neighbors: alias-to-latest / unversioned component URLs, search-chat omnibox, **site-nav-tree** (multi-component sidebar forest with an **`include` allowlist**; keeps default nav-tree)
+* Optional neighbors: search-chat omnibox, **site-nav-tree** (multi-component sidebar forest with an **`include` allowlist**; keeps default nav-tree)
 * Playbook default: `urls.html_extension_style: indexify` (folder URLs; `index.adoc` → trailing-slash path)
 
 Wiring a product repo under `content.sources` publishes pages and xrefs — it does **not** mean the component belongs in the sidebar forest. Thin tools: hub portal under `home` only, or register the source but omit it from site-nav-tree `include`.
@@ -41,7 +43,7 @@ Facto is discovered **by pack name** (like a VS Code extension pack): theme + th
 == Quick start
 
 . Copy `playbook.fragment.yml` into your playbook (or start from `examples/minimal-playbook.yml`).
-. `pnpm add antora @antora/lunr-extension asciidoctor-kroki @antora-supplemental/page-context @antora-supplemental/page-edit @antora-supplemental/link-validator @antora-supplemental/build-stack`
+. `pnpm add antora @antora/lunr-extension asciidoctor-emoji asciidoctor-kroki @antora-supplemental/page-context @antora-supplemental/page-edit @antora-supplemental/link-validator @antora-supplemental/build-stack @antora-supplemental/unversioned-component-urls`
 +
 Until published to npm: `pnpm add github:antora-supplemental/page-context#main github:antora-supplemental/page-edit#main github:antora-supplemental/link-validator#v0.2.0 github:antora-supplemental/linkinator#v0.1.0 github:antora-supplemental/extension-lister#v0.1.0`
 +

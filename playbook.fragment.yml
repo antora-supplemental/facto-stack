@@ -15,6 +15,10 @@ antora:
     # - require: '@antora-supplemental/diagram-lightbox'
     #   injectAssets: true
     - '@antora/lunr-extension'
+    # Bare /component/ for versioned components. Default short_circuit_single
+    # aliases a single numbered version through; set it false for a one-item chooser.
+    - require: '@antora-supplemental/unversioned-component-urls'
+      mode: selector
     # Multi-component hubs: curated sidebar forest (keeps default nav-tree JS).
     # Prefer `include` allowlist — content.sources ≠ forest roots.
     # - require: '@antora-supplemental/site-nav-tree'
@@ -55,6 +59,7 @@ ui:
 
 asciidoc:
   extensions:
+    - asciidoctor-emoji
     - asciidoctor-kroki
     - '@antora-supplemental/page-context'
   attributes:

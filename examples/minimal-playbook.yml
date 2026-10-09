@@ -6,6 +6,8 @@ site:
 antora:
   extensions:
     - '@antora/lunr-extension'
+    - require: '@antora-supplemental/unversioned-component-urls'
+      mode: selector
 content:
   sources:
     - url: ./..
@@ -18,6 +20,7 @@ ui:
   supplemental_files: ./examples/supplemental-ui
 asciidoc:
   extensions:
+    - asciidoctor-emoji
     - asciidoctor-kroki
     - '@antora-supplemental/page-context'
   attributes:
