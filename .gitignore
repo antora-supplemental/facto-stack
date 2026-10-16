@@ -6,6 +6,11 @@
 !package.json
 !pnpm-lock.yaml
 !playbook.fragment.yml
+!antora-registry.md
+!lib/
+!lib/**
+!test/
+!test/**
 !scripts/
 !scripts/**
 !examples/

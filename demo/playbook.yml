@@ -28,34 +28,15 @@ ui:
 
 antora:
   extensions:
-    - '@antora/lunr-extension'
-    - require: '@antora-supplemental/unversioned-component-urls'
-      mode: selector
-    - require: '@antora-supplemental/mermaid-client/antora'
-      # CDN Mermaid runtime (default). Assets injected into UI catalog.
-      injectAssets: true
-    - require: '@antora-supplemental/diagram-lightbox'
-      injectAssets: true
-    - '@antora-supplemental/build-stack'
-    - require: '@antora-supplemental/link-validator'
-      reportEmail: support@devcentr.org
-      softFail403: true
-      failLevel: none
-    - require: '@antora-supplemental/linkinator'
-      statusDefault: unchecked
-    - require: '@antora-supplemental/extension-lister'
-      layouts: [footer]
-    - require: '@antora-supplemental/orphan-finder/extension'
-      reportEmail: support@devcentr.org
-      failOnUnresolved: false
+    - require: '@antora-supplemental/facto-stack'
+      profile: demo
+      linkValidator:
+        reportEmail: support@devcentr.org
+      orphanFinder:
+        reportEmail: support@devcentr.org
+        failOnUnresolved: false
 
 asciidoc:
-  extensions:
-    - '@antora-supplemental/asciidoctor-emoji-literals'
-    - asciidoctor-emoji
-    # PlantUML / non-Mermaid bake only — Mermaid stays client via mermaid-client
-    - asciidoctor-kroki
-    - '@antora-supplemental/page-context'
   attributes:
     source-highlighter: highlight.js
     icons: font

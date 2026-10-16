@@ -1,5 +1,18 @@
 # Fragment - paste under your playbook root (merge with existing keys).
 # facto-stack: Valentus stays the UI bundle; this file is the extras composer.
+#
+# Preferred (one playbook require → footer lists "facto-stack" only):
+#
+# antora:
+#   extensions:
+#     - require: '@antora-supplemental/facto-stack'
+#       linkValidator:
+#         reportEmail: you@example.org
+#       pageContextAntora:
+#         component: docs
+#         path: keywords
+#
+# Legacy explicit list (below) remains for copy-paste reference.
 
 # Folder URLs: index.adoc → …/email/ (canonical + sitemap follow Antora page URL).
 urls:

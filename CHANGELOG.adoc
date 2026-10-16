@@ -1,5 +1,11 @@
 = Changelog
 
+== 2026-10-16 — Antora compose-pack extension
+
+* `@antora-supplemental/facto-stack` is now a real Antora extension: one `- require:` registers the hub or demo member stack programmatically so `@antora-supplemental/build-stack` footers list depth-1 playbook imports (pack name only).
+* Hub profile (default) matches `playbook.fragment.yml`; `profile: demo` swaps in client Mermaid + diagram lightbox.
+* Pack config merges per-member overrides (`linkValidator`, `pageContextAntora`, `lunr`, `omit`, …) and default AsciiDoc extensions/attributes when the playbook omits them.
+
 == 2026-10-09 -- Literal emoji interim + unversioned component URLs
 
 * `@antora-supplemental/asciidoctor-emoji-literals` runs before official npm `asciidoctor-emoji` 0.5.x and rewrites pasted Unicode emoji to `emoji:name[]` (interim until asciidoctor-emoji 1.x on core 4). Opt out with `:emoji-literals: false`.

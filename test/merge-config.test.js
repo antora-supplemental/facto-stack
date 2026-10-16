@@ -1,0 +1,32 @@
+'use strict'
+
+const { describe, it } = require('node:test')
+const assert = require('node:assert/strict')
+const { applyPackConfig, mergeAsciiDocPlaybook } = require('../lib/merge-config')
+const { HUB_ANTORA_EXTENSIONS } = require('../lib/default-stack')
+
+describe('applyPackConfig', () => {
+  it('merges linkValidator overrides', () => {
+    const out = applyPackConfig(HUB_ANTORA_EXTENSIONS, {
+      linkValidator: { reportEmail: 'dlang@devcentr.org' },
+    })
+    const lv = out.find((e) => e.require === '@antora-supplemental/link-validator')
+    assert.equal(lv.reportEmail, 'dlang@devcentr.org')
+  })
+
+  it('omits listed pack members', () => {
+    const out = applyPackConfig(HUB_ANTORA_EXTENSIONS, {
+      omit: ['@antora-supplemental/extension-lister'],
+    })
+    assert.ok(!out.some((e) => (typeof e === 'string' ? e : e.require) === '@antora-supplemental/extension-lister'))
+  })
+})
+
+describe('mergeAsciiDocPlaybook', () => {
+  it('adds default asciidoc extensions when missing', () => {
+    const playbook = { asciidoc: { extensions: [], attributes: {} } }
+    mergeAsciiDocPlaybook(playbook, { asciidocAttributes: { 'page-context-keyword-base': '/docs/keywords' } })
+    assert.ok(playbook.asciidoc.extensions.includes('asciidoctor-kroki'))
+    assert.equal(playbook.asciidoc.attributes['page-context-keyword-base'], '/docs/keywords')
+  })
+})
