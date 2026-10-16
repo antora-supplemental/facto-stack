@@ -74,12 +74,32 @@
     }
   }
 
+  function normalizePathname (path) {
+    if (!path || path === '/') return '/'
+    var p = path.replace(/\/index\.html$/i, '/')
+    if (p.length > 1 && p.charAt(p.length - 1) === '/') p = p.slice(0, -1)
+    return p
+  }
+
   function samePath (url) {
     try {
-      return pageUrl(url).pathname === window.location.pathname
+      return (
+        normalizePathname(pageUrl(url).pathname) ===
+        normalizePathname(pageUrl(window.location.href).pathname)
+      )
     } catch (e) {
       return false
     }
+  }
+
+  function scrollToHash (hash) {
+    var raw = hash || window.location.hash
+    if (!raw || raw.charAt(0) !== '#') return
+    var id = decodeURIComponent(raw.slice(1))
+    if (!id) return
+    var el = document.getElementById(id)
+    if (!el) return
+    el.scrollIntoView({ block: 'start', behavior: 'auto' })
   }
 
   function componentName (url) {
@@ -219,6 +239,7 @@
         }
         window.scrollTo(0, scrollY)
         ctx.articleHost = articleHost
+        scrollToHash(pageUrl(ctx.url).hash)
         emit('loaded', ctx)
       }
       if (fade) {
@@ -262,6 +283,7 @@
         var doc = new DOMParser().parseFromString(html, 'text/html')
         ctx.doc = doc
         if (push) history.pushState({ softNav: true, docNav: true }, '', dest)
+        lastPopPath = normalizePathname(pageUrl(dest).pathname) + pageUrl(dest).search
         document.title = extractTitle(doc)
         applyRegions(doc, ctx)
       })
@@ -284,15 +306,32 @@
     var a = ev.target.closest('a')
     if (!a || a.target === '_blank' || a.hasAttribute('download')) return
     if (a.closest('.nav-container')) return
-    var href = a.getAttribute('href')
-    if (!href || href.charAt(0) === '#') return
-    if (!sameOrigin(a.href) || samePath(a.href)) return
+    if (!sameOrigin(a.href)) return
+    var dest = pageUrl(a.href)
+    if (samePath(dest.href)) {
+      if (dest.hash) {
+        ev.preventDefault()
+        scrollToHash(dest.hash)
+        if (dest.href !== window.location.href) {
+          history.pushState(history.state || { softNav: true, docNav: true }, '', dest.href)
+        }
+      }
+      return
+    }
     if (!sameComponent(a.href)) return
     ev.preventDefault()
     navigate(a.href, true)
   })
 
+  var lastPopPath = normalizePathname(window.location.pathname) + window.location.search
+
   window.addEventListener('popstate', function () {
+    var pathKey = normalizePathname(window.location.pathname) + window.location.search
+    if (pathKey === lastPopPath) {
+      scrollToHash()
+      return
+    }
+    lastPopPath = pathKey
     navigate(window.location.href, false)
   })
 
