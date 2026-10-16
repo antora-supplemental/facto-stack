@@ -10,6 +10,7 @@ Facto stack demos vendor `soft-nav.js` into supplemental UI and load it **before
 * Intercepts in-article links within the **same Antora component**
 * Fetches the next page and swaps registered regions (mast / nav / article)
 * Emits `soft-nav:loaded` so Mermaid and lightbox rebind without SoftNav naming them
+* Hub profile registers `@antora-supplemental/soft-nav-page-toc` so the right-rail page TOC rebuilds after article swaps (see link:https://docs.antora-supplemental.org/docs/ROOT/proposals/soft-nav-page-toc.html[upstream proposal^])
 * Cross-component links still do a full document load
 
 == Try it

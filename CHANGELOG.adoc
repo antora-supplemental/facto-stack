@@ -1,5 +1,9 @@
 = Changelog
 
+== 2026-10-16 — SoftNav page TOC extension
+
+* **v0.2.3** — Hub and demo profiles register `@antora-supplemental/soft-nav-page-toc` (rebuild aside page TOC after SoftNav article swaps). Proposal: link:https://docs.antora-supplemental.org/docs/ROOT/proposals/soft-nav-page-toc.html[SoftNav page TOC and nav-hidden pages^].
+
 == 2026-10-16 — Antora compose-pack extension
 
 * **v0.2.2** — Hub and demo profiles register `@antora-supplemental/antora-search-chat` immediately after Lunr; override via pack `searchChat:` config.
