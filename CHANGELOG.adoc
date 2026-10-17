@@ -1,5 +1,12 @@
 = Changelog
 
+== 2026-10-17 — v0.2.21 hub provider release
+
+* **v0.2.21** — pack now pins `link-validator` @ `v0.2.2` and `page-context` @ `v0.6.7`, so hubs can drop their own pins (and the dlang `overrides` entry).
+* Adds the `facto-maint` bin (`orphan-finder`, `nav-drift`, `stale-page`, `playbook-pin-auditor`, `deep-link-contracts`) so hub maint scripts need no extra dependencies.
+* README documents the provider boundary (extensions vs Valentus bundle vs `supplemental-ui` copies) and `soft-nav-page-toc` vs `soft-nav.js`.
+* Hub GitHub topics: `facto-stack` only.
+
 == 2026-10-17 — v0.2.20 pack release (linkinator v0.1.9)
 
 * **v0.2.20** — ships `@antora-supplemental/linkinator` @ `v0.1.9` (inline external-link icon + hover Archive beside it).

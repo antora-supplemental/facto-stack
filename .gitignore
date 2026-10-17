@@ -7,6 +7,8 @@
 !pnpm-lock.yaml
 !playbook.fragment.yml
 !antora-registry.md
+!bin/
+!bin/**
 !lib/
 !lib/**
 !test/

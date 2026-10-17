@@ -33,7 +33,7 @@ It documents and templates what DevCentr / antora-supplemental already reuse tog
 * **Build stack footer** (`@antora-supplemental/build-stack`) — publish playbook extensions + UI bundle to `site.keys` for footer attribution
 * Optional neighbors: **site-nav-tree** (multi-component sidebar forest with an **`include` allowlist**; keeps default nav-tree)
 * **Hub profile footer:** default `profile: hub` registers members internally and keeps the footer at depth 1 (`facto-stack` only). Set `footerListMembers: true` (demo profile default) to list every member instead.
-* **Hub GitHub topics:** playbook repos that only `require` this pack should carry topic `facto-stack` (and `valentus-theme` for the UI bundle) — not topics for each member extension (linkinator, page-edit, antora-search-chat, …). Tag a member only when the hub also directly pins or `require`s it. link:https://antora-supplemental.org/docs/home/hub-github-topics.html[Hub GitHub topics^].
+* **Hub GitHub topics:** playbook repos that use this pack as their provider carry topic `facto-stack` only — not topics for the Valentus UI bundle, nor for any member extension (page-context, site-nav-tree, soft-nav-page-toc, linkinator, page-edit, antora-search-chat, …). link:https://docs.antora-supplemental.org/docs/hub-github-topics/[Hub GitHub topics^].
 * **Optional diagram chrome (hub):** `mermaidClient: { enabled: true }` and `diagramLightbox: { enabled: true }` turn on `mermaid-client/antora` and `diagram-lightbox` for hubs whose `supplemental-ui` already includes the Mermaid / lightbox partials.
 * Playbook default: `urls.html_extension_style: indexify` (folder URLs; `index.adoc` → trailing-slash path)
 
@@ -54,6 +54,37 @@ When you **do** enable `@antora-supplemental/site-nav-tree`, also ship:
 * `@antora-supplemental/nav-typology-diataxis` when the hub follows Diátaxis nav buckets
 
 Register typology **after** site-nav-tree. Detail: https://github.com/antora-supplemental/site-nav-tree[site-nav-tree] and https://github.com/antora-supplemental/nav-typology[nav-typology] READMEs.
+
+== What the pack provides to a hub
+
+Hubs should declare **`@antora-supplemental/facto-stack` plus `antora`** in `package.json` — not each member. The pack lists the members as its own `dependencies`, loads them for the Antora `antora.extensions` list, and merges the AsciiDoc extensions and attributes into `playbook.asciidoc`. Under pnpm the `antora` shim sets `NODE_PATH` to the virtual store, so member requires (`page-context`, `site-nav-tree`, `soft-nav-page-toc`, `link-validator`, …) resolve without a direct hub pin.
+
+[cols="1,2",options="header"]
+|===
+| Piece
+| Provided how
+
+| Extensions (page-context, site-nav-tree, soft-nav-page-toc, nav-typology, link-validator, linkinator, page-edit, search-chat, …)
+| **Pack members.** Do not pin or topic-tag them in the hub. Version bumps arrive by bumping the pack.
+
+| Valentus UI bundle
+| **Not an npm dependency of the pack.** It is a release asset (`ui.bundle.url` in the playbook). The pack does not set the URL; the playbook still names it. Treat it as the pack's *paired theme*, not a member extension — the hub carries no separate `valentus-theme` topic.
+
+| `supplemental-ui` partials / helpers / CSS
+| **Copied once** from the member packages (`ui/` folders) into the hub; the copies are hub-owned. Re-sync from `node_modules/.pnpm/…` or the member repos when a member bumps UI files.
+
+| Maint CLIs (orphan-finder, nav-drift, stale-page, playbook-pin-auditor, deep-link-contracts)
+| **`facto-maint <tool> …`** — the pack's `bin`. Hub scripts become `facto-maint orphan-finder --root ./docs …` with no extra pins.
+|===
+
+=== soft-nav-page-toc vs hub `soft-nav.js`
+
+Two different things share the "soft nav" name:
+
+* `@antora-supplemental/soft-nav-page-toc` is a **build-time Antora extension** (pack member). It makes the right-hand *page TOC* rebuild correctly after a SoftNav swap.
+* `supplemental-ui/js/soft-nav.js` is the **in-browser SPA navigation script** copied from https://github.com/antora-supplemental/antora-ui-chassis/tree/main/packages/soft-nav[antora-ui-chassis]. It swaps article content on link clicks.
+
+The extension depends on the script's events; neither replaces the other.
 
 == Why a separate pack (not Valentus “full”)
 
