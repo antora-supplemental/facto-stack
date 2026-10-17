@@ -1,5 +1,9 @@
 = Changelog
 
+== 2026-10-17 — site-nav-tree v0.6.0 (parent label opens Overview)
+
+* Bump `@antora-supplemental/site-nav-tree` @ `v0.6.0`: clicking a nav parent label (**Demo pages**, **Core**, **Extensions**, …) expands it and loads its Overview article.
+
 == 2026-10-17 — demo-data Demo pages nav (v0.3.5)
 
 * Pin `demo-data` @ `v0.3.5`: forest root **Demo pages**; **Core** / **Extensions** sidebar sections (v0.3.3 hierarchy; pin v0.3.5 — not v0.3.4).
