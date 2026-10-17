@@ -81,10 +81,10 @@ Hubs should declare **`@antora-supplemental/facto-stack` plus `antora`** in `pac
 
 Two different things share the "soft nav" name:
 
-* `@antora-supplemental/soft-nav-page-toc` is a **build-time Antora extension** (pack member). It makes the right-hand *page TOC* rebuild correctly after a SoftNav swap.
-* `supplemental-ui/js/soft-nav.js` is the **in-browser SPA navigation script** copied from https://github.com/antora-supplemental/antora-ui-chassis/tree/main/packages/soft-nav[antora-ui-chassis]. It swaps article content on link clicks.
+* `@antora-supplemental/soft-nav-page-toc` is a **build-time Antora extension** (pack member). It adds compose-time nav-hidden meta and breadcrumbs and can inject a script that rebuilds the right-hand *page TOC* after a SoftNav swap.
+* `supplemental-ui/js/soft-nav.js` is the **in-browser SoftNav script** copied from https://github.com/antora-supplemental/antora-ui-chassis/tree/main/packages/soft-nav[antora-ui-chassis]. It does the actual content swap on link clicks. Hub copies already rebuild the aside TOC, so hubs set `softNavPageToc: { injectScript: false }`.
 
-The extension depends on the script's events; neither replaces the other.
+The extension is a package you get through the pack; `soft-nav.js` is a file the hub owns. Neither replaces the other.
 
 == Why a separate pack (not Valentus “full”)
 
