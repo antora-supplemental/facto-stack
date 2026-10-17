@@ -1,5 +1,9 @@
 = Changelog
 
+== 2026-10-17 — v0.2.13 pack release (site-nav-tree v0.6.5)
+
+* **v0.2.13** — ships `@antora-supplemental/site-nav-tree` @ `v0.6.5` (companion script `?v=` cache bust + skip duplicate footer injection when hub already loads the companion).
+
 == 2026-10-17 — v0.2.12 pack release (site-nav-tree v0.6.4)
 
 * **v0.2.12** — ships `@antora-supplemental/site-nav-tree` @ `v0.6.4` (current-page highlight prefers owning forest component root; fixes cross-component nav xref stealing selection on hub forests).
