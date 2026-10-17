@@ -1,5 +1,9 @@
 = Changelog
 
+== 2026-10-17 — v0.2.25 pack release (antora-search-chat v0.1.7)
+
+* **v0.2.25** — ships `@antora-supplemental/antora-search-chat` @ `v0.1.7`: search scope menu / results / Ask panel stack on top of everything (fixes dropdown hidden behind the doc mast, with Valentus 2.1.7), stacked scope-above-input released, *(Chat unavailable)* copy, *Semantic Search* placeholder when the semantic level is enabled, capability levels (`keyword` / `semantic` / `chat`), opt-in floating dock placement (`placement: dock`, results open upward), and Enter-to-chat. Pairs with Valentus `v2.1.7`.
+
 == 2026-10-17 — v0.2.24 pack release (nav-typology v0.1.11)
 
 * **v0.2.24** — ships `@antora-supplemental/nav-typology` @ `v0.1.11`: an Overview leaf under a typed node (Diátaxis bucket, spec, changelog) inherits that node typology icon; untyped-parent Overviews stay icon-less and bold.
