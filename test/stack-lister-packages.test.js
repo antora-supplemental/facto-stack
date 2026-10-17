@@ -10,6 +10,7 @@ describe('stackListerPackages', () => {
     const names = stackListerPackages(DEMO_ANTORA_EXTENSIONS)
     assert.ok(names.includes('@antora/lunr-extension'))
     assert.ok(names.includes('@antora-supplemental/site-nav-tree'))
+    assert.ok(names.includes('@antora-supplemental/page-edit'))
     assert.ok(names.includes('asciidoctor-kroki'))
     assert.ok(!names.includes('@antora-supplemental/facto-stack'))
   })

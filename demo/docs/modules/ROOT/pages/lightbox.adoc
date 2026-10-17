@@ -24,7 +24,15 @@ PlantUML source (regenerate with `pnpm diagrams:demo-plantuml`):
 
 [source,plantuml]
 ----
-include::{docdir}/../diagrams/lightbox-compose.puml[]
+@startuml
+skinparam backgroundColor transparent
+actor User
+participant "Valentus UI" as UI
+participant "Facto stack" as Stack
+User -> UI : lean chrome
+UI -> Stack : compose extensions
+Stack --> User : Mermaid client + lightbox + SoftNav
+@enduml
 ----
 
 TIP: Click the PlantUML SVG (or a Mermaid host on xref:mermaid.adoc[Client Mermaid]) to open the lightbox.

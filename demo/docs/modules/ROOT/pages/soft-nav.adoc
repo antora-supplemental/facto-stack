@@ -1,6 +1,13 @@
 = SoftNav
 :description: Same-origin soft navigation from antora-ui-chassis soft-nav.
 :navtitle: SoftNav
+:page-audience: Authors wiring chassis SoftNav with consumer scripts
+:page-usage-context: Facto stack demo — soft navigation smoke
+:page-doc-type: explanation
+:page-orig-author: Ryan Johnson
+:page-last-author: Cursor agent on behalf of Ryan Johnson
+:page-last-edited: 2026-10-16
+:page-keywords: soft-nav, page-toc
 
 SoftNav is a chassis UI component (`antora-ui-chassis/packages/soft-nav`).
 Facto stack demos vendor `soft-nav.js` into supplemental UI and load it **before** consumer scripts (Mermaid, lightbox).

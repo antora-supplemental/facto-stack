@@ -93,6 +93,9 @@ importers:
       '@dev-centr/mermaid-svg-css-vars':
         specifier: 0.1.2
         version: 0.1.2
+      '@dev-centr/plantuml-svg-css-vars':
+        specifier: github:dev-centr/plantuml-svg-css-vars#v0.1.2
+        version: https://codeload.github.com/dev-centr/plantuml-svg-css-vars/tar.gz/9f7c54b60b41609140edd418a3a4062fb39fa9a0
       '@dev-centr/themed-svg':
         specifier: 0.1.1
         version: 0.1.1
@@ -374,8 +377,19 @@ packages:
     engines: {node: '>=20'}
     hasBin: true
 
+  '@dev-centr/plantuml-svg-css-vars@https://codeload.github.com/dev-centr/plantuml-svg-css-vars/tar.gz/9f7c54b60b41609140edd418a3a4062fb39fa9a0':
+    resolution: {tarball: https://codeload.github.com/dev-centr/plantuml-svg-css-vars/tar.gz/9f7c54b60b41609140edd418a3a4062fb39fa9a0}
+    version: 0.1.2
+    engines: {node: '>=20'}
+    hasBin: true
+
   '@dev-centr/themed-svg@0.1.1':
     resolution: {integrity: sha512-hBZH3BKQErb3HRHOVUGL5mxPy6IHZ3EHMH0w4LoHtN+zmlj+wXC5ErVm5r0eTc8+IHN7OTjvaUMF+ZPhoNIMZA==}
+    engines: {node: '>=20'}
+    hasBin: true
+
+  '@dev-centr/themed-svg@0.2.3':
+    resolution: {integrity: sha512-mEd90oVCPTj3Bj8wSQ9gKgJdHiM6JDbGYlVyM5sm0RZJYkwStDk8bM0RQ/fq0P4263nN96qHxlk0zPYrMs0E3Q==}
     engines: {node: '>=20'}
     hasBin: true
 
@@ -2183,7 +2197,20 @@ snapshots:
     dependencies:
       '@dev-centr/themed-svg': 0.1.1
 
+  '@dev-centr/plantuml-svg-css-vars@https://codeload.github.com/dev-centr/plantuml-svg-css-vars/tar.gz/9f7c54b60b41609140edd418a3a4062fb39fa9a0':
+    dependencies:
+      '@dev-centr/themed-svg': 0.2.3
+
   '@dev-centr/themed-svg@0.1.1':
+    dependencies:
+      '@xmldom/xmldom': 0.8.15
+      color-name: 2.1.1
+      dompurify: 3.4.15
+      postcss: 8.5.28
+      postcss-value-parser: 4.2.0
+      saxes: 6.0.0
+
+  '@dev-centr/themed-svg@0.2.3':
     dependencies:
       '@xmldom/xmldom': 0.8.15
       color-name: 2.1.1

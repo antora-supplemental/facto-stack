@@ -1,0 +1,29 @@
+= Antora Supplemental Facto stack portal
+:description: Hub entry for the published Facto stack demo — stack compose pages and shared theme-demo fixtures.
+:navtitle: Overview
+:page-doc-type: explanation
+:page-usage-context: Public GitHub Pages demo for adopters evaluating Facto compose defaults
+:page-orig-author: Ryan Johnson
+:page-last-author: Cursor agent on behalf of Ryan Johnson
+:page-last-edited: 2026-10-16
+
+This site lives at `/facto-stack/` on GitHub Pages.
+The **`home`** component is the hub entry (`/facto-stack/home/`); product demos use their own component ids so paths stay readable.
+
+== Demos on this site
+
+[cols="2,3"]
+|===
+| Component | What to open
+
+| **stack**
+| xref:stack:ROOT:index.adoc[Facto stack demo] — client Mermaid, diagram lightbox, SoftNav, Kroki PlantUML (Themed SVG)
+
+| **theme-demo**
+| xref:theme-demo:ROOT:index.adoc[Theme demo fixtures] — shared AsciiDoc catalog from https://github.com/antora-supplemental/demo-data[demo-data^]
+|===
+
+== Related
+
+* https://antora-supplemental.github.io/valentus-theme/[Valentus theme demo^] — lean UI chrome only
+* https://github.com/antora-supplemental/facto-stack[`facto-stack` compose pack^]

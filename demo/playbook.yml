@@ -6,7 +6,7 @@
 site:
   title: Facto stack demo
   url: https://antora-supplemental.github.io/facto-stack
-  start_page: facto-stack::index.adoc
+  start_page: home::index.adoc
   robots: |
     User-agent: *
     Allow: /
@@ -22,12 +22,14 @@ content:
     # Baseline body fixtures (demo-data theme-demo — host-agnostic AsciiDoc catalog)
     - url: https://github.com/antora-supplemental/demo-data.git
       branches: main
-      tags: v0.2.0
       start_path: docs/theme-demo
     # Optional site-nav-tree forest smoke (catalog-alpha, catalog-beta):
     # - url: https://github.com/antora-supplemental/demo-data.git
     #   branches: main
     #   start_path: docs/fixtures/site-nav-tree
+    - url: ./..
+      start_path: demo/home
+      branches: HEAD
     - url: ./..
       start_path: demo/docs
       branches: HEAD
@@ -40,12 +42,13 @@ ui:
 
 antora:
   extensions:
+    - ./lib/verify-themed-svg-dark-mode.js
     - require: '@antora-supplemental/facto-stack'
       profile: demo
       siteNavTree:
         enabled: true
-        include: [facto-stack, theme-demo]
-        order: [facto-stack, theme-demo]
+        include: [home, stack, theme-demo]
+        order: [home, stack, theme-demo]
       linkValidator:
         reportEmail: support@devcentr.org
       orphanFinder:

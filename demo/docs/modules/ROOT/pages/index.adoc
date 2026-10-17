@@ -5,7 +5,9 @@
 :page-orig-author: Ryan Johnson
 :page-last-author: Cursor agent on behalf of Ryan Johnson
 :page-last-edited: 2026-09-25
-:navtitle: Stack home
+:navtitle: Facto stack demo
+:page-usage-context: Published GitHub Pages stack demo (component `stack`)
+:page-keywords: facto-stack, mermaid-client, diagram-lightbox, soft-nav
 
 ifndef::page-context-active[]
 [.page-context.page-context-lead]

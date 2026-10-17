@@ -1,0 +1,9 @@
+@startuml
+skinparam backgroundColor transparent
+actor User
+participant "Valentus UI" as UI
+participant "Facto stack" as Stack
+User -> UI : lean chrome
+UI -> Stack : compose extensions
+Stack --> User : Mermaid client + lightbox + SoftNav
+@enduml

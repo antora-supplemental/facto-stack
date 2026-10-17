@@ -1,6 +1,13 @@
 = Client Mermaid
 :description: Mermaid rendered in the browser via mermaid-client (not Kroki bake).
 :navtitle: Client Mermaid
+:page-audience: Authors comparing client Mermaid vs Kroki bake
+:page-usage-context: Facto stack demo — client runtime path
+:page-doc-type: explanation
+:page-orig-author: Ryan Johnson
+:page-last-author: Cursor agent on behalf of Ryan Johnson
+:page-last-edited: 2026-10-16
+:page-keywords: mermaid-client, diagrams
 
 Facto defaults can bake Mermaid through Kroki.
 This demo proves the **client** path: `@antora-supplemental/mermaid-client` keeps the source in the HTML and loads a pinned CDN Mermaid runtime so light/dark can re-theme without rebuilding SVGs.
