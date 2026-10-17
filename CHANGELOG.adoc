@@ -2,7 +2,7 @@
 
 == 2026-10-16 — site-nav-tree filter styling
 
-* Pin `@antora-supplemental/site-nav-tree` **v0.5.5** (nav label filter inherits Valentus `--adt-*` tokens).
+* Pin `@antora-supplemental/site-nav-tree` **v0.5.6** (nav label filter inherits Valentus `--adt-*` tokens; transparent sticky wrapper).
 
 == 2026-10-16 — Hub component naming (README)
 
