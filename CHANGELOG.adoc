@@ -6,6 +6,7 @@
 * Adds the `facto-maint` bin (`orphan-finder`, `nav-drift`, `stale-page`, `playbook-pin-auditor`, `deep-link-contracts`) so hub maint scripts need no extra dependencies.
 * README documents the provider boundary (extensions vs Valentus bundle vs `supplemental-ui` copies) and `soft-nav-page-toc` vs `soft-nav.js`.
 * Hub GitHub topics: `facto-stack` only.
+* README hub-topics link → `docs.antora-supplemental.org/docs/hub-github-topics/`.
 
 == 2026-10-17 — v0.2.20 pack release (linkinator v0.1.9)
 
