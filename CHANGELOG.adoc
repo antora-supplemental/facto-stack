@@ -1,5 +1,9 @@
 = Changelog
 
+== 2026-10-17 — v0.2.27 pack release (antora-search-chat v0.1.9)
+
+* **v0.2.27** — ships `@antora-supplemental/antora-search-chat` @ `v0.1.9`: facto `{ config, playbook }` payload is unwrapped (and lowercased `searchchat` playbook key accepted), so pack `searchChat:` overrides such as `placement: dock` actually reach the extension.
+
 == 2026-10-17 — v0.2.26 pack release (antora-search-chat v0.1.8)
 
 * **v0.2.26** — ships `@antora-supplemental/antora-search-chat` @ `v0.1.8`: in dock placement the vacated navbar search slot collapses (`:has()`), so the top bar is brand + actions only.
