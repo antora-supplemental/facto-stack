@@ -3,6 +3,7 @@
 == 2026-10-16 — Demo-data content source
 
 * Demo playbook composes `theme-demo` from `antora-supplemental/demo-data` with stack pages under `demo/docs`; `siteNavTree` allowlists `facto-stack` + `theme-demo`. README links the org demo-data catalog proposal.
+* Playbook comments document optional `docs/fixtures/site-nav-tree` source and tag pinning for baseline fixtures.
 
 == 2026-10-16 — site-nav-tree filter styling
 
