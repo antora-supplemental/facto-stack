@@ -1,5 +1,10 @@
 = Changelog
 
+== 2026-10-16 — SoftNav TOC selector and detail breadcrumbs
+
+* **v0.2.4** — Pin `@antora-supplemental/soft-nav-page-toc` **v0.1.6**. The v0.2.3 tag still resolved **v0.1.0**, which injected a broken `…/_/` script URL and did not emit `:hide-page:` meta or the parent breadcrumb. v0.1.6 rebuilds the aside TOC with the Default UI heading selector and appends Changelog before a detail title.
+* Demo `supplemental-ui/js/soft-nav.js` uses that same TOC selector and appends the parent crumb on soft navigation when the fetched page has no meta yet.
+
 == 2026-10-16 — SoftNav page TOC extension
 
 * **v0.2.3** — Hub and demo profiles register `@antora-supplemental/soft-nav-page-toc` (rebuild aside page TOC after SoftNav article swaps). Proposal: link:https://docs.antora-supplemental.org/docs/ROOT/proposals/soft-nav-page-toc.html[SoftNav page TOC and nav-hidden pages^].
