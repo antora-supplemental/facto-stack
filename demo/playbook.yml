@@ -21,13 +21,18 @@ content:
   sources:
     # Baseline body fixtures (demo-data demo-pages — host-agnostic AsciiDoc catalog)
     - url: https://github.com/antora-supplemental/demo-data.git
-      tags: [v0.3.1]
+      tags: [v0.3.2]
       branches: []
       start_path: docs/demo-pages
-    # Optional site-nav-tree forest smoke (catalog-alpha, catalog-beta):
-    # - url: https://github.com/antora-supplemental/demo-data.git
-    #   branches: main
-    #   start_path: docs/fixtures/site-nav-tree
+    # site-nav-tree supplement — nested under demo-pages Extensions (not separate forest roots)
+    - url: https://github.com/antora-supplemental/demo-data.git
+      tags: [v0.3.2]
+      branches: []
+      start_path: docs/fixtures/site-nav-tree/catalog-alpha
+    - url: https://github.com/antora-supplemental/demo-data.git
+      tags: [v0.3.2]
+      branches: []
+      start_path: docs/fixtures/site-nav-tree/catalog-beta
     - url: ./..
       start_path: demo/home
       branches: HEAD
@@ -55,6 +60,7 @@ antora:
 
 asciidoc:
   attributes:
+    demo-fixtures-site-nav-tree: ''
     source-highlighter: highlight.js
     icons: font
     stem: latexmath

@@ -1,5 +1,9 @@
 = Changelog
 
+== 2026-10-17 — demo-data extensions nav (v0.3.2)
+
+* Pin `demo-data` @ `v0.3.2`: **Extensions** nav section under `antora-core`; topic pages under `extensions/`; `site-nav-tree` fixtures (`catalog-alpha`, `catalog-beta`) composed and nested via `demo-fixtures-site-nav-tree` (forest `include` unchanged: `[home, demo-pages]`).
+
 == 2026-10-17 — demo-data nav labels (v0.3.1)
 
 * Pin `demo-data` @ `v0.3.1`: baseline forest root **antora-core**, index nav **Overview** (drops **Body fixtures** / **Demo home** labels).
