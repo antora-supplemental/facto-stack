@@ -21,16 +21,16 @@ content:
   sources:
     # Baseline body fixtures (demo-data demo-pages — host-agnostic AsciiDoc catalog)
     - url: https://github.com/antora-supplemental/demo-data.git
-      tags: [v0.3.3]
+      tags: [v0.3.5]
       branches: []
       start_path: docs/demo-pages
     # site-nav-tree supplement — nested under demo-pages Extensions (not separate forest roots)
     - url: https://github.com/antora-supplemental/demo-data.git
-      tags: [v0.3.3]
+      tags: [v0.3.5]
       branches: []
       start_path: docs/fixtures/site-nav-tree/catalog-alpha
     - url: https://github.com/antora-supplemental/demo-data.git
-      tags: [v0.3.3]
+      tags: [v0.3.5]
       branches: []
       start_path: docs/fixtures/site-nav-tree/catalog-beta
     - url: ./..

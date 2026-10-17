@@ -1,8 +1,9 @@
 = Changelog
 
-== 2026-10-17 — demo-data Demo pages nav (v0.3.3)
+== 2026-10-17 — demo-data Demo pages nav (v0.3.5)
 
-* Pin `demo-data` @ `v0.3.3`: forest root **Demo pages**; **Core** / **Extensions** sidebar sections (fixes mistaken **antora-core** forest label from v0.3.1).
+* Pin `demo-data` @ `v0.3.5`: forest root **Demo pages**; **Core** / **Extensions** sidebar sections (v0.3.3 hierarchy; pin v0.3.5 — not v0.3.4).
+* Bump `@antora-supplemental/site-nav-tree` @ `v0.5.7` — no duplicate top-level Overview when landing lives under **Core**.
 * Home portal table names **Demo pages** sidebar root.
 
 == 2026-10-17 — demo-data extensions nav (v0.3.2)
