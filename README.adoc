@@ -33,6 +33,7 @@ It documents and templates what DevCentr / antora-supplemental already reuse tog
 * **Build stack footer** (`@antora-supplemental/build-stack`) — publish playbook extensions + UI bundle to `site.keys` for footer attribution
 * Optional neighbors: **site-nav-tree** (multi-component sidebar forest with an **`include` allowlist**; keeps default nav-tree)
 * **Hub profile footer:** default `profile: hub` registers members internally and keeps the footer at depth 1 (`facto-stack` only). Set `footerListMembers: true` (demo profile default) to list every member instead.
+* **Hub GitHub topics:** playbook repos that only `require` this pack should carry topic `facto-stack` (and `valentus-theme` for the UI bundle) — not topics for each member extension (linkinator, page-edit, antora-search-chat, …). Tag a member only when the hub also directly pins or `require`s it. link:https://antora-supplemental.org/docs/home/hub-github-topics.html[Hub GitHub topics^].
 * **Optional diagram chrome (hub):** `mermaidClient: { enabled: true }` and `diagramLightbox: { enabled: true }` turn on `mermaid-client/antora` and `diagram-lightbox` for hubs whose `supplemental-ui` already includes the Mermaid / lightbox partials.
 * Playbook default: `urls.html_extension_style: indexify` (folder URLs; `index.adoc` → trailing-slash path)
 
