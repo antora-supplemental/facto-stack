@@ -1,5 +1,9 @@
 = Changelog
 
+== 2026-10-17 — v0.2.14 pack release (site-nav-tree v0.6.6)
+
+* **v0.2.14** — ships `@antora-supplemental/site-nav-tree` @ `v0.6.6` (DOM owner-root current-page selection, full depth-1 expand on forest landing / root click).
+
 == 2026-10-17 — v0.2.13 pack release (site-nav-tree v0.6.5)
 
 * **v0.2.13** — ships `@antora-supplemental/site-nav-tree` @ `v0.6.5` (companion script `?v=` cache bust + skip duplicate footer injection when hub already loads the companion).
