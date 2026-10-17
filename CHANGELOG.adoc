@@ -1,5 +1,11 @@
 = Changelog
 
+== 2026-10-17 — v0.2.23 pack release (site-nav-tree v0.6.8, nav-typology v0.1.10)
+
+* **v0.2.23** — ships `@antora-supplemental/site-nav-tree` @ `v0.6.8` (Overview leaf owns the landing current-page highlight; section breadcrumb crumbs re-link to their Overview; section labels on the current path no longer paint current-page chrome) and `@antora-supplemental/nav-typology` @ `v0.1.10` (Overview leaves bold, no typology icon). Demo `soft-nav.js` now intercepts clicks in the capture phase so the Antora nav-container `stopPropagation` cannot force hard page loads from the tree.
+0.6.8\ (Overview leaf owns the landing current-page highlight; section breadcrumb crumbs re-link to their Overview; section labels on the current path no longer paint current-page chrome) and \@antora-supplemental/nav-typology\ @ \
+0.1.10\ (Overview leaves bold, no typology icon). Demo \soft-nav.js\ now intercepts clicks in the capture phase so Antora's nav-container \stopPropagation\ cannot force hard page loads from the tree.
+
 == 2026-10-17 — v0.2.22 pack release (linkinator v0.1.10)
 
 * **v0.2.22** — ships `@antora-supplemental/linkinator` @ `v0.1.10` (opaque Wayback chip on hover/focus/active; link-only transparent tint unchanged).
