@@ -1,5 +1,9 @@
 = Changelog
 
+== 2026-10-17 — v0.2.20 pack release (linkinator v0.1.9)
+
+* **v0.2.20** — ships `@antora-supplemental/linkinator` @ `v0.1.9` (inline external-link icon + hover Archive beside it).
+
 == 2026-10-17 — v0.2.19 pack release (linkinator v0.1.8)
 
 * **v0.2.19** — ships `@antora-supplemental/linkinator` @ `v0.1.8` (Wayback chip right of link, hover bridge, vertically centered).
