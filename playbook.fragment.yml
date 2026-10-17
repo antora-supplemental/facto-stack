@@ -36,8 +36,10 @@ antora:
     # Multi-component hubs: curated sidebar forest (keeps default nav-tree JS).
     # Prefer `include` allowlist — content.sources ≠ forest roots.
     # - require: '@antora-supplemental/site-nav-tree'
+    #   filter: true
     #   include: [home, general-knowledge, business-bootstrap]
     #   order: [home, general-knowledge, business-bootstrap]
+    # Compose pack (one require): siteNavTree: { enabled: true, include: [...], order: [...] }
     - require: '@antora-supplemental/nav-typology'
     - require: '@antora-supplemental/nav-typology-diataxis'
     - '@antora-supplemental/build-stack'

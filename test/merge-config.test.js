@@ -20,6 +20,16 @@ describe('applyPackConfig', () => {
     })
     assert.ok(!out.some((e) => (typeof e === 'string' ? e : e.require) === '@antora-supplemental/extension-lister'))
   })
+
+  it('enables site-nav-tree with filter default from siteNavTree pack config', () => {
+    const out = applyPackConfig(HUB_ANTORA_EXTENSIONS, {
+      siteNavTree: { enabled: true, include: ['home', 'docs'] },
+    })
+    const nav = out.find((e) => e.require === '@antora-supplemental/site-nav-tree')
+    assert.equal(nav.enabled, true)
+    assert.equal(nav.filter, true)
+    assert.deepEqual(nav.include, ['home', 'docs'])
+  })
 })
 
 describe('mergeAsciiDocPlaybook', () => {

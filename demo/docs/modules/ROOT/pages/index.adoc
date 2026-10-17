@@ -46,6 +46,9 @@ This stack demo proves the compose path on top of that lean UI.
 
 | Lunr + page-context + build-stack
 | Search, metadata lead, footer attribution (Facto defaults)
+
+| `@antora-supplemental/site-nav-tree` (`filter: true`)
+| Sticky label filter above the left nav (local DOM match, not Lunr)
 |===
 
 == Try the stack pieces
@@ -53,6 +56,7 @@ This stack demo proves the compose path on top of that lean UI.
 * xref:mermaid.adoc[Client Mermaid] — diagram source rendered in the browser
 * xref:lightbox.adoc[Diagram lightbox] — click a figure to zoom / pan
 * xref:soft-nav.adoc[SoftNav] — in-component links swap regions without a full reload
+* Use the **Filter navigation** field in the left panel to narrow this component’s nav labels
 
 == Source
 

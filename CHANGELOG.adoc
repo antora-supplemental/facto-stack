@@ -1,5 +1,9 @@
 = Changelog
 
+== 2026-10-16 — site-nav-tree nav filter default
+
+* **v0.2.5** — Hub profile ships a disabled `@antora-supplemental/site-nav-tree` member with `filter: true`; enable via pack `siteNavTree: { enabled: true, include: [...] }` (override `filter` only to turn off). Demo profile registers site-nav-tree with filter on. Pin `@antora-supplemental/site-nav-tree` **v0.5.4+**. `playbook.fragment.yml` documents `filter: true` on the explicit require example.
+
 == 2026-10-16 — SoftNav TOC selector and detail breadcrumbs
 
 * **v0.2.4** — Pin `@antora-supplemental/soft-nav-page-toc` **v0.1.6**. The v0.2.3 tag still resolved **v0.1.0**, which injected a broken `…/_/` script URL and did not emit `:hide-page:` meta or the parent breadcrumb. v0.1.6 rebuilds the aside TOC with the Default UI heading selector and appends Changelog before a detail title.
