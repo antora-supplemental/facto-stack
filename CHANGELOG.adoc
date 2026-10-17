@@ -1,5 +1,9 @@
 = Changelog
 
+== 2026-10-16 — site-nav-tree filter styling
+
+* Pin `@antora-supplemental/site-nav-tree` **v0.5.5** (nav label filter inherits Valentus `--adt-*` tokens).
+
 == 2026-10-16 — Hub component naming (README)
 
 * README: **Hub component naming** subsection — `home` aggregator, Overview nav, `start_path: docs` vs component id; link to Dev-Centr `publishing/hub-home-component`.
