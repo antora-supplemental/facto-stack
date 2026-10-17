@@ -1,5 +1,9 @@
 = Changelog
 
+== 2026-10-17 — v0.2.11 pack release (linkinator v0.1.4)
+
+* **v0.2.11** — ships `@antora-supplemental/linkinator` @ `v0.1.4` (styled block hover + Archive Wayback pill; auto-injects `linkinator.css` / `linkinator.js` on composed pages).
+
 == 2026-10-17 — v0.2.10 pack release (site-nav-tree v0.6.3)
 
 * **v0.2.10** — ships `@antora-supplemental/site-nav-tree` @ `v0.6.3` (deterministic nav href freeze + SoftNav click resolution; fixes intermittent Explanation 404s on hub SoftNav).

@@ -33,8 +33,8 @@ importers:
         specifier: github:antora-supplemental/link-validator#v0.2.1
         version: https://codeload.github.com/antora-supplemental/link-validator/tar.gz/fe35aaca8cdb4e2a5761189d592ea0492b4bd302(@antora/site-generator@3.1.15)
       '@antora-supplemental/linkinator':
-        specifier: github:antora-supplemental/linkinator#v0.1.3
-        version: https://codeload.github.com/antora-supplemental/linkinator/tar.gz/40b8aeef2908718e0b094238b50a769a8548cf3d(@antora/site-generator@3.1.15)
+        specifier: github:antora-supplemental/linkinator#v0.1.4
+        version: https://codeload.github.com/antora-supplemental/linkinator/tar.gz/6fb97a159588c64f598100ba5008a5109c9d8e90(@antora/site-generator@3.1.15)
       '@antora-supplemental/mermaid-client':
         specifier: github:antora-supplemental/antora-diagram-engines#5fcae8cfd7a555e1021e2b081f50e3d78df44ca9&path:packages/mermaid-client
         version: https://codeload.github.com/antora-supplemental/antora-diagram-engines/tar.gz/5fcae8cfd7a555e1021e2b081f50e3d78df44ca9#path:packages/mermaid-client(@antora/site-generator@3.1.15)
@@ -60,8 +60,8 @@ importers:
         specifier: github:antora-supplemental/playbook-pin-auditor#v0.1.1
         version: https://codeload.github.com/antora-supplemental/playbook-pin-auditor/tar.gz/b92d67faf6de20180a3fd77c1b821420d3f7ecfa
       '@antora-supplemental/site-nav-tree':
-        specifier: github:antora-supplemental/site-nav-tree#v0.6.1
-        version: https://codeload.github.com/antora-supplemental/site-nav-tree/tar.gz/e2cf7d4ee80e03e40de929507685b1530616c45f(@antora/site-generator@3.1.15)
+        specifier: github:antora-supplemental/site-nav-tree#v0.6.3
+        version: https://codeload.github.com/antora-supplemental/site-nav-tree/tar.gz/1e9f25b4a23e6e17163857049f067040dc15505e(@antora/site-generator@3.1.15)
       '@antora-supplemental/soft-nav-page-toc':
         specifier: github:antora-supplemental/soft-nav-page-toc#v0.1.6
         version: https://codeload.github.com/antora-supplemental/soft-nav-page-toc/tar.gz/e14807953757708297d2ac4f1ffac1a2810b3ccb(@antora/site-generator@3.1.15)
@@ -179,9 +179,9 @@ packages:
       '@antora/site-generator':
         optional: true
 
-  '@antora-supplemental/linkinator@https://codeload.github.com/antora-supplemental/linkinator/tar.gz/40b8aeef2908718e0b094238b50a769a8548cf3d':
-    resolution: {tarball: https://codeload.github.com/antora-supplemental/linkinator/tar.gz/40b8aeef2908718e0b094238b50a769a8548cf3d}
-    version: 0.1.3
+  '@antora-supplemental/linkinator@https://codeload.github.com/antora-supplemental/linkinator/tar.gz/6fb97a159588c64f598100ba5008a5109c9d8e90':
+    resolution: {tarball: https://codeload.github.com/antora-supplemental/linkinator/tar.gz/6fb97a159588c64f598100ba5008a5109c9d8e90}
+    version: 0.1.4
     engines: {node: '>=18'}
     peerDependencies:
       '@antora/site-generator': '>=3.1.0'
@@ -254,9 +254,9 @@ packages:
     engines: {node: '>=18'}
     hasBin: true
 
-  '@antora-supplemental/site-nav-tree@https://codeload.github.com/antora-supplemental/site-nav-tree/tar.gz/e2cf7d4ee80e03e40de929507685b1530616c45f':
-    resolution: {tarball: https://codeload.github.com/antora-supplemental/site-nav-tree/tar.gz/e2cf7d4ee80e03e40de929507685b1530616c45f}
-    version: 0.6.1
+  '@antora-supplemental/site-nav-tree@https://codeload.github.com/antora-supplemental/site-nav-tree/tar.gz/1e9f25b4a23e6e17163857049f067040dc15505e':
+    resolution: {tarball: https://codeload.github.com/antora-supplemental/site-nav-tree/tar.gz/1e9f25b4a23e6e17163857049f067040dc15505e}
+    version: 0.6.3
     engines: {node: '>=18'}
     peerDependencies:
       '@antora/site-generator': '>=3.1.0'
@@ -1972,7 +1972,7 @@ snapshots:
     optionalDependencies:
       '@antora/site-generator': 3.1.15
 
-  '@antora-supplemental/linkinator@https://codeload.github.com/antora-supplemental/linkinator/tar.gz/40b8aeef2908718e0b094238b50a769a8548cf3d(@antora/site-generator@3.1.15)':
+  '@antora-supplemental/linkinator@https://codeload.github.com/antora-supplemental/linkinator/tar.gz/6fb97a159588c64f598100ba5008a5109c9d8e90(@antora/site-generator@3.1.15)':
     optionalDependencies:
       '@antora/site-generator': 3.1.15
 
@@ -2013,7 +2013,7 @@ snapshots:
     dependencies:
       js-yaml: 4.1.1
 
-  '@antora-supplemental/site-nav-tree@https://codeload.github.com/antora-supplemental/site-nav-tree/tar.gz/e2cf7d4ee80e03e40de929507685b1530616c45f(@antora/site-generator@3.1.15)':
+  '@antora-supplemental/site-nav-tree@https://codeload.github.com/antora-supplemental/site-nav-tree/tar.gz/1e9f25b4a23e6e17163857049f067040dc15505e(@antora/site-generator@3.1.15)':
     dependencies:
       '@antora/site-generator': 3.1.15
 
