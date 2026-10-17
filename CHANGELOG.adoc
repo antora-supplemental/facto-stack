@@ -1,5 +1,9 @@
 = Changelog
 
+== 2026-10-16 — Demo-data content source
+
+* Demo playbook composes `theme-demo` from `antora-supplemental/demo-data` with stack pages under `demo/docs`; `siteNavTree` allowlists `facto-stack` + `theme-demo`. README links the org demo-data catalog proposal.
+
 == 2026-10-16 — site-nav-tree filter styling
 
 * Pin `@antora-supplemental/site-nav-tree` **v0.5.6** (nav label filter inherits Valentus `--adt-*` tokens; transparent sticky wrapper).

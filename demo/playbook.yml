@@ -16,6 +16,10 @@ urls:
 
 content:
   sources:
+    # Shared Valentus body fixtures (scaffold → full ROOT migration from valentus-theme)
+    - url: https://github.com/antora-supplemental/demo-data.git
+      branches: main
+      start_path: docs/theme-demo
     - url: ./..
       start_path: demo/docs
       branches: HEAD
@@ -30,6 +34,10 @@ antora:
   extensions:
     - require: '@antora-supplemental/facto-stack'
       profile: demo
+      siteNavTree:
+        enabled: true
+        include: [facto-stack, theme-demo]
+        order: [facto-stack, theme-demo]
       linkValidator:
         reportEmail: support@devcentr.org
       orphanFinder:
