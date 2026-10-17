@@ -4,6 +4,7 @@
 
 * Single `home` component carries portal Overview (`/facto-stack/home/`) and former stack demo pages (Mermaid, lightbox, SoftNav). Removed parallel `stack` component and `demo/docs` content source.
 * `siteNavTree` allowlists `home` + `theme-demo` only; maint scripts and PlantUML generator paths point at `demo/home`.
+* CI post-build: `scripts/legacy-stack-component-redirects.mjs` stubs `/stack/…` → `/home/…` for bookmarked URLs.
 
 == 2026-10-16 — Docs hub link URLs
 

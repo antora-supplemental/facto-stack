@@ -57,6 +57,9 @@ jobs:
           setup_node: false
           fetch: true
 
+      - name: Legacy /stack/ redirects to /home/
+        run: node scripts/legacy-stack-component-redirects.mjs
+
       - name: Setup Pages
         uses: actions/configure-pages@v6
 
