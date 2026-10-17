@@ -52,7 +52,6 @@ antora:
         enabled: true
         include: [home, demo-pages]
         order: [home, demo-pages]
-        exclude: [catalog-alpha, catalog-beta]
       linkValidator:
         reportEmail: support@devcentr.org
       orphanFinder:

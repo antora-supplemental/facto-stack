@@ -8,7 +8,7 @@
 == 2026-10-17 — demo-data extensions nav (v0.3.2)
 
 * Pin `demo-data` @ `v0.3.2`: **Extensions** nav section under `antora-core`; topic pages under `extensions/`; `site-nav-tree` fixtures (`catalog-alpha`, `catalog-beta`) composed and nested via `demo-fixtures-site-nav-tree` (forest `include` unchanged: `[home, demo-pages]`).
-* Pack: pass playbook payload to single-argument member `register` functions so `siteNavTree.include` reaches `@antora-supplemental/site-nav-tree`.
+* Pack: normalize Antora-lowercased extension config keys (`sitenavtree` → `siteNavTree`) so `include` / overrides reach bundled members.
 
 == 2026-10-17 — demo-data nav labels (v0.3.1)
 

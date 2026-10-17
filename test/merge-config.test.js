@@ -2,7 +2,7 @@
 
 const { describe, it } = require('node:test')
 const assert = require('node:assert/strict')
-const { applyPackConfig, mergeAsciiDocPlaybook } = require('../lib/merge-config')
+const { applyPackConfig, mergeAsciiDocPlaybook, normalizePackConfig } = require('../lib/merge-config')
 const { HUB_ANTORA_EXTENSIONS } = require('../lib/default-stack')
 
 describe('applyPackConfig', () => {
@@ -29,6 +29,17 @@ describe('applyPackConfig', () => {
     assert.equal(nav.enabled, true)
     assert.equal(nav.filter, true)
     assert.deepEqual(nav.include, ['home', 'docs'])
+  })
+})
+
+describe('normalizePackConfig', () => {
+  it('maps Antora-lowercased override keys', () => {
+    const out = normalizePackConfig({
+      sitenavtree: { enabled: true, include: ['home'] },
+      linkvalidator: { reportEmail: 'a@b.c' },
+    })
+    assert.deepEqual(out.siteNavTree.include, ['home'])
+    assert.equal(out.linkValidator.reportEmail, 'a@b.c')
   })
 })
 
