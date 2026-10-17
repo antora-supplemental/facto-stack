@@ -1,5 +1,13 @@
 = Changelog
 
+== 2026-10-16 — Demo hub URLs, page chrome, PlantUML dark guard
+
+* Demo site: add `home` hub component (`/facto-stack/home/`); rename stack component to `stack` (`/facto-stack/stack/…`) so paths no longer repeat `facto-stack/facto-stack`.
+* Demo profile registers `@antora-supplemental/page-edit` and `@antora-supplemental/page-context/antora` (keyword listings under `/home/keywords/`).
+* Stack + home pages: `page-audience`, `page-usage-context`, authors, keywords; lightbox PlantUML uses Kroki → `@dev-centr/plantuml-svg-css-vars` → Themed SVG (`pnpm diagrams:demo-plantuml`).
+* CI: `pnpm diagrams:check` before build; `FACTO_THEMED_SVG_FAIL=1` + `demo/lib/verify-themed-svg-dark-mode.js` (scoped to `facto-stack-demo-*` namespaces).
+* *PlantUML ideal vs today:* client Mermaid re-themes at runtime; baked PlantUML should follow **engine light/dark → SVG encoder** (`plantuml-svg-css-vars` + host CSS). Raw `asciidoctor-kroki` `[plantuml]` blocks remain fixed-color until you adopt that pipeline (demo lightbox page shows the Themed path).
+
 == 2026-10-16 — Demo-data content source
 
 * Demo playbook composes `theme-demo` from `antora-supplemental/demo-data` with stack pages under `demo/docs`; `siteNavTree` allowlists `facto-stack` + `theme-demo`. README links the org demo-data catalog proposal.

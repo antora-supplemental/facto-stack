@@ -41,9 +41,14 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - name: Verify demo PlantUML Themed SVG artifacts
+        run: node scripts/build-demo-plantuml.mjs --check
+
       - name: Build Antora site
         id: antora
         uses: antora-supplemental/antora-build-action@v3
+        env:
+          FACTO_THEMED_SVG_FAIL: "1"
         with:
           playbook: demo/playbook.yml
           output_dir: build/site
