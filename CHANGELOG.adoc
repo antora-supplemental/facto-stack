@@ -1,5 +1,9 @@
 = Changelog
 
+== 2026-10-17 — v0.2.12 pack release (site-nav-tree v0.6.4)
+
+* **v0.2.12** — ships `@antora-supplemental/site-nav-tree` @ `v0.6.4` (current-page highlight prefers owning forest component root; fixes cross-component nav xref stealing selection on hub forests).
+
 == 2026-10-17 — v0.2.11 pack release (linkinator v0.1.4)
 
 * **v0.2.11** — ships `@antora-supplemental/linkinator` @ `v0.1.4` (styled block hover + Archive Wayback pill; auto-injects `linkinator.css` / `linkinator.js` on composed pages).
