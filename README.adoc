@@ -87,7 +87,7 @@ The fragment sets `page-context-active` so page bodies can keep `ifndef::page-co
 | Valentus UI + `@antora-supplemental/mermaid-client` (client mode) + `@antora-supplemental/diagram-lightbox` + SoftNav (+ Lunr / page-context / build-stack). Mermaid is **not** Kroki-baked here. Portal and stack demo pages share the `home` component (`/facto-stack/home/…`).
 |===
 
-Shared *Theme demo* fixtures (Valentus ROOT pages) live in link:https://github.com/antora-supplemental/demo-data[`demo-data`^]; `demo/playbook.yml` composes `docs/theme-demo` with portal + stack pages under `demo/home`.
+Shared *Demo pages* fixtures (Valentus ROOT pages) live in link:https://github.com/antora-supplemental/demo-data[`demo-data`^]; `demo/playbook.yml` composes `docs/demo-pages` with portal + stack pages under `demo/home`.
 Prescribed pattern: link:https://github.com/antora-supplemental/demo-data/blob/main/README.adoc[demo-data README^] · architecture: link:https://docs.antora-supplemental.org/docs/proposals/demo-data-catalog/[Demo data catalog^] · tutorial: link:https://docs.antora-supplemental.org/docs/tutorials/build-a-composable-antora-demo/[Build a composable Antora demo^].
 
 Local stack demo:

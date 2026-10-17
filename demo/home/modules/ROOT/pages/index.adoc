@@ -1,5 +1,5 @@
 = Antora Supplemental Facto stack portal
-:description: Hub entry and Facto stack demo — client Mermaid, diagram lightbox, SoftNav, and shared theme-demo fixtures.
+:description: Hub entry and Facto stack demo — client Mermaid, diagram lightbox, SoftNav, and shared demo-pages fixtures.
 :navtitle: Overview
 :page-doc-type: explanation
 :page-audience: Authors evaluating the Facto compose pack
@@ -72,8 +72,8 @@ This stack demo proves the compose path on top of that lean UI.
 |===
 | Component | What to open
 
-| **theme-demo**
-| xref:theme-demo:ROOT:index.adoc[Theme demo fixtures] — shared AsciiDoc catalog from https://github.com/antora-supplemental/demo-data[demo-data^]
+| **demo-pages**
+| xref:demo-pages:ROOT:index.adoc[Demo pages fixtures] — shared AsciiDoc catalog from https://github.com/antora-supplemental/demo-data[demo-data^]
 |===
 
 == Source

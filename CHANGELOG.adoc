@@ -1,5 +1,10 @@
 = Changelog
 
+== 2026-10-16 — demo-data demo-pages v0.3.0
+
+* Demo playbook pins `demo-data` @ `v0.3.0`; baseline component `demo-pages` (`docs/demo-pages`); `siteNavTree` allowlists `[home, demo-pages]`.
+* CI post-build: `scripts/legacy-theme-demo-redirects.mjs` stubs `/theme-demo/…` → `/demo-pages/…` for bookmarked URLs.
+
 == 2026-10-16 — Demo footer attribution
 
 * Pages demo footer: `valentus-theme` repo + MIT and `facto-stack` compose link only — drop self-referential stack demo link and cross-link to the Valentus theme demo.

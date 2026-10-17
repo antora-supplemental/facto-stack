@@ -1,6 +1,6 @@
 # Facto stack demo - Valentus (lean) + client Mermaid + diagram-lightbox + SoftNav.
 # Published: https://antora-supplemental.github.io/facto-stack/
-# Demo content protocol: demo-data theme-demo (baseline) + demo/home (portal + stack pages).
+# Demo content protocol: demo-data demo-pages (baseline) + demo/home (portal + stack pages).
 #   https://github.com/antora-supplemental/demo-data/blob/main/README.adoc
 #   https://docs.antora-supplemental.org/docs/proposals/demo-data-catalog/
 site:
@@ -19,11 +19,11 @@ urls:
 
 content:
   sources:
-    # Baseline body fixtures (demo-data theme-demo — host-agnostic AsciiDoc catalog)
+    # Baseline body fixtures (demo-data demo-pages — host-agnostic AsciiDoc catalog)
     - url: https://github.com/antora-supplemental/demo-data.git
-      tags: [v0.2.1]
+      tags: [v0.3.0]
       branches: []
-      start_path: docs/theme-demo
+      start_path: docs/demo-pages
     # Optional site-nav-tree forest smoke (catalog-alpha, catalog-beta):
     # - url: https://github.com/antora-supplemental/demo-data.git
     #   branches: main
@@ -45,8 +45,8 @@ antora:
       profile: demo
       siteNavTree:
         enabled: true
-        include: [home, theme-demo]
-        order: [home, theme-demo]
+        include: [home, demo-pages]
+        order: [home, demo-pages]
       linkValidator:
         reportEmail: support@devcentr.org
       orphanFinder:

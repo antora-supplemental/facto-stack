@@ -186,7 +186,7 @@ module.exports.register = function () {
         continue
       }
       if (!svg.includes('prefers-color-scheme')) continue
-      // Demo CI guard: only fail on Facto stack demo diagrams (not theme-demo fixtures).
+      // Demo CI guard: only fail on Facto stack demo diagrams (not demo-pages fixtures).
       if (!svg.includes('--themed-svg-facto-stack-demo-')) continue
 
       const abspath = file.src && file.src.abspath ? file.src.abspath : null

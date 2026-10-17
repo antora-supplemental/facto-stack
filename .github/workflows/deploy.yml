@@ -60,6 +60,9 @@ jobs:
       - name: Legacy /stack/ redirects to /home/
         run: node scripts/legacy-stack-component-redirects.mjs
 
+      - name: Legacy /theme-demo/ redirects to /demo-pages/
+        run: node scripts/legacy-theme-demo-redirects.mjs
+
       - name: Setup Pages
         uses: actions/configure-pages@v6
 
