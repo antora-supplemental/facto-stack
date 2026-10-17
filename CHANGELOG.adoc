@@ -1,5 +1,10 @@
 = Changelog
 
+== 2026-10-17 — demo-data nav labels (v0.3.1)
+
+* Pin `demo-data` @ `v0.3.1`: baseline forest root **antora-core**, index nav **Overview** (drops **Body fixtures** / **Demo home** labels).
+* Home portal table cross-link names the **antora-core** sidebar root.
+
 == 2026-10-16 — demo-data demo-pages v0.3.0
 
 * Demo playbook pins `demo-data` @ `v0.3.0`; baseline component `demo-pages` (`docs/demo-pages`); `siteNavTree` allowlists `[home, demo-pages]`.
