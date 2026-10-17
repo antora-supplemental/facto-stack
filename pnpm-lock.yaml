@@ -60,8 +60,8 @@ importers:
         specifier: github:antora-supplemental/playbook-pin-auditor#v0.1.1
         version: https://codeload.github.com/antora-supplemental/playbook-pin-auditor/tar.gz/b92d67faf6de20180a3fd77c1b821420d3f7ecfa
       '@antora-supplemental/site-nav-tree':
-        specifier: github:antora-supplemental/site-nav-tree#v0.5.4
-        version: https://codeload.github.com/antora-supplemental/site-nav-tree/tar.gz/8df8a6e1b5b2981586631379f8211234785df718(@antora/site-generator@3.1.15)
+        specifier: github:antora-supplemental/site-nav-tree#v0.5.5
+        version: https://codeload.github.com/antora-supplemental/site-nav-tree/tar.gz/1193c0ef26fac68c17a9e8cd16a391408b64e0aa(@antora/site-generator@3.1.15)
       '@antora-supplemental/soft-nav-page-toc':
         specifier: github:antora-supplemental/soft-nav-page-toc#v0.1.6
         version: https://codeload.github.com/antora-supplemental/soft-nav-page-toc/tar.gz/e14807953757708297d2ac4f1ffac1a2810b3ccb(@antora/site-generator@3.1.15)
@@ -251,9 +251,9 @@ packages:
     engines: {node: '>=18'}
     hasBin: true
 
-  '@antora-supplemental/site-nav-tree@https://codeload.github.com/antora-supplemental/site-nav-tree/tar.gz/8df8a6e1b5b2981586631379f8211234785df718':
-    resolution: {tarball: https://codeload.github.com/antora-supplemental/site-nav-tree/tar.gz/8df8a6e1b5b2981586631379f8211234785df718}
-    version: 0.5.4
+  '@antora-supplemental/site-nav-tree@https://codeload.github.com/antora-supplemental/site-nav-tree/tar.gz/1193c0ef26fac68c17a9e8cd16a391408b64e0aa':
+    resolution: {tarball: https://codeload.github.com/antora-supplemental/site-nav-tree/tar.gz/1193c0ef26fac68c17a9e8cd16a391408b64e0aa}
+    version: 0.5.5
     engines: {node: '>=18'}
     peerDependencies:
       '@antora/site-generator': '>=3.1.0'
@@ -1995,7 +1995,7 @@ snapshots:
     dependencies:
       js-yaml: 4.1.1
 
-  '@antora-supplemental/site-nav-tree@https://codeload.github.com/antora-supplemental/site-nav-tree/tar.gz/8df8a6e1b5b2981586631379f8211234785df718(@antora/site-generator@3.1.15)':
+  '@antora-supplemental/site-nav-tree@https://codeload.github.com/antora-supplemental/site-nav-tree/tar.gz/1193c0ef26fac68c17a9e8cd16a391408b64e0aa(@antora/site-generator@3.1.15)':
     dependencies:
       '@antora/site-generator': 3.1.15
 
