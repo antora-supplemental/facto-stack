@@ -1,5 +1,9 @@
 = Changelog
 
+== 2026-10-17 — v0.2.16 pack release (linkinator v0.1.6)
+
+* **v0.2.16** — ships `@antora-supplemental/linkinator` @ `v0.1.6` (⧉ floating Wayback overlay, link-only hover tint; no whole-list-item highlight).
+
 == 2026-10-17 — v0.2.15 pack release (site-nav-tree v0.6.7)
 
 * **v0.2.15** — ships `@antora-supplemental/site-nav-tree` @ `v0.6.7` (single `is-current-page` winner; full path rewrite after SoftNav mark-by-path).
