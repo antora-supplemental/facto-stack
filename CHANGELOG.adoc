@@ -1,5 +1,9 @@
 = Changelog
 
+== 2026-10-17 — demo home Overview copy
+
+* Remove GitHub Pages path blurb from `demo/home` portal Overview (redundant with site chrome).
+
 == 2026-10-17 — v0.2.18 pack release (linkinator v0.1.7)
 
 * **v0.2.18** — ships `@antora-supplemental/linkinator` @ `v0.1.7` (Wayback overlay `display: none` when idle — zero line layout footprint).
