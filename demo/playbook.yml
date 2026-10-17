@@ -22,7 +22,7 @@ content:
     # Baseline body fixtures (demo-data theme-demo — host-agnostic AsciiDoc catalog)
     - url: https://github.com/antora-supplemental/demo-data.git
       branches: main
-      # tags: v0.2.0  # pin for reproducible CI when tagged
+      tags: v0.2.0
       start_path: docs/theme-demo
     # Optional site-nav-tree forest smoke (catalog-alpha, catalog-beta):
     # - url: https://github.com/antora-supplemental/demo-data.git
