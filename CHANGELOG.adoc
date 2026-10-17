@@ -1,5 +1,9 @@
 = Changelog
 
+== 2026-10-17 — v0.2.28 pack release (antora-search-chat v0.1.10)
+
+* **v0.2.28** — ships `@antora-supplemental/antora-search-chat` @ `v0.1.10`: `data-placement` bake is global (the partial comment shadowed the first regex match, so the dock placement never reached first paint).
+
 == 2026-10-17 — v0.2.27 pack release (antora-search-chat v0.1.9)
 
 * **v0.2.27** — ships `@antora-supplemental/antora-search-chat` @ `v0.1.9`: facto `{ config, playbook }` payload is unwrapped (and lowercased `searchchat` playbook key accepted), so pack `searchChat:` overrides such as `placement: dock` actually reach the extension.
