@@ -1,30 +1,44 @@
 = Diagram lightbox
 :description: Zoom / pan / lightbox for figures via diagram-lightbox.
 :navtitle: Diagram lightbox
+:page-audience: Authors evaluating diagram lightbox and Kroki bake paths
+:page-usage-context: Facto stack demo — baked PlantUML via Themed SVG (not raw Kroki `<img>`)
+:page-doc-type: explanation
+:page-orig-author: Ryan Johnson
+:page-last-author: Cursor agent on behalf of Ryan Johnson
+:page-last-edited: 2026-10-16
+:page-keywords: diagram-lightbox, plantuml, themed-svg, kroki
 
 `@antora-supplemental/diagram-lightbox` injects zoom/pan/lightbox JS+CSS for baked SVG figures and client Mermaid hosts.
 It replaces older hub mirrors of chassis `diagram-zoom` for Facto stack demos.
 
-== Baked PlantUML figure (Kroki)
+== Baked PlantUML figure (Themed SVG)
 
 Mermaid stays on the client path.
-PlantUML still uses Kroki so you can mix formats in one playbook:
+PlantUML for this demo uses **Kroki → `@dev-centr/plantuml-svg-css-vars` → Themed SVG** so host dark mode can recolor sequence figures (raw Kroki embeds stay fixed-color).
 
-[plantuml]
+[.themed-svg]
+image::diagrams/lightbox-compose.host.svg[Facto stack compose sequence,width=100%]
+
+PlantUML source (regenerate with `pnpm diagrams:demo-plantuml`):
+
+[source,plantuml]
 ----
-@startuml
-skinparam backgroundColor transparent
-actor User
-participant "Valentus UI" as UI
-participant "Facto stack" as Stack
-User -> UI : lean chrome
-UI -> Stack : compose extensions
-Stack --> User : Mermaid client + lightbox + SoftNav
-@enduml
+include::{docdir}/../diagrams/lightbox-compose.puml[]
 ----
 
 TIP: Click the PlantUML SVG (or a Mermaid host on xref:mermaid.adoc[Client Mermaid]) to open the lightbox.
 Ctrl/Cmd+wheel zooms in-article where supported.
+
+== Manual check (touchpad / wheel)
+
+With the lightbox open over a diagram on this page:
+
+* *Two-finger scroll* (no Ctrl) should *pan* the diagram, not zoom the page behind the modal.
+* *Pinch* (or Ctrl/Cmd + wheel) should *zoom* toward the cursor.
+* Primary-button drag on the stage still pans.
+
+In-article (lightbox closed): only Ctrl/Cmd+wheel zooms; plain scroll passes through to the page.
 
 == Regular image block
 
