@@ -1,5 +1,10 @@
 = Changelog
 
+== 2026-10-16 — Merge stack demo into `home`
+
+* Single `home` component carries portal Overview (`/facto-stack/home/`) and former stack demo pages (Mermaid, lightbox, SoftNav). Removed parallel `stack` component and `demo/docs` content source.
+* `siteNavTree` allowlists `home` + `theme-demo` only; maint scripts and PlantUML generator paths point at `demo/home`.
+
 == 2026-10-16 — Docs hub link URLs
 
 * README and demo playbook comments use unversioned docs URLs (`/docs/tutorials/…`, `/docs/proposals/…`) so links resolve on the live hub (not `/docs/ROOT/…` 404s).
@@ -10,7 +15,7 @@
 
 == 2026-10-16 — Demo hub URLs, page chrome, PlantUML dark guard
 
-* Demo site: add `home` hub component (`/facto-stack/home/`); rename stack component to `stack` (`/facto-stack/stack/…`) so paths no longer repeat `facto-stack/facto-stack`.
+* Demo site: add `home` hub component (`/facto-stack/home/`); stack demo pages later merged into `home` (see entry above — `/facto-stack/stack/` removed).
 * Demo profile registers `@antora-supplemental/page-edit` and `@antora-supplemental/page-context/antora` (keyword listings under `/home/keywords/`).
 * Stack + home pages: `page-audience`, `page-usage-context`, authors, keywords; lightbox PlantUML uses Kroki → `@dev-centr/plantuml-svg-css-vars` → Themed SVG (`pnpm diagrams:demo-plantuml`).
 * CI: `pnpm diagrams:check` before build; `FACTO_THEMED_SVG_FAIL=1` + `demo/lib/verify-themed-svg-dark-mode.js` (scoped to `facto-stack-demo-*` namespaces).

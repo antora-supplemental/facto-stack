@@ -6,8 +6,8 @@ import { plantumlSequenceBindings } from '@dev-centr/plantuml-svg-css-vars'
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..')
 const name = 'lightbox-compose'
-const sourcePath = join(root, 'demo/docs/modules/ROOT/diagrams', `${name}.puml`)
-const imageDir = join(root, 'demo/docs/modules/ROOT/images/diagrams')
+const sourcePath = join(root, 'demo/home/modules/ROOT/diagrams', `${name}.puml`)
+const imageDir = join(root, 'demo/home/modules/ROOT/images/diagrams')
 const manifestPath = join(imageDir, `${name}.theme.json`)
 const hostCssPath = join(root, 'demo/supplemental-ui/css/site-themed-svg.css')
 const adapter = join(root, 'node_modules/@dev-centr/plantuml-svg-css-vars/bin/plantuml-svg-css-vars.js')

@@ -27,9 +27,9 @@
     "diagrams:generate": "node scripts/generate-themed-diagrams.mjs",
     "diagrams:demo-plantuml": "node scripts/build-demo-plantuml.mjs",
     "diagrams:check": "node scripts/generate-themed-diagrams.mjs --check && node scripts/build-demo-plantuml.mjs --check",
-    "maint:orphans": "orphan-finder --root ./demo/docs --out ./build/orphan-finder",
-    "maint:nav-drift": "nav-drift --root ./demo/docs --require-in-nav --out ./build/nav-drift",
-    "maint:stale": "stale-page --root ./demo/docs --days 365 --out ./build/stale-page",
+    "maint:orphans": "orphan-finder --root ./demo/home --out ./build/orphan-finder",
+    "maint:nav-drift": "nav-drift --root ./demo/home --require-in-nav --out ./build/nav-drift",
+    "maint:stale": "stale-page --root ./demo/home --days 365 --out ./build/stale-page",
     "maint:pins": "playbook-pin-auditor --root . --playbook demo/playbook.yml",
     "maint:deep-links": "deep-link-contracts --config deep-link-contracts.yml --site-dir ./build/site",
     "test": "node --test test/*.test.js"

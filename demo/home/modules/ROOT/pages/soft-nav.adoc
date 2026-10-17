@@ -24,7 +24,7 @@ Facto stack demos vendor `soft-nav.js` into supplemental UI and load it **before
 
 Use the sidebar (or these links) to move around this component — SoftNav should soft-swap instead of a full reload:
 
-* xref:index.adoc[Stack home]
+* xref:index.adoc[Overview]
 * xref:mermaid.adoc[Client Mermaid]
 * xref:lightbox.adoc[Diagram lightbox]
 

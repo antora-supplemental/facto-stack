@@ -83,11 +83,11 @@ The fragment sets `page-context-active` so page bodies can keep `ifndef::page-co
 | Lean chrome only (layout, dark mode, omnibox). No mermaid-client / lightbox / SoftNav in core.
 
 | **Facto stack** (this repo)
-| https://antora-supplemental.github.io/facto-stack/[facto-stack Pages]
-| Valentus UI + `@antora-supplemental/mermaid-client` (client mode) + `@antora-supplemental/diagram-lightbox` + SoftNav (+ Lunr / page-context / build-stack). Mermaid is **not** Kroki-baked here.
+| https://antora-supplemental.github.io/facto-stack/home/[facto-stack Pages — Overview]
+| Valentus UI + `@antora-supplemental/mermaid-client` (client mode) + `@antora-supplemental/diagram-lightbox` + SoftNav (+ Lunr / page-context / build-stack). Mermaid is **not** Kroki-baked here. Portal and stack demo pages share the `home` component (`/facto-stack/home/…`).
 |===
 
-Shared *Theme demo* fixtures (Valentus ROOT pages) live in link:https://github.com/antora-supplemental/demo-data[`demo-data`^]; `demo/playbook.yml` composes `docs/theme-demo` with stack-only pages under `demo/docs`.
+Shared *Theme demo* fixtures (Valentus ROOT pages) live in link:https://github.com/antora-supplemental/demo-data[`demo-data`^]; `demo/playbook.yml` composes `docs/theme-demo` with portal + stack pages under `demo/home`.
 Prescribed pattern: link:https://github.com/antora-supplemental/demo-data/blob/main/README.adoc[demo-data README^] · architecture: link:https://docs.antora-supplemental.org/docs/proposals/demo-data-catalog/[Demo data catalog^] · tutorial: link:https://docs.antora-supplemental.org/docs/tutorials/build-a-composable-antora-demo/[Build a composable Antora demo^].
 
 Local stack demo:
@@ -160,7 +160,7 @@ Copy https://github.com/antora-supplemental/antora-ui-chassis/tree/main/packages
 
 == Related
 
-* https://antora-supplemental.github.io/facto-stack/[Facto stack demo (Pages)]
+* https://antora-supplemental.github.io/facto-stack/home/[Facto stack demo — Overview (Pages)]
 * https://antora-supplemental.github.io/valentus-theme/[Valentus theme demo (Pages)]
 * https://github.com/antora-supplemental/valentus-theme[valentus-theme]
 * https://github.com/antora-supplemental/page-context[page-context]
