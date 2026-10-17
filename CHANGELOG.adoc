@@ -1,5 +1,9 @@
 = Changelog
 
+== 2026-10-17 — v0.2.18 pack release (linkinator v0.1.7)
+
+* **v0.2.18** — ships `@antora-supplemental/linkinator` @ `v0.1.7` (Wayback overlay `display: none` when idle — zero line layout footprint).
+
 == 2026-10-17 — v0.2.17 pack release (page-edit v0.2.5)
 
 * **v0.2.17** — ships `@antora-supplemental/page-edit` @ `v0.2.5` (View | Edit on tag-pinned `demo-data` `demo-pages` where Antora supplies blob URLs in `src.editUrl`).
