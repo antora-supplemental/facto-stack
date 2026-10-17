@@ -1,5 +1,9 @@
 = Changelog
 
+== 2026-10-17 — v0.2.9 pack release (site-nav-tree v0.6.1)
+
+* **v0.2.9** — ships `@antora-supplemental/site-nav-tree` @ `v0.6.1` (Overview-landing label hover chrome + SoftNav navigate without reload flash; includes v0.6.0 parent-label opens Overview).
+
 == 2026-10-17 — v0.2.8 hub diagram members
 
 * Hub profile registers `@antora-supplemental/mermaid-client/antora` and `@antora-supplemental/diagram-lightbox` as **disabled** members; enable with pack config `mermaidClient: { enabled: true }` / `diagramLightbox: { enabled: true }`. A hub keeps one playbook require (footer lists `facto-stack` once) and still ships client Mermaid + lightbox.
