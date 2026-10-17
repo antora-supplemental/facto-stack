@@ -1,5 +1,9 @@
 = Changelog
 
+== 2026-10-16 — Demo footer attribution
+
+* Pages demo footer: `valentus-theme` repo + MIT and `facto-stack` compose link only — drop self-referential stack demo link and cross-link to the Valentus theme demo.
+
 == 2026-10-16 — Merge stack demo into `home`
 
 * Single `home` component carries portal Overview (`/facto-stack/home/`) and former stack demo pages (Mermaid, lightbox, SoftNav). Removed parallel `stack` component and `demo/docs` content source.

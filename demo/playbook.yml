@@ -12,7 +12,7 @@ site:
     Allow: /
     Sitemap: https://antora-supplemental.github.io/facto-stack/sitemap.xml
   keys:
-    footerNote: 'Facto stack demo (Mermaid client, lightbox, SoftNav) — not Valentus core.'
+    footerNote: 'Client Mermaid, diagram lightbox, and SoftNav — not Valentus core.'
 
 urls:
   html_extension_style: indexify
