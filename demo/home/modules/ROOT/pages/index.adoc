@@ -72,7 +72,7 @@ This stack demo proves the compose path on top of that lean UI.
 |===
 | Component | What to open
 
-| **antora-core** (`demo-pages`)
+| **Demo pages** (`demo-pages`)
 | xref:demo-pages:ROOT:index.adoc[Overview] — shared AsciiDoc catalog from https://github.com/antora-supplemental/demo-data[demo-data^]
 |===
 

@@ -1,8 +1,14 @@
 = Changelog
 
+== 2026-10-17 — demo-data Demo pages nav (v0.3.3)
+
+* Pin `demo-data` @ `v0.3.3`: forest root **Demo pages**; **Core** / **Extensions** sidebar sections (fixes mistaken **antora-core** forest label from v0.3.1).
+* Home portal table names **Demo pages** sidebar root.
+
 == 2026-10-17 — demo-data extensions nav (v0.3.2)
 
 * Pin `demo-data` @ `v0.3.2`: **Extensions** nav section under `antora-core`; topic pages under `extensions/`; `site-nav-tree` fixtures (`catalog-alpha`, `catalog-beta`) composed and nested via `demo-fixtures-site-nav-tree` (forest `include` unchanged: `[home, demo-pages]`).
+* Pack: pass playbook payload to single-argument member `register` functions so `siteNavTree.include` reaches `@antora-supplemental/site-nav-tree`.
 
 == 2026-10-17 — demo-data nav labels (v0.3.1)
 
