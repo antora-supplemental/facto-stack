@@ -1,6 +1,6 @@
 {
   "name": "@antora-supplemental/facto-stack",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "private": true,
   "description": "De-facto Antora stack composer + published stack demo: Valentus (lean) + Lunr + STEM + diagrams (client Mermaid / lightbox / SoftNav; Kroki optional)",
   "license": "MPL-2.0",
@@ -34,6 +34,7 @@
     "test": "node --test test/*.test.js"
   },
   "dependencies": {
+    "@antora-supplemental/facto-stack": "link:.",
     "@antora-supplemental/antora-search-chat": "github:antora-supplemental/antora-search-chat#v0.1.5",
     "@antora-supplemental/asciidoctor-emoji-literals": "github:antora-supplemental/asciidoctor-emoji-literals#main",
     "@antora-supplemental/build-stack": "github:antora-supplemental/build-stack#main",

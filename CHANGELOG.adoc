@@ -6,7 +6,7 @@
 
 == 2026-10-16 — Demo footer lists pack members
 
-* **v0.2.6** — Demo profile publishes build-stack footer keys for every registered pack member (not depth-1 `facto-stack` only) and passes the same id list to `@antora-supplemental/extension-lister` `packages`. Demo supplemental UI includes `footer-build-stack`. `demo/playbook.yml` output dir `../build/site` so extension reports land beside the published site. Self `link:` dependency fixes CI `Cannot find module '@antora-supplemental/facto-stack'`.
+* **v0.2.6** — Demo profile publishes build-stack footer keys for every registered pack member (not depth-1 `facto-stack` only) and passes the same id list to `@antora-supplemental/extension-lister` `packages`. Demo supplemental UI includes `footer-build-stack`. Demo `sitePublished` syncs extension-lister / link-validator reports into the published site dir when playbook dir ≠ cwd. Self `link:` dependency fixes CI `Cannot find module '@antora-supplemental/facto-stack'`.
 
 == 2026-10-16 — site-nav-tree nav filter default
 

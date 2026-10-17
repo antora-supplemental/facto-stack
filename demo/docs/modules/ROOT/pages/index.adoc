@@ -44,11 +44,14 @@ This stack demo proves the compose path on top of that lean UI.
 | `asciidoctor-kroki` (optional)
 | PlantUML (and other non-Mermaid) bake when needed — Mermaid stays client
 
-| Lunr + page-context + build-stack
+| Lunr + search chat + build-stack
 | Search, metadata lead, footer attribution (Facto defaults)
 
 | `@antora-supplemental/site-nav-tree` (`filter: true`)
 | Sticky label filter above the left nav (local DOM match, not Lunr)
+
+| `@antora-supplemental/soft-nav-page-toc`
+| Rebuilds the aside page TOC after SoftNav article swaps
 |===
 
 == Try the stack pieces

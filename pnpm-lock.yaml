@@ -26,6 +26,9 @@ importers:
       '@antora-supplemental/extension-lister':
         specifier: github:antora-supplemental/extension-lister#v0.1.0
         version: https://codeload.github.com/antora-supplemental/extension-lister/tar.gz/19149b332ead9cf681a118aa0e730f8cda325900(@antora/site-generator@3.1.15)
+      '@antora-supplemental/facto-stack':
+        specifier: link:.
+        version: 'link:'
       '@antora-supplemental/link-validator':
         specifier: github:antora-supplemental/link-validator#v0.2.1
         version: https://codeload.github.com/antora-supplemental/link-validator/tar.gz/fe35aaca8cdb4e2a5761189d592ea0492b4bd302(@antora/site-generator@3.1.15)
