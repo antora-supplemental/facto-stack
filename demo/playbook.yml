@@ -2,7 +2,7 @@
 # Published: https://antora-supplemental.github.io/facto-stack/
 # Demo content protocol: demo-data theme-demo (baseline) + demo/docs (stack-only).
 #   https://github.com/antora-supplemental/demo-data/blob/main/README.adoc
-#   https://docs.antora-supplemental.org/docs/ROOT/proposals/demo-data-catalog.html
+#   https://docs.antora-supplemental.org/docs/proposals/demo-data-catalog/
 site:
   title: Facto stack demo
   url: https://antora-supplemental.github.io/facto-stack
@@ -22,6 +22,7 @@ content:
     # Baseline body fixtures (demo-data theme-demo — host-agnostic AsciiDoc catalog)
     - url: https://github.com/antora-supplemental/demo-data.git
       tags: [v0.2.1]
+      branches: []
       start_path: docs/theme-demo
     # Optional site-nav-tree forest smoke (catalog-alpha, catalog-beta):
     # - url: https://github.com/antora-supplemental/demo-data.git

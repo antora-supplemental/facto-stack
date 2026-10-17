@@ -1,5 +1,9 @@
 = Changelog
 
+== 2026-10-16 — Docs hub link URLs
+
+* README and demo playbook comments use unversioned docs URLs (`/docs/tutorials/…`, `/docs/proposals/…`) so links resolve on the live hub (not `/docs/ROOT/…` 404s).
+
 == 2026-10-16 — Pin demo-data theme-demo v0.2.1
 
 * Demo playbook pins `demo-data` @ `v0.2.1` for baseline `theme-demo` (page-context attrs on hub index for composed Pages).
