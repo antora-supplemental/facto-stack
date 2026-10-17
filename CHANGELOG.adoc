@@ -1,5 +1,9 @@
 = Changelog
 
+== 2026-10-17 — v0.2.15 pack release (site-nav-tree v0.6.7)
+
+* **v0.2.15** — ships `@antora-supplemental/site-nav-tree` @ `v0.6.7` (single `is-current-page` winner; full path rewrite after SoftNav mark-by-path).
+
 == 2026-10-17 — v0.2.14 pack release (site-nav-tree v0.6.6)
 
 * **v0.2.14** — ships `@antora-supplemental/site-nav-tree` @ `v0.6.6` (DOM owner-root current-page selection, full depth-1 expand on forest landing / root click).
