@@ -1,5 +1,13 @@
 = Changelog
 
+== 2026-10-16 — Hub component naming (README)
+
+* README: **Hub component naming** subsection — `home` aggregator, Overview nav, `start_path: docs` vs component id; link to Dev-Centr `publishing/hub-home-component`.
+
+== 2026-10-16 — Demo footer lists pack members
+
+* **v0.2.6** — Demo profile publishes build-stack footer keys for every registered pack member (not depth-1 `facto-stack` only) and passes the same id list to `@antora-supplemental/extension-lister` `packages`. Demo supplemental UI includes `footer-build-stack`. `demo/playbook.yml` output dir `../build/site` so extension reports land beside the published site. Self `link:` dependency fixes CI `Cannot find module '@antora-supplemental/facto-stack'`.
+
 == 2026-10-16 — site-nav-tree nav filter default
 
 * **v0.2.5** — Hub profile ships a disabled `@antora-supplemental/site-nav-tree` member with `filter: true`; enable via pack `siteNavTree: { enabled: true, include: [...] }` (override `filter` only to turn off). Demo profile registers site-nav-tree with filter on. Pin `@antora-supplemental/site-nav-tree` **v0.5.4+**. `playbook.fragment.yml` documents `filter: true` on the explicit require example.

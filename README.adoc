@@ -36,6 +36,10 @@ It documents and templates what DevCentr / antora-supplemental already reuse tog
 
 Wiring a product repo under `content.sources` publishes pages and xrefs — it does **not** mean the component belongs in the sidebar forest. Thin tools: hub portal under `home` only, or register the source but omit it from site-nav-tree `include`.
 
+=== Hub component naming
+
+Dev-Centr org hubs name the aggregator component `home` / title `Home`, set `site.start_page: home::index.adoc`, and lead the hub nav with **Overview** (portal-branded H1 on the index page). Playbook sources still use `start_path: docs` per repo — do not name the hub component `docs` when GitHub Pages or `site.url` already lives under `/docs` (avoids `/docs/docs/` URLs). Convention write-up: link:https://docs.devcentr.org/home/publishing/hub-home-component.html[Hub home component^] (skill `hub-home-overview` in `dev-centr/agent-rules`).
+
 == Recommended pairing (multi-component hubs)
 
 **nav-typology is optional on its own** — you can use typology icons without site-nav-tree.
