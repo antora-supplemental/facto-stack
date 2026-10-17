@@ -1,5 +1,10 @@
 = Changelog
 
+== 2026-10-17 — v0.2.8 hub diagram members
+
+* Hub profile registers `@antora-supplemental/mermaid-client/antora` and `@antora-supplemental/diagram-lightbox` as **disabled** members; enable with pack config `mermaidClient: { enabled: true }` / `diagramLightbox: { enabled: true }`. A hub keeps one playbook require (footer lists `facto-stack` once) and still ships client Mermaid + lightbox.
+* Footer / extension-lister member lists skip members with `enabled: false` (disabled `site-nav-tree` could be listed when `footerListMembers` was on).
+
 == 2026-10-17 — v0.2.7 pack release (site-nav-tree v0.6.0)
 
 * **v0.2.7** — ships `@antora-supplemental/site-nav-tree` @ `v0.6.0` for hubs that consume the pack via git tag (dlang-supplemental/docs and similar).

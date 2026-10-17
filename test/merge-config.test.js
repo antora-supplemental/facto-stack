@@ -32,6 +32,25 @@ describe('applyPackConfig', () => {
   })
 })
 
+describe('hub optional diagram members', () => {
+  it('registers mermaid-client and diagram-lightbox disabled by default', () => {
+    const out = applyPackConfig(HUB_ANTORA_EXTENSIONS, {})
+    for (const id of ['@antora-supplemental/mermaid-client/antora', '@antora-supplemental/diagram-lightbox']) {
+      const entry = out.find((e) => e.require === id)
+      assert.equal(entry.enabled, false, id)
+    }
+  })
+
+  it('enables them via mermaidClient / diagramLightbox pack config', () => {
+    const out = applyPackConfig(HUB_ANTORA_EXTENSIONS, {
+      mermaidClient: { enabled: true },
+      diagramLightbox: { enabled: true },
+    })
+    assert.equal(out.find((e) => e.require === '@antora-supplemental/mermaid-client/antora').enabled, true)
+    assert.equal(out.find((e) => e.require === '@antora-supplemental/diagram-lightbox').enabled, true)
+  })
+})
+
 describe('normalizePackConfig', () => {
   it('maps Antora-lowercased override keys', () => {
     const out = normalizePackConfig({

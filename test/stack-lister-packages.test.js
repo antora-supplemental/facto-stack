@@ -2,7 +2,7 @@
 
 const { describe, it } = require('node:test')
 const assert = require('node:assert/strict')
-const { DEMO_ANTORA_EXTENSIONS } = require('../lib/default-stack')
+const { DEMO_ANTORA_EXTENSIONS, HUB_ANTORA_EXTENSIONS } = require('../lib/default-stack')
 const { injectExtensionListerPackages, stackListerPackages } = require('../lib/stack-lister-packages')
 
 describe('stackListerPackages', () => {
@@ -13,6 +13,15 @@ describe('stackListerPackages', () => {
     assert.ok(names.includes('@antora-supplemental/page-edit'))
     assert.ok(names.includes('asciidoctor-kroki'))
     assert.ok(!names.includes('@antora-supplemental/facto-stack'))
+  })
+})
+
+describe('stackListerPackages (disabled members)', () => {
+  it('omits pack members with enabled: false', () => {
+    const names = stackListerPackages(HUB_ANTORA_EXTENSIONS)
+    assert.ok(!names.includes('@antora-supplemental/site-nav-tree'))
+    assert.ok(!names.includes('@antora-supplemental/diagram-lightbox'))
+    assert.ok(names.includes('@antora-supplemental/page-edit'))
   })
 })
 
