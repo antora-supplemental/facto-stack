@@ -1,5 +1,9 @@
 = Changelog
 
+== 2026-10-16 — Pin demo-data theme-demo v0.2.1
+
+* Demo playbook pins `demo-data` @ `v0.2.1` for baseline `theme-demo` (page-context attrs on hub index for composed Pages).
+
 == 2026-10-16 — Demo hub URLs, page chrome, PlantUML dark guard
 
 * Demo site: add `home` hub component (`/facto-stack/home/`); rename stack component to `stack` (`/facto-stack/stack/…`) so paths no longer repeat `facto-stack/facto-stack`.
