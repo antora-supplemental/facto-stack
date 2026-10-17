@@ -1,5 +1,9 @@
 = Changelog
 
+== 2026-10-17 — v0.2.10 pack release (site-nav-tree v0.6.3)
+
+* **v0.2.10** — ships `@antora-supplemental/site-nav-tree` @ `v0.6.3` (deterministic nav href freeze + SoftNav click resolution; fixes intermittent Explanation 404s on hub SoftNav).
+
 == 2026-10-17 — v0.2.9 pack release (site-nav-tree v0.6.1)
 
 * **v0.2.9** — ships `@antora-supplemental/site-nav-tree` @ `v0.6.1` (Overview-landing label hover chrome + SoftNav navigate without reload flash; includes v0.6.0 parent-label opens Overview).
