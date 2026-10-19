@@ -1,5 +1,9 @@
 = Changelog
 
+== 2026-10-19 — v0.2.29 pack release (antora-search-chat v0.1.11)
+
+* **v0.2.29** — ships `@antora-supplemental/antora-search-chat` @ `v0.1.11`: dock placement now stays visible when its vacated navbar slot collapses (zero-size overflow-visible host instead of `display: none`).
+
 == 2026-10-17 — v0.2.28 pack release (antora-search-chat v0.1.10)
 
 * **v0.2.28** — ships `@antora-supplemental/antora-search-chat` @ `v0.1.10`: `data-placement` bake is global (the partial comment shadowed the first regex match, so the dock placement never reached first paint).
