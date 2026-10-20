@@ -1,5 +1,9 @@
 = Changelog
 
+== 2026-10-20 — v0.2.39 pack release (local content desktop dialog)
+
+* **v0.2.39** — pins `@antora-supplemental/antora-local-content-sources` @ `v0.2.8`: Windows desktop disk search uses a sectioned Yes/No window and a scrollable progress log. The ASCII banner stays for CI, headless runs, and `ANTORA_LOCAL_SOURCES_UI=tty`. Logger phase lines are ASCII and print once.
+
 == 2026-10-19 — v0.2.38 pack release (local content banner wrap)
 
 * **v0.2.38** — pins `@antora-supplemental/antora-local-content-sources` @ `v0.2.7`: long disk-search banner lines wrap inside the ASCII frame so the right border stays on the same row.
