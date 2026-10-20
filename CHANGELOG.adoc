@@ -1,5 +1,9 @@
 = Changelog
 
+== 2026-10-19 — v0.2.30 pack release (antora-search-chat v0.1.12)
+
+* **v0.2.30** — ships `@antora-supplemental/antora-search-chat` @ `v0.1.12`: the floating dock is portaled to `<body>` so `position: fixed` anchors to the viewport (not the transformed theme header), and its scope menu / Lunr results open above the whole dock box.
+
 == 2026-10-19 — v0.2.29 pack release (antora-search-chat v0.1.11)
 
 * **v0.2.29** — ships `@antora-supplemental/antora-search-chat` @ `v0.1.11`: dock placement now stays visible when its vacated navbar slot collapses (zero-size overflow-visible host instead of `display: none`).
