@@ -1,5 +1,9 @@
 = Changelog
 
+== 2026-10-20 — v0.2.43 pack release (CI skips local disk search)
+
+* **v0.2.43** — pins `@antora-supplemental/antora-local-content-sources` @ `v0.2.11`: the desktop search window lists playbook URLs with live status and a colored finished line. CI never scans the disk or opens that window. Search chat stays at `v0.1.18`.
+
 == 2026-10-20 — v0.2.42 pack release (search field and result zones)
 
 * **v0.2.42** — ships `@antora-supplemental/antora-search-chat` @ `v0.1.18`: one query field (`Search or ask... /`), no Search/Ask mode buttons, scope corners clipped to the rounded box, one results scrollbar, keyword and semantic zones when semantic search is on, and no empty results border before a query.
