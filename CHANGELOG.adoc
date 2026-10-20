@@ -1,5 +1,9 @@
 = Changelog
 
+== 2026-10-19 — v0.2.32 pack release (antora-search-chat v0.1.14)
+
+* **v0.2.32** — ships `@antora-supplemental/antora-search-chat` @ `v0.1.14`: opaque search dock/compound/results chrome (Lunr transparent menu shell fixed); accent-on-border rims.
+
 == 2026-10-19 — v0.2.31 pack release (antora-search-chat v0.1.13)
 
 * **v0.2.31** — ships `@antora-supplemental/antora-search-chat` @ `v0.1.13`: dock Lunr results are height-capped with internal scrolling so the first hits stay on screen above the dock.
