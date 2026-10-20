@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@antora-supplemental/antora-local-content-sources':
+        specifier: github:antora-supplemental/antora-local-content-sources#v0.2.4
+        version: https://codeload.github.com/antora-supplemental/antora-local-content-sources/tar.gz/57100822d26b72132bdde87de44534ec0e52236f
       '@antora-supplemental/antora-search-chat':
         specifier: github:antora-supplemental/antora-search-chat#v0.1.14
         version: https://codeload.github.com/antora-supplemental/antora-search-chat/tar.gz/9617baee42211cdb337c9f7fac97dfa850197ff2(@antora/lunr-extension@1.0.0-alpha.13)
@@ -110,6 +113,11 @@ packages:
 
   '@antfu/install-pkg@2.0.1':
     resolution: {integrity: sha512-iCKVQcIC0e3oDxEfs3SHQGW+ovhBMZmS1TE+bTk50rVyMCBmCfClv7Qi3HQKlumYwvjb/iIMeWCW2i67q6kFfQ==}
+
+  '@antora-supplemental/antora-local-content-sources@https://codeload.github.com/antora-supplemental/antora-local-content-sources/tar.gz/57100822d26b72132bdde87de44534ec0e52236f':
+    resolution: {tarball: https://codeload.github.com/antora-supplemental/antora-local-content-sources/tar.gz/57100822d26b72132bdde87de44534ec0e52236f}
+    version: 0.2.4
+    engines: {node: '>=18'}
 
   '@antora-supplemental/antora-search-chat@https://codeload.github.com/antora-supplemental/antora-search-chat/tar.gz/9617baee42211cdb337c9f7fac97dfa850197ff2':
     resolution: {tarball: https://codeload.github.com/antora-supplemental/antora-search-chat/tar.gz/9617baee42211cdb337c9f7fac97dfa850197ff2}
@@ -1900,6 +1908,11 @@ packages:
     resolution: {integrity: sha512-0pfFzegeDWJHJIAmTLRP2DwHjdF5s7jo9tuztdQxAhINCdvS+3nGINqPd00AphqJR/0LhANUS6/+7SCb98YOfA==}
     engines: {node: '>=10'}
 
+  yaml@2.9.1:
+    resolution: {integrity: sha512-3NxN8+78OdzbT7C/WjGsyfPAtJaN3FNDsWxv7Y7mcDsT/oOmgW8BpyQQFFBnvZE3j9Y2Sdz1ULFLezL7Eb2yFw==}
+    engines: {node: '>= 14.6'}
+    hasBin: true
+
   yargs-parser@20.2.9:
     resolution: {integrity: sha512-y11nGElTIV+CT3Zv9t7VKl+Q3hTQoT9a1Qzezhhl6Rp21gJ/IVTW7Z3y9EWXhuUBC2Shnf+DX0antecpAwSP8w==}
     engines: {node: '>=10'}
@@ -1932,6 +1945,10 @@ snapshots:
     dependencies:
       package-manager-detector: 1.8.0
       tinyexec: 1.3.1
+
+  '@antora-supplemental/antora-local-content-sources@https://codeload.github.com/antora-supplemental/antora-local-content-sources/tar.gz/57100822d26b72132bdde87de44534ec0e52236f':
+    dependencies:
+      yaml: 2.9.1
 
   '@antora-supplemental/antora-search-chat@https://codeload.github.com/antora-supplemental/antora-search-chat/tar.gz/9617baee42211cdb337c9f7fac97dfa850197ff2(@antora/lunr-extension@1.0.0-alpha.13)':
     dependencies:
@@ -3761,6 +3778,8 @@ snapshots:
   xmlchars@2.2.0: {}
 
   y18n@5.0.8: {}
+
+  yaml@2.9.1: {}
 
   yargs-parser@20.2.9: {}
 

@@ -1,5 +1,9 @@
 = Changelog
 
+== 2026-10-19 — v0.2.33 pack release (local content sources)
+
+* **v0.2.33** — registers `@antora-supplemental/antora-local-content-sources` @ `v0.2.4` before other pack members (hub `mode: auto`, off in CI). Playbook override: `localContentSources: { … }` or `localContentSources: false` to disable. Hubs no longer need a committed local playbook duplicate.
+
 == 2026-10-19 — v0.2.32 pack release (antora-search-chat v0.1.14)
 
 * **v0.2.32** — ships `@antora-supplemental/antora-search-chat` @ `v0.1.14`: opaque search dock/compound/results chrome (Lunr transparent menu shell fixed); accent-on-border rims.
