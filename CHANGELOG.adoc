@@ -1,5 +1,9 @@
 = Changelog
 
+== 2026-10-19 — v0.2.35 pack release (antora-search-chat v0.1.15)
+
+* **v0.2.35** — ships `@antora-supplemental/antora-search-chat` @ `v0.1.15`: stable Search/Ask omnibox shell (no layout swap), scope disabled in Ask, capability strip at dock bottom, stronger opaque Lunr/scope/hover fills.
+
 == 2026-10-19 — v0.2.34 pack release (local content sources fix)
 
 * **v0.2.34** — pins `@antora-supplemental/antora-local-content-sources` @ `v0.2.5` (syntax fix for hub builds).
