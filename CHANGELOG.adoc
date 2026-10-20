@@ -1,5 +1,9 @@
 = Changelog
 
+== 2026-10-20 — v0.2.41 pack release (local content window title)
+
+* **v0.2.41** — pins `@antora-supplemental/antora-local-content-sources` @ `v0.2.9`: the Windows search window title is "Antora Local content search" on the Yes/No confirm view and the later progress view.
+
 == 2026-10-20 — v0.2.40 pack release (search dock above footer)
 
 * **v0.2.40** — ships `@antora-supplemental/antora-search-chat` @ `v0.1.17`: the search dock stays on screen and occupies layout space above the footer, so footer links stay clickable.

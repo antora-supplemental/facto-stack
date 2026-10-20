@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@antora-supplemental/antora-local-content-sources':
-        specifier: github:antora-supplemental/antora-local-content-sources#v0.2.8
-        version: https://codeload.github.com/antora-supplemental/antora-local-content-sources/tar.gz/762f60c5b423b79d927c3e57c06c5872f05c522c
+        specifier: github:antora-supplemental/antora-local-content-sources#v0.2.9
+        version: https://codeload.github.com/antora-supplemental/antora-local-content-sources/tar.gz/a5955fee4ae676f338fedef8bc33f852094bbfc8
       '@antora-supplemental/antora-search-chat':
         specifier: github:antora-supplemental/antora-search-chat#v0.1.17
         version: https://codeload.github.com/antora-supplemental/antora-search-chat/tar.gz/e0235970ce22a783445378c43a790030045a0804(@antora/lunr-extension@1.0.0-alpha.13)
@@ -114,9 +114,9 @@ packages:
   '@antfu/install-pkg@2.0.1':
     resolution: {integrity: sha512-iCKVQcIC0e3oDxEfs3SHQGW+ovhBMZmS1TE+bTk50rVyMCBmCfClv7Qi3HQKlumYwvjb/iIMeWCW2i67q6kFfQ==}
 
-  '@antora-supplemental/antora-local-content-sources@https://codeload.github.com/antora-supplemental/antora-local-content-sources/tar.gz/762f60c5b423b79d927c3e57c06c5872f05c522c':
-    resolution: {tarball: https://codeload.github.com/antora-supplemental/antora-local-content-sources/tar.gz/762f60c5b423b79d927c3e57c06c5872f05c522c}
-    version: 0.2.8
+  '@antora-supplemental/antora-local-content-sources@https://codeload.github.com/antora-supplemental/antora-local-content-sources/tar.gz/a5955fee4ae676f338fedef8bc33f852094bbfc8':
+    resolution: {tarball: https://codeload.github.com/antora-supplemental/antora-local-content-sources/tar.gz/a5955fee4ae676f338fedef8bc33f852094bbfc8}
+    version: 0.2.9
     engines: {node: '>=18'}
 
   '@antora-supplemental/antora-search-chat@https://codeload.github.com/antora-supplemental/antora-search-chat/tar.gz/e0235970ce22a783445378c43a790030045a0804':
@@ -1946,7 +1946,7 @@ snapshots:
       package-manager-detector: 1.8.0
       tinyexec: 1.3.1
 
-  '@antora-supplemental/antora-local-content-sources@https://codeload.github.com/antora-supplemental/antora-local-content-sources/tar.gz/762f60c5b423b79d927c3e57c06c5872f05c522c':
+  '@antora-supplemental/antora-local-content-sources@https://codeload.github.com/antora-supplemental/antora-local-content-sources/tar.gz/a5955fee4ae676f338fedef8bc33f852094bbfc8':
     dependencies:
       yaml: 2.9.1
 
