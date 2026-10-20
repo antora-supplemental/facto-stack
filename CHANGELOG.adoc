@@ -1,5 +1,9 @@
 = Changelog
 
+== 2026-10-19 — v0.2.38 pack release (local content banner wrap)
+
+* **v0.2.38** — pins `@antora-supplemental/antora-local-content-sources` @ `v0.2.7`: long disk-search banner lines wrap inside the ASCII frame so the right border stays on the same row.
+
 == 2026-10-19 — v0.2.37 pack release (local content banner)
 
 * **v0.2.37** — pins `@antora-supplemental/antora-local-content-sources` @ `v0.2.6`: the disk-search banner prints once, as ASCII on stderr, so Windows consoles no longer show a mojibake duplicate.
