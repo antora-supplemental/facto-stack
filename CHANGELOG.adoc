@@ -1,8 +1,12 @@
 = Changelog
 
+== 2026-10-19 — v0.2.34 pack release (local content sources fix)
+
+* **v0.2.34** — pins `@antora-supplemental/antora-local-content-sources` @ `v0.2.5` (syntax fix for hub builds).
+
 == 2026-10-19 — v0.2.33 pack release (local content sources)
 
-* **v0.2.33** — registers `@antora-supplemental/antora-local-content-sources` @ `v0.2.4` before other pack members (hub `mode: auto`, off in CI). Playbook override: `localContentSources: { … }` or `localContentSources: false` to disable. Hubs no longer need a committed local playbook duplicate.
+* **v0.2.33** — registers `@antora-supplemental/antora-local-content-sources` before other pack members (hub `mode: auto`, off in CI). Playbook override: `localContentSources: { … }` or `localContentSources: false` to disable. Hubs no longer need a committed local playbook duplicate. (Use **v0.2.34+** — v0.2.33 pinned a broken extension build.)
 
 == 2026-10-19 — v0.2.32 pack release (antora-search-chat v0.1.14)
 
