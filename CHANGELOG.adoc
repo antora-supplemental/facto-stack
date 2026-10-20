@@ -1,5 +1,9 @@
 = Changelog
 
+== 2026-10-19 — v0.2.36 pack release (antora-search-chat v0.1.16)
+
+* **v0.2.36** — ships `@antora-supplemental/antora-search-chat` @ `v0.1.16`: search dock shell stays fully opaque. Valentus `.adt-nav-search { background: transparent !important }` no longer shows the page through the overlay.
+
 == 2026-10-19 — v0.2.35 pack release (antora-search-chat v0.1.15)
 
 * **v0.2.35** — ships `@antora-supplemental/antora-search-chat` @ `v0.1.15`: stable Search/Ask omnibox shell (no layout swap), scope disabled in Ask, capability strip at dock bottom, stronger opaque Lunr/scope/hover fills.
