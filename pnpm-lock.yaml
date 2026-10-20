@@ -12,8 +12,8 @@ importers:
         specifier: github:antora-supplemental/antora-local-content-sources#v0.2.11
         version: https://codeload.github.com/antora-supplemental/antora-local-content-sources/tar.gz/e586864264e0bdc5da02db54b3c243d34952d653
       '@antora-supplemental/antora-search-chat':
-        specifier: github:antora-supplemental/antora-search-chat#v0.1.18
-        version: https://codeload.github.com/antora-supplemental/antora-search-chat/tar.gz/86bc83829b22e4a761b885d89900cadf9a10d7e9(@antora/lunr-extension@1.0.0-alpha.13)
+        specifier: github:antora-supplemental/antora-search-chat#v0.1.19
+        version: https://codeload.github.com/antora-supplemental/antora-search-chat/tar.gz/78f08f7deaf2e27694ded1dd93ed4921f881967e(@antora/lunr-extension@1.0.0-alpha.13)
       '@antora-supplemental/asciidoctor-emoji-literals':
         specifier: github:antora-supplemental/asciidoctor-emoji-literals#main
         version: https://codeload.github.com/antora-supplemental/asciidoctor-emoji-literals/tar.gz/353b32fba85bcced2c635fa96b59348f45d43315(@asciidoctor/core@2.2.9)(asciidoctor-emoji@0.5.0(@asciidoctor/core@2.2.9))
@@ -119,9 +119,9 @@ packages:
     version: 0.2.11
     engines: {node: '>=18'}
 
-  '@antora-supplemental/antora-search-chat@https://codeload.github.com/antora-supplemental/antora-search-chat/tar.gz/86bc83829b22e4a761b885d89900cadf9a10d7e9':
-    resolution: {tarball: https://codeload.github.com/antora-supplemental/antora-search-chat/tar.gz/86bc83829b22e4a761b885d89900cadf9a10d7e9}
-    version: 0.1.18
+  '@antora-supplemental/antora-search-chat@https://codeload.github.com/antora-supplemental/antora-search-chat/tar.gz/78f08f7deaf2e27694ded1dd93ed4921f881967e':
+    resolution: {tarball: https://codeload.github.com/antora-supplemental/antora-search-chat/tar.gz/78f08f7deaf2e27694ded1dd93ed4921f881967e}
+    version: 0.1.19
     engines: {node: '>=18'}
     peerDependencies:
       '@antora/lunr-extension': '>=1.0.0-alpha.12'
@@ -1950,7 +1950,7 @@ snapshots:
     dependencies:
       yaml: 2.9.1
 
-  '@antora-supplemental/antora-search-chat@https://codeload.github.com/antora-supplemental/antora-search-chat/tar.gz/86bc83829b22e4a761b885d89900cadf9a10d7e9(@antora/lunr-extension@1.0.0-alpha.13)':
+  '@antora-supplemental/antora-search-chat@https://codeload.github.com/antora-supplemental/antora-search-chat/tar.gz/78f08f7deaf2e27694ded1dd93ed4921f881967e(@antora/lunr-extension@1.0.0-alpha.13)':
     dependencies:
       '@antora/lunr-extension': 1.0.0-alpha.13
 
