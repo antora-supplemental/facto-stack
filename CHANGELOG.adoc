@@ -1,5 +1,9 @@
 = Changelog
 
+== 2026-10-20 — v0.2.42 pack release (search field and result zones)
+
+* **v0.2.42** — ships `@antora-supplemental/antora-search-chat` @ `v0.1.18`: one query field (`Search or ask... /`), no Search/Ask mode buttons, scope corners clipped to the rounded box, one results scrollbar, keyword and semantic zones when semantic search is on, and no empty results border before a query.
+
 == 2026-10-20 — v0.2.41 pack release (local content window title)
 
 * **v0.2.41** — pins `@antora-supplemental/antora-local-content-sources` @ `v0.2.9`: the Windows search window title is "Antora Local content search" on the Yes/No confirm view and the later progress view.
