@@ -1,5 +1,9 @@
 = Changelog
 
+== 2026-10-20 — v0.2.45 pack release (local or remote docs)
+
+* **v0.2.45** — pins `@antora-supplemental/antora-local-content-sources` @ `v0.2.12`: desktop builds choose Use local docs or Use remote docs, then a search window with a per-row Download, Move, or Local button. CI still does not scan. Search chat stays at `v0.1.19`.
+
 == 2026-10-20 — v0.2.44 pack release (scope bar and slash hint)
 
 * **v0.2.44** — ships `@antora-supplemental/antora-search-chat` @ `v0.1.19`: the context bar is one hover and click target, and the empty-field hint shows `/` as a code chip.
