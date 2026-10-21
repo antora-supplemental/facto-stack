@@ -1,5 +1,9 @@
 = Changelog
 
+== 2026-10-21 — v0.2.46 pack release (Valentus 3 + search-chat 0.1.20)
+
+* **v0.2.46** — pins Valentus rolling `v3` `ui-bundle.zip`, `@antora-supplemental/antora-search-chat` @ `v0.1.20` (`valentus-*` omnibox namespace + SoftNavContext scope refresh), `@antora-supplemental/site-nav-tree` @ `v0.6.9` (`bindSoftNavContext` in nav-tree filter), and `@antora-supplemental/soft-nav-context` from `antora-ui-chassis` @ `6433442`.
+
 == 2026-10-21 -- soft-nav-context git dependency pin
 
 * Replace local `file:` dependency with `github:antora-supplemental/antora-ui-chassis#6433442&path:packages/soft-nav-context` so CI and remote clones resolve the extension.

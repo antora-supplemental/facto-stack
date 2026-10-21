@@ -66,7 +66,7 @@ antora:
 
 ui:
   bundle:
-    url: https://github.com/antora-supplemental/valentus-theme/releases/download/v2/ui-bundle.zip
+    url: https://github.com/antora-supplemental/valentus-theme/releases/download/v3/ui-bundle.zip
     snapshot: true
   # supplemental_files: ./supplemental-ui  # brand + site-math.js/css; optional site-mermaid.js fallback
   # With site-nav-tree + Valentus: also copy site-nav-tree ui/partials/nav-menu.hbs into supplemental-ui/partials/
