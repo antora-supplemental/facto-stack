@@ -1,5 +1,10 @@
 = Changelog
 
+== 2026-10-21 -- SoftNavContext extension in compose pack
+
+* Hub and demo profiles register `@antora-supplemental/soft-nav-context` (build injects page context partial + runtime after `soft-nav.js` in footer).
+* Demo footer keeps vendored `soft-nav.js`; context scripts come from the extension instead of duplicate supplemental copies.
+
 == 2026-10-21 -- SoftNavContext in Facto stack demo
 
 * Demo supplemental UI loads chassis `soft-nav-context.js` + `bind-soft-nav-context.js` after SoftNav; `article` partial includes `soft-nav-page-context` for navigation context.
