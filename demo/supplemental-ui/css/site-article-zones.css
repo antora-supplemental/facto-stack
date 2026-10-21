@@ -1,0 +1,7 @@
+.doc[data-zone-root] .doc-zone--meta:empty {
+  display: none;
+}
+
+.doc[data-zone-root] .doc-zone--header .page-context-source-line {
+  margin-top: 0.35rem;
+}

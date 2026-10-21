@@ -43,7 +43,9 @@ antora:
     - require: '@antora-supplemental/nav-typology'
     - require: '@antora-supplemental/nav-typology-diataxis'
     - '@antora-supplemental/build-stack'
-    # Bake View | Edit into page-context lead table (no runtime icon JS).
+    # Move page-context lead into [data-zone="meta"] (requires zoned article.hbs).
+    - '@antora-supplemental/article-zones'
+    # Bake View | Edit into header zone (no runtime icon JS).
     - '@antora-supplemental/page-edit'
     # Outbound http(s) link validation + triage page under /link-validator/
     - require: '@antora-supplemental/link-validator'
