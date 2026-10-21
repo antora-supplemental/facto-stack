@@ -13,9 +13,9 @@
     {{#if site.keys.footerNote}} <span class="site-footer-note">{{{site.keys.footerNote}}}</span>{{/if}}
   </p>
 </footer>
-{{!-- SoftNav → AdtChrome before feature scripts --}}
+{{!-- SoftNav → SoftNavContext before feature scripts --}}
 <script src="{{{uiRootPath}}}/js/soft-nav.js" defer></script>
-<script src="{{{uiRootPath}}}/js/adt-chrome.js" defer></script>
-<script src="{{{uiRootPath}}}/js/adt-chrome-compat.js" defer></script>
+<script src="{{{uiRootPath}}}/js/soft-nav-context.js" defer></script>
+<script src="{{{uiRootPath}}}/js/bind-soft-nav-context.js" defer></script>
 {{> mermaid-client-scripts}}
 {{> diagram-lightbox-scripts}}

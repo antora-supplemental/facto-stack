@@ -1,17 +1,17 @@
 /**
- * AdtChrome — reactive navigation context for Antora supplemental UI.
+ * SoftNavContext — reactive navigation context for Antora supplemental UI.
  *
  * Pairs with SoftNav: persistent chrome reads context from each fetched page;
  * content-scoped extensions can subscribe instead of re-parsing detail.doc.
  *
- * Public API (global AdtChrome):
+ * Public API (global SoftNavContext):
  *   .schema              — page context JSON schema version
  *   .context             — current PageContext object (read-only snapshot)
  *   .on(phase, handler)  — before | context | loaded | failed
  *   .parseDocument(doc)  — extract PageContext from a Document
  *
  * DOM events (detail = PageContext or nav ctx):
- *   adt-chrome:context | adt-chrome:before | adt-chrome:loaded | adt-chrome:failed
+ *   soft-nav-context:context | soft-nav-context:before | soft-nav-context:loaded | soft-nav-context:failed
  *
  * Load after soft-nav.js, before feature scripts.
  */
@@ -35,7 +35,7 @@
   }
 
   function parseJsonScript (doc) {
-    var el = doc.getElementById('adt-page-context')
+    var el = doc.getElementById('soft-nav-page-context')
     if (!el) return null
     var raw = trim(el.textContent)
     if (raw) {
@@ -63,7 +63,7 @@
   }
 
   function parseFromSearchRoot (doc) {
-    var root = doc.querySelector('[data-adt-search-chat]')
+    var root = doc.querySelector('[data-valentus-search-chat]')
     if (!root) return null
     return {
       schema: SCHEMA,
@@ -120,11 +120,11 @@
       try {
         list[i](detail)
       } catch (err) {
-        console.warn('[adt-chrome] listener error on ' + phase, err)
+        console.warn('[soft-nav-context] listener error on ' + phase, err)
       }
     }
     global.document.dispatchEvent(
-      new CustomEvent('adt-chrome:' + phase, { detail: detail })
+      new CustomEvent('soft-nav-context:' + phase, { detail: detail })
     )
   }
 
@@ -133,13 +133,13 @@
     emit('context', next)
   }
 
-  var AdtChrome = {
+  var SoftNavContext = {
     schema: SCHEMA,
     get context () {
       return currentContext
     },
     on: function (phase, handler) {
-      if (!listeners[phase]) throw new Error('AdtChrome.on: unknown phase ' + phase)
+      if (!listeners[phase]) throw new Error('SoftNavContext.on: unknown phase ' + phase)
       listeners[phase].push(handler)
       return function unsubscribe () {
         var list = listeners[phase]
@@ -182,5 +182,5 @@
 
   setContext(parseDocument(global.document, global.location.href))
   hookSoftNav()
-  global.AdtChrome = AdtChrome
+  global.SoftNavContext = SoftNavContext
 })(typeof window !== 'undefined' ? window : globalThis)

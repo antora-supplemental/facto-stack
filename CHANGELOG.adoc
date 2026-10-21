@@ -1,8 +1,8 @@
 = Changelog
 
-== 2026-10-21 -- AdtChrome in Facto stack demo
+== 2026-10-21 -- SoftNavContext in Facto stack demo
 
-* Demo supplemental UI loads chassis `adt-chrome.js` + `adt-chrome-compat.js` after SoftNav; `article` partial includes `adt-page-context` for navigation context.
+* Demo supplemental UI loads chassis `soft-nav-context.js` + `bind-soft-nav-context.js` after SoftNav; `article` partial includes `soft-nav-page-context` for navigation context.
 
 == 2026-10-20 — v0.2.45 pack release (local or remote docs)
 
@@ -42,7 +42,7 @@
 
 == 2026-10-19 — v0.2.36 pack release (antora-search-chat v0.1.16)
 
-* **v0.2.36** — ships `@antora-supplemental/antora-search-chat` @ `v0.1.16`: search dock shell stays fully opaque. Valentus `.adt-nav-search { background: transparent !important }` no longer shows the page through the overlay.
+* **v0.2.36** — ships `@antora-supplemental/antora-search-chat` @ `v0.1.16`: search dock shell stays fully opaque. Valentus `.valentus-nav-search { background: transparent !important }` no longer shows the page through the overlay.
 
 == 2026-10-19 — v0.2.35 pack release (antora-search-chat v0.1.15)
 
@@ -229,7 +229,7 @@
 
 == 2026-10-16 — site-nav-tree filter styling
 
-* Pin `@antora-supplemental/site-nav-tree` **v0.5.6** (nav label filter inherits Valentus `--adt-*` tokens; transparent sticky wrapper).
+* Pin `@antora-supplemental/site-nav-tree` **v0.5.6** (nav label filter inherits Valentus `--valentus-*` tokens; transparent sticky wrapper).
 
 == 2026-10-16 — Hub component naming (README)
 
