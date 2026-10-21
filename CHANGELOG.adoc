@@ -1,5 +1,9 @@
 = Changelog
 
+== 2026-10-21 — v0.2.59 pack release (playbook fragment + demo zoned article)
+
+* **v0.2.59** — `playbook.fragment.yml` registers `@antora-supplemental/article-zones` before `page-edit`; demo supplemental ships zoned `article.hbs` + zone CSS until rolling `v3` `ui-bundle.zip` rebuilds. `@antora-supplemental/article-zones` @ `v0.1.1` (README alias note). Stack order test: article-zones → page-edit → linkinator.
+
 == 2026-10-21 — v0.2.58 pack release (article-zones, zoned Valentus, linkinator v0.1.12)
 
 * **v0.2.58** — `@antora-supplemental/article-zones` @ `v0.1.0` (move page-context lead into `[data-zone="meta"]`); `@antora-supplemental/page-edit` @ `v0.3.2` (Source in header zone); `@antora-supplemental/linkinator` @ `v0.1.12` (wrap only `[data-zone="body"]`). Register order: article-zones → page-edit → linkinator. Pair with Valentus **3.0.2** zoned `article.hbs`.
@@ -15,6 +19,10 @@
 == 2026-10-21 ? v0.2.55 pack release (page-edit v0.3.1)
 
 * **v0.2.55** ? `@antora-supplemental/page-edit` @ `v0.3.1` (Source line: label, then VCS mark, then View | Edit).
+
+== 2026-10-21 — v0.2.60 pack release (site-nav-tree v0.6.14)
+
+* **v0.2.60** — `@antora-supplemental/site-nav-tree` @ `v0.6.14` (mobile forest nav drawer CSS; companion styles always inject at build).
 
 == 2026-10-21 — v0.2.54 pack release (site-nav-tree v0.6.13)
 
