@@ -52,7 +52,7 @@ Dev-Centr org hubs name the aggregator component `home` / title `Home`, set `sit
 When you **do** enable `@antora-supplemental/site-nav-tree`, also ship:
 
 * **Nav filter** — the pack member defaults to `filter: true` (sticky sidebar label filter + UI injection from site-nav-tree **v0.5.4+**). Compose pack: `siteNavTree: { enabled: true, include: [home, …] }`. Explicit playbook require: add `filter: true` (or omit only if you copy `ui/` manually and want no filter).
-* `@antora-supplemental/nav-typology` + its **companion UI** (`nav-tree.hbs`, helpers, CSS, sprite — Antora does not auto-merge extension UI)
+* `@antora-supplemental/nav-typology` @ `v0.1.12+` (companion UI injects at build time; no manual `supplemental-ui` copy)
 * `@antora-supplemental/nav-typology-diataxis` when the hub follows Diátaxis nav buckets
 
 Register typology **after** site-nav-tree. Detail: https://github.com/antora-supplemental/site-nav-tree[site-nav-tree] and https://github.com/antora-supplemental/nav-typology[nav-typology] READMEs.

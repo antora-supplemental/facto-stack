@@ -70,7 +70,7 @@ ui:
     snapshot: true
   # supplemental_files: ./supplemental-ui  # brand + site-math.js/css; optional site-mermaid.js fallback
   # With site-nav-tree + Valentus: also copy site-nav-tree ui/partials/nav-menu.hbs into supplemental-ui/partials/
-  # With nav-typology: copy nav-tree partial, helpers, css, svg into supplemental-ui/
+  # nav-typology @ v0.1.12+ injects companion UI (no supplemental copy)
   # With build-stack: copy ui/partials/footer-build-stack.hbs; {{> footer-build-stack}} in footer-content.hbs
 
 asciidoc:

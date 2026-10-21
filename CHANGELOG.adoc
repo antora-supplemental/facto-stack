@@ -1,5 +1,9 @@
 = Changelog
 
+== 2026-10-21 — v0.2.52 pack release (nav-typology v0.1.12)
+
+* **v0.2.52** — `@antora-supplemental/nav-typology` @ `v0.1.12` (companion UI injects on `uiLoaded`; hubs drop manual `supplemental-ui` copies).
+
 == 2026-10-21 — v0.2.51 pack release (search-chat v0.1.23)
 
 * **v0.2.51** — `@antora-supplemental/antora-search-chat` @ `v0.1.23` (dock layout shell only; results panel matches compound width).
