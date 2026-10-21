@@ -1,5 +1,9 @@
 = Changelog
 
+== 2026-10-21 — v0.2.57 pack release (linkinator v0.1.11, page-context v0.7.2)
+
+* **v0.2.57** — `@antora-supplemental/linkinator` @ `v0.1.11` (skip metadata / View|Edit zones); `@antora-supplemental/page-context` @ `v0.7.2` (lead `data-zone="meta"`).
+
 == 2026-10-21 — v0.2.56 pack release (search-chat v0.1.24)
 
 * **v0.2.56** — `@antora-supplemental/antora-search-chat` @ `v0.1.24` (subtle drop shadow under the stacked search compound in navbar and dock placement).
