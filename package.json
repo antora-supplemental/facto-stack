@@ -1,6 +1,6 @@
 {
   "name": "@antora-supplemental/facto-stack",
-  "version": "0.2.63",
+  "version": "0.2.64",
   "private": true,
   "description": "De-facto Antora stack composer + published stack demo: Valentus (lean) + Lunr + STEM + diagrams (client Mermaid / lightbox / SoftNav; Kroki optional)",
   "license": "MPL-2.0",
@@ -60,7 +60,7 @@
     "@antora-supplemental/page-edit": "github:antora-supplemental/page-edit#v0.3.3",
     "@antora-supplemental/playbook-pin-auditor": "github:antora-supplemental/playbook-pin-auditor#v0.1.1",
     "@antora-supplemental/site-nav-tree": "github:antora-supplemental/site-nav-tree#v0.6.14",
-    "@antora-supplemental/soft-nav-page-toc": "github:antora-supplemental/soft-nav-page-toc#v0.1.8",
+    "@antora-supplemental/soft-nav-page-toc": "github:antora-supplemental/soft-nav-page-toc#v0.1.9",
     "@antora-supplemental/chassis-compose": "github:antora-supplemental/antora-ui-chassis#chassis-compose-v0.1.4&path:packages/chassis-compose",
     "@antora-supplemental/stale-page": "github:antora-supplemental/stale-page#v0.1.1",
     "@antora-supplemental/triage-ux-kit": "github:antora-supplemental/triage-ux-kit#v0.1.0",

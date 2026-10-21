@@ -1,5 +1,9 @@
 = Changelog
 
+== 2026-10-21 — v0.2.64 pack release (soft-nav-page-toc v0.1.9)
+
+* **v0.2.64** — `@antora-supplemental/soft-nav-page-toc` @ `v0.1.9` (`data-page-toc-root` TOC contract; bundles page-toc runtime). Pair with Valentus **3.0.8** `site-page-toc.js`.
+
 == 2026-10-21 — v0.2.63 pack release (soft-nav-page-toc v0.1.8)
 
 * **v0.2.63** — `@antora-supplemental/soft-nav-page-toc` @ `v0.1.8` (right-rail page TOC with Valentus zoned `article.hbs` / `.doc-zone--body`).
