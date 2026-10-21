@@ -19,6 +19,8 @@
 !examples/**
 !demo/
 !demo/**
+demo/build/
+examples/build/
 !.github/
 !.github/**
 !/.editorconfig

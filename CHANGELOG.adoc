@@ -1,5 +1,9 @@
 = Changelog
 
+== 2026-10-21 — v0.2.48 pack release (examples diagram-lightbox)
+
+* **v0.2.48** — `examples/minimal-playbook.yml` uses `@antora-supplemental/mermaid-client/antora` and `@antora-supplemental/diagram-lightbox` (no vendored `site-diagram-zoom`); `.gitignore` excludes `examples/build/` and `demo/build/`.
+
 == 2026-10-21 — examples use diagram-lightbox (no vendored zoom)
 
 * `examples/minimal-playbook.yml` registers `@antora-supplemental/mermaid-client/antora` and `@antora-supplemental/diagram-lightbox`; supplemental partials use extension-injected `mermaid-client-*` and `diagram-lightbox-*` (aligned with `demo/`).
