@@ -1,5 +1,9 @@
 = Changelog
 
+== 2026-10-21 — v0.2.63 pack release (soft-nav-page-toc v0.1.8)
+
+* **v0.2.63** — `@antora-supplemental/soft-nav-page-toc` @ `v0.1.8` (right-rail page TOC with Valentus zoned `article.hbs` / `.doc-zone--body`).
+
 == 2026-10-21 — v0.2.62 pack release (page-edit v0.3.3)
 
 * **v0.2.62** — `@antora-supplemental/page-edit` @ `v0.3.3` (Source line above the title in header zone). Demo supplemental zone CSS matches Valentus **3.0.7** spacing until rolling `v3` `ui-bundle.zip` rebuilds.
