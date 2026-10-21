@@ -1,5 +1,9 @@
 = Changelog
 
+== 2026-10-21 -- soft-nav-context git dependency pin
+
+* Replace local `file:` dependency with `github:antora-supplemental/antora-ui-chassis#6433442&path:packages/soft-nav-context` so CI and remote clones resolve the extension.
+
 == 2026-10-21 -- SoftNavContext extension in compose pack
 
 * Hub and demo profiles register `@antora-supplemental/soft-nav-context` (build injects page context partial + runtime after `soft-nav.js` in footer).

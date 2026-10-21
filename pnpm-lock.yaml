@@ -66,8 +66,8 @@ importers:
         specifier: github:antora-supplemental/site-nav-tree#v0.6.8
         version: https://codeload.github.com/antora-supplemental/site-nav-tree/tar.gz/894e31e1f2eac2e60f71312f23a044a214dbfd38(@antora/site-generator@3.1.15)
       '@antora-supplemental/soft-nav-context':
-        specifier: file:../antora-ui-chassis/packages/soft-nav-context
-        version: file:../antora-ui-chassis/packages/soft-nav-context
+        specifier: github:antora-supplemental/antora-ui-chassis#6433442&path:packages/soft-nav-context
+        version: https://codeload.github.com/antora-supplemental/antora-ui-chassis/tar.gz/6433442ce8a11eedeabc917749ff33d0a4a2dbbb#path:packages/soft-nav-context
       '@antora-supplemental/soft-nav-page-toc':
         specifier: github:antora-supplemental/soft-nav-page-toc#v0.1.6
         version: https://codeload.github.com/antora-supplemental/soft-nav-page-toc/tar.gz/e14807953757708297d2ac4f1ffac1a2810b3ccb(@antora/site-generator@3.1.15)
@@ -272,8 +272,9 @@ packages:
     peerDependencies:
       '@antora/site-generator': '>=3.1.0'
 
-  '@antora-supplemental/soft-nav-context@file:../antora-ui-chassis/packages/soft-nav-context':
-    resolution: {directory: ../antora-ui-chassis/packages/soft-nav-context, type: directory}
+  '@antora-supplemental/soft-nav-context@https://codeload.github.com/antora-supplemental/antora-ui-chassis/tar.gz/6433442ce8a11eedeabc917749ff33d0a4a2dbbb#path:packages/soft-nav-context':
+    resolution: {path: packages/soft-nav-context, tarball: https://codeload.github.com/antora-supplemental/antora-ui-chassis/tar.gz/6433442ce8a11eedeabc917749ff33d0a4a2dbbb}
+    version: 0.1.1
 
   '@antora-supplemental/soft-nav-page-toc@https://codeload.github.com/antora-supplemental/soft-nav-page-toc/tar.gz/e14807953757708297d2ac4f1ffac1a2810b3ccb':
     resolution: {tarball: https://codeload.github.com/antora-supplemental/soft-nav-page-toc/tar.gz/e14807953757708297d2ac4f1ffac1a2810b3ccb}
@@ -2040,7 +2041,7 @@ snapshots:
     dependencies:
       '@antora/site-generator': 3.1.15
 
-  '@antora-supplemental/soft-nav-context@file:../antora-ui-chassis/packages/soft-nav-context': {}
+  '@antora-supplemental/soft-nav-context@https://codeload.github.com/antora-supplemental/antora-ui-chassis/tar.gz/6433442ce8a11eedeabc917749ff33d0a4a2dbbb#path:packages/soft-nav-context': {}
 
   '@antora-supplemental/soft-nav-page-toc@https://codeload.github.com/antora-supplemental/soft-nav-page-toc/tar.gz/e14807953757708297d2ac4f1ffac1a2810b3ccb(@antora/site-generator@3.1.15)':
     optionalDependencies:
