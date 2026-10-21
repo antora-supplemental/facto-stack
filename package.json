@@ -1,6 +1,6 @@
 {
   "name": "@antora-supplemental/facto-stack",
-  "version": "0.2.48",
+  "version": "0.2.49",
   "private": true,
   "description": "De-facto Antora stack composer + published stack demo: Valentus (lean) + Lunr + STEM + diagrams (client Mermaid / lightbox / SoftNav; Kroki optional)",
   "license": "MPL-2.0",
@@ -39,7 +39,7 @@
     "test": "node --test test/*.test.js"
   },
   "dependencies": {
-    "@antora-supplemental/antora-search-chat": "github:antora-supplemental/antora-search-chat#v0.1.20",
+    "@antora-supplemental/antora-search-chat": "github:antora-supplemental/antora-search-chat#v0.1.21",
     "@antora-supplemental/asciidoctor-emoji-literals": "github:antora-supplemental/asciidoctor-emoji-literals#main",
     "@antora-supplemental/build-stack": "github:antora-supplemental/build-stack#main",
     "@antora-supplemental/deep-link-contracts": "github:antora-supplemental/deep-link-contracts#v0.1.1",
@@ -57,9 +57,9 @@
     "@antora-supplemental/page-context": "github:antora-supplemental/page-context#v0.6.7",
     "@antora-supplemental/page-edit": "github:antora-supplemental/page-edit#v0.2.5",
     "@antora-supplemental/playbook-pin-auditor": "github:antora-supplemental/playbook-pin-auditor#v0.1.1",
-    "@antora-supplemental/site-nav-tree": "github:antora-supplemental/site-nav-tree#v0.6.9",
-    "@antora-supplemental/soft-nav-page-toc": "github:antora-supplemental/soft-nav-page-toc#v0.1.6",
-    "@antora-supplemental/chassis-compose": "github:antora-supplemental/antora-ui-chassis#d619558&path:packages/chassis-compose",
+    "@antora-supplemental/site-nav-tree": "github:antora-supplemental/site-nav-tree#v0.6.10",
+    "@antora-supplemental/soft-nav-page-toc": "github:antora-supplemental/soft-nav-page-toc#v0.1.7",
+    "@antora-supplemental/chassis-compose": "github:antora-supplemental/antora-ui-chassis#chassis-compose-v0.1.2&path:packages/chassis-compose",
     "@antora-supplemental/stale-page": "github:antora-supplemental/stale-page#v0.1.1",
     "@antora-supplemental/triage-ux-kit": "github:antora-supplemental/triage-ux-kit#v0.1.0",
     "@antora-supplemental/unversioned-component-urls": "github:antora-supplemental/antora-unversioned-component-urls#v2.1.2",
