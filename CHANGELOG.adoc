@@ -1,5 +1,9 @@
 = Changelog
 
+== 2026-10-21 — v0.2.56 pack release (search-chat v0.1.24)
+
+* **v0.2.56** — `@antora-supplemental/antora-search-chat` @ `v0.1.24` (subtle drop shadow under the stacked search compound in navbar and dock placement).
+
 == 2026-10-21 ? v0.2.55 pack release (page-edit v0.3.1)
 
 * **v0.2.55** ? `@antora-supplemental/page-edit` @ `v0.3.1` (Source line: label, then VCS mark, then View | Edit).
