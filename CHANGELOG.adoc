@@ -1,5 +1,9 @@
 = Changelog
 
+== 2026-10-21 — v0.2.51 pack release (search-chat v0.1.23)
+
+* **v0.2.51** — `@antora-supplemental/antora-search-chat` @ `v0.1.23` (dock layout shell only; results panel matches compound width).
+
 == 2026-10-21 — v0.2.50 pack release (incremental + search-chat dock)
 
 * **v0.2.50** — hub and demo profiles register `@antora-supplemental/incremental` @ `v0.1.0` (override key `incremental`); default `searchChat.placement: dock` and `@antora-supplemental/antora-search-chat` @ `v0.1.22`.
