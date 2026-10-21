@@ -10,6 +10,10 @@
 * Remove vendored `examples/supplemental-ui/js/site-diagram-zoom.js` and `css/site-diagram-zoom.css`.
 * Fix `ui.supplemental_files` in `examples/minimal-playbook.yml` (`./supplemental-ui` relative to the playbook file).
 
+== 2026-10-21 — demo soft-nav via chassis-compose
+
+* Demo drops vendored `supplemental-ui/js/soft-nav.js`; `@antora-supplemental/chassis-compose` injects runtime + context (pin antora-ui-chassis @ `chassis-v0.1.1` when released).
+
 == 2026-10-21 — v0.2.47 chassis-compose transitive pin
 
 * Hub and demo profiles register `@antora-supplemental/chassis-compose` (bundles `soft-nav-context`); pack override key stays `softNavContext`.

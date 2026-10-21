@@ -13,7 +13,6 @@
     {{#if site.keys.footerNote}} <span class="site-footer-note">{{{site.keys.footerNote}}}</span>{{/if}}
   </p>
 </footer>
-{{!-- SoftNav before feature scripts; @antora-supplemental/soft-nav-context injects context + bind after this line --}}
-<script src="{{{uiRootPath}}}/js/soft-nav.js" defer></script>
+{{!-- SoftNav + context: @antora-supplemental/chassis-compose injects soft-nav.js then soft-nav-context --}}
 {{> mermaid-client-scripts}}
 {{> diagram-lightbox-scripts}}
