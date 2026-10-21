@@ -1,5 +1,11 @@
 = Changelog
 
+== 2026-10-21 — examples use diagram-lightbox (no vendored zoom)
+
+* `examples/minimal-playbook.yml` registers `@antora-supplemental/mermaid-client/antora` and `@antora-supplemental/diagram-lightbox`; supplemental partials use extension-injected `mermaid-client-*` and `diagram-lightbox-*` (aligned with `demo/`).
+* Remove vendored `examples/supplemental-ui/js/site-diagram-zoom.js` and `css/site-diagram-zoom.css`.
+* Fix `ui.supplemental_files` in `examples/minimal-playbook.yml` (`./supplemental-ui` relative to the playbook file).
+
 == 2026-10-21 — v0.2.47 chassis-compose transitive pin
 
 * Hub and demo profiles register `@antora-supplemental/chassis-compose` (bundles `soft-nav-context`); pack override key stays `softNavContext`.

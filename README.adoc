@@ -134,7 +134,7 @@ pnpm build          # antora demo/playbook.yml → build/site
 pnpm serve          # http-server on :8082
 ----
 
-Bake-path smoke (Kroki Mermaid + themed SVG artifacts) remains under `examples/` (`pnpm build:example`).
+Bake-path smoke (Kroki Mermaid + themed SVG artifacts) remains under `examples/` (`pnpm build:example`). The example playbook also registers `mermaid-client` and `diagram-lightbox` with extension partials (same pattern as `demo/`; no vendored chassis zoom assets).
 
 GitHub Pages:: workflow `.github/workflows/deploy.yml` publishes `demo/`.
 **One-time:** repo Settings → Pages → Source = **GitHub Actions** (same pattern as valentus-theme).
