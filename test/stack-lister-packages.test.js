@@ -8,6 +8,7 @@ const { injectExtensionListerPackages, stackListerPackages } = require('../lib/s
 describe('stackListerPackages', () => {
   it('includes demo Antora members and default AsciiDoc extensions', () => {
     const names = stackListerPackages(DEMO_ANTORA_EXTENSIONS)
+    assert.ok(names.includes('@antora-supplemental/incremental'))
     assert.ok(names.includes('@antora/lunr-extension'))
     assert.ok(names.includes('@antora-supplemental/site-nav-tree'))
     assert.ok(names.includes('@antora-supplemental/page-edit'))

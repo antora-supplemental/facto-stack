@@ -1,5 +1,9 @@
 = Changelog
 
+== 2026-10-21 — v0.2.50 pack release (incremental + search-chat dock)
+
+* **v0.2.50** — hub and demo profiles register `@antora-supplemental/incremental` @ `v0.1.0` (override key `incremental`); default `searchChat.placement: dock` and `@antora-supplemental/antora-search-chat` @ `v0.1.22`.
+
 == 2026-10-21 — v0.2.49 pack release (SoftNavSignals + chassis-v0.1.1)
 
 * **v0.2.49** — `chassis-compose` @ `chassis-compose-v0.1.2` (injected `soft-nav.js`, soft-nav-context **0.2.0** / **SoftNavSignals**); search-chat **v0.1.21**, site-nav-tree **v0.6.10**, soft-nav-page-toc **v0.1.7**; demo no longer vendors `soft-nav.js`.

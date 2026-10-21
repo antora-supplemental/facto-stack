@@ -16,6 +16,7 @@ antora:
 It documents and templates what DevCentr / antora-supplemental already reuse together:
 
 * **Valentus** UI bundle (`v2` rolling tag) — lean theme only
+* **Incremental** (`@antora-supplemental/incremental`) — dependency manifest + dirty-set helpers for faster local rebuilds (hub/demo profiles register it before Lunr)
 * **Lunr** (`@antora/lunr-extension`) — site search
 * **Search / Ask omnibox** (`@antora-supplemental/antora-search-chat`) — Valentus header tabs on top of Lunr (Ask stub until `searchChat.backend_url` is set on the pack)
 * **Emoji** — `@antora-supplemental/asciidoctor-emoji-literals` (interim: pasted Unicode → `emoji:name[]`) + official npm `asciidoctor-emoji` 0.5.x (Twemoji for `emoji:name[]` macros). Drop literals when upstream 1.x runs on core 4.
