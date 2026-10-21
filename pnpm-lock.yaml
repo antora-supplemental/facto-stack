@@ -20,6 +20,9 @@ importers:
       '@antora-supplemental/build-stack':
         specifier: github:antora-supplemental/build-stack#main
         version: https://codeload.github.com/antora-supplemental/build-stack/tar.gz/8e71d388b76e1827915ce21f0a092800aac45358(@antora/site-generator@3.1.15)
+      '@antora-supplemental/chassis-compose':
+        specifier: github:antora-supplemental/antora-ui-chassis#d619558&path:packages/chassis-compose
+        version: https://codeload.github.com/antora-supplemental/antora-ui-chassis/tar.gz/d619558c6713185174f8a6a9caf2de034d9591bb#path:packages/chassis-compose(@antora/site-generator@3.1.15)
       '@antora-supplemental/deep-link-contracts':
         specifier: github:antora-supplemental/deep-link-contracts#v0.1.1
         version: https://codeload.github.com/antora-supplemental/deep-link-contracts/tar.gz/1e44a79d2d17c9106dab9660da181039ae701ae6
@@ -65,9 +68,6 @@ importers:
       '@antora-supplemental/site-nav-tree':
         specifier: github:antora-supplemental/site-nav-tree#v0.6.9
         version: https://codeload.github.com/antora-supplemental/site-nav-tree/tar.gz/51865008d6002e239cf394f24f08049e3e128af1(@antora/site-generator@3.1.15)
-      '@antora-supplemental/soft-nav-context':
-        specifier: github:antora-supplemental/antora-ui-chassis#6433442&path:packages/soft-nav-context
-        version: https://codeload.github.com/antora-supplemental/antora-ui-chassis/tar.gz/6433442ce8a11eedeabc917749ff33d0a4a2dbbb#path:packages/soft-nav-context
       '@antora-supplemental/soft-nav-page-toc':
         specifier: github:antora-supplemental/soft-nav-page-toc#v0.1.6
         version: https://codeload.github.com/antora-supplemental/soft-nav-page-toc/tar.gz/e14807953757708297d2ac4f1ffac1a2810b3ccb(@antora/site-generator@3.1.15)
@@ -148,6 +148,16 @@ packages:
     engines: {node: '>=18'}
     peerDependencies:
       '@antora/site-generator': '>=3.1.0'
+
+  '@antora-supplemental/chassis-compose@https://codeload.github.com/antora-supplemental/antora-ui-chassis/tar.gz/d619558c6713185174f8a6a9caf2de034d9591bb#path:packages/chassis-compose':
+    resolution: {path: packages/chassis-compose, tarball: https://codeload.github.com/antora-supplemental/antora-ui-chassis/tar.gz/d619558c6713185174f8a6a9caf2de034d9591bb}
+    version: 0.1.0
+    engines: {node: '>=18'}
+    peerDependencies:
+      '@antora/site-generator': '>=3.1.0'
+    peerDependenciesMeta:
+      '@antora/site-generator':
+        optional: true
 
   '@antora-supplemental/deep-link-contracts@https://codeload.github.com/antora-supplemental/deep-link-contracts/tar.gz/1e44a79d2d17c9106dab9660da181039ae701ae6':
     resolution: {tarball: https://codeload.github.com/antora-supplemental/deep-link-contracts/tar.gz/1e44a79d2d17c9106dab9660da181039ae701ae6}
@@ -272,8 +282,8 @@ packages:
     peerDependencies:
       '@antora/site-generator': '>=3.1.0'
 
-  '@antora-supplemental/soft-nav-context@https://codeload.github.com/antora-supplemental/antora-ui-chassis/tar.gz/6433442ce8a11eedeabc917749ff33d0a4a2dbbb#path:packages/soft-nav-context':
-    resolution: {path: packages/soft-nav-context, tarball: https://codeload.github.com/antora-supplemental/antora-ui-chassis/tar.gz/6433442ce8a11eedeabc917749ff33d0a4a2dbbb}
+  '@antora-supplemental/soft-nav-context@https://codeload.github.com/antora-supplemental/antora-ui-chassis/tar.gz/d619558c6713185174f8a6a9caf2de034d9591bb#path:packages/soft-nav-context':
+    resolution: {path: packages/soft-nav-context, tarball: https://codeload.github.com/antora-supplemental/antora-ui-chassis/tar.gz/d619558c6713185174f8a6a9caf2de034d9591bb}
     version: 0.1.1
 
   '@antora-supplemental/soft-nav-page-toc@https://codeload.github.com/antora-supplemental/soft-nav-page-toc/tar.gz/e14807953757708297d2ac4f1ffac1a2810b3ccb':
@@ -1974,6 +1984,12 @@ snapshots:
     dependencies:
       '@antora/site-generator': 3.1.15
 
+  '@antora-supplemental/chassis-compose@https://codeload.github.com/antora-supplemental/antora-ui-chassis/tar.gz/d619558c6713185174f8a6a9caf2de034d9591bb#path:packages/chassis-compose(@antora/site-generator@3.1.15)':
+    dependencies:
+      '@antora-supplemental/soft-nav-context': https://codeload.github.com/antora-supplemental/antora-ui-chassis/tar.gz/d619558c6713185174f8a6a9caf2de034d9591bb#path:packages/soft-nav-context
+    optionalDependencies:
+      '@antora/site-generator': 3.1.15
+
   '@antora-supplemental/deep-link-contracts@https://codeload.github.com/antora-supplemental/deep-link-contracts/tar.gz/1e44a79d2d17c9106dab9660da181039ae701ae6':
     dependencies:
       js-yaml: 4.1.1
@@ -2041,7 +2057,7 @@ snapshots:
     dependencies:
       '@antora/site-generator': 3.1.15
 
-  '@antora-supplemental/soft-nav-context@https://codeload.github.com/antora-supplemental/antora-ui-chassis/tar.gz/6433442ce8a11eedeabc917749ff33d0a4a2dbbb#path:packages/soft-nav-context': {}
+  '@antora-supplemental/soft-nav-context@https://codeload.github.com/antora-supplemental/antora-ui-chassis/tar.gz/d619558c6713185174f8a6a9caf2de034d9591bb#path:packages/soft-nav-context': {}
 
   '@antora-supplemental/soft-nav-page-toc@https://codeload.github.com/antora-supplemental/soft-nav-page-toc/tar.gz/e14807953757708297d2ac4f1ffac1a2810b3ccb(@antora/site-generator@3.1.15)':
     optionalDependencies:

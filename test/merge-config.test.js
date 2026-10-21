@@ -6,6 +6,15 @@ const { applyPackConfig, mergeAsciiDocPlaybook, normalizePackConfig } = require(
 const { HUB_ANTORA_EXTENSIONS } = require('../lib/default-stack')
 
 describe('applyPackConfig', () => {
+  it('merges softNavContext overrides into chassis-compose', () => {
+    const out = applyPackConfig(HUB_ANTORA_EXTENSIONS, {
+      softNavContext: { ui: false },
+    })
+    const entry = out.find((e) => e === '@antora-supplemental/chassis-compose' || e.require === '@antora-supplemental/chassis-compose')
+    assert.ok(entry)
+    assert.equal(entry.ui, false)
+  })
+
   it('merges linkValidator overrides', () => {
     const out = applyPackConfig(HUB_ANTORA_EXTENSIONS, {
       linkValidator: { reportEmail: 'dlang@devcentr.org' },
