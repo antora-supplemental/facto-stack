@@ -1,5 +1,9 @@
 = Changelog
 
+== 2026-10-21 -- AdtChrome in Facto stack demo
+
+* Demo supplemental UI loads chassis `adt-chrome.js` + `adt-chrome-compat.js` after SoftNav; `article` partial includes `adt-page-context` for navigation context.
+
 == 2026-10-20 — v0.2.45 pack release (local or remote docs)
 
 * **v0.2.45** — pins `@antora-supplemental/antora-local-content-sources` @ `v0.2.12`: desktop builds choose Use local docs or Use remote docs, then a search window with a per-row Download, Move, or Local button. CI still does not scan. Search chat stays at `v0.1.19`.
