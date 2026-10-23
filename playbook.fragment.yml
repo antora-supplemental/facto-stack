@@ -47,6 +47,15 @@ antora:
     - '@antora-supplemental/article-zones'
     # Bake View | Edit into header zone (no runtime icon JS).
     - '@antora-supplemental/page-edit'
+    # Link every page to the org's other docs sites (team, partners, ...) via a generated
+    # registry page. Say `sites: none` when there are none (hides it, no log).
+    - require: '@antora-supplemental/related-docs'
+      sites: none
+      # sites:
+      #   - name: Team docs
+      #     url: https://team.docs.example.org
+      #     audience: team
+      #     requires_login: true
     # Outbound http(s) link validation + triage page under /link-validator/
     - require: '@antora-supplemental/link-validator'
       reportEmail: support@devcentr.org

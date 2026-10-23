@@ -1,5 +1,9 @@
 = Changelog
 
+== 2026-10-23 - v0.2.65 pack release (related-docs v0.1.0)
+
+* **v0.2.65** - adds `@antora-supplemental/related-docs` @ `v0.1.0` to hub and demo profiles (after page-edit). It links every page to the org's other docs sites through a generated registry page. Configure with pack key `relatedDocs: { sites: [...] }`; set `relatedDocs: { sites: none }` when the org has no other docs sites. Unconfigured: hidden, one info log line.
+
 == 2026-10-22 — Rolling git pins (v0, v0.2)
 
 * **Release CI** — `.github/workflows/release.yml` publishes immutable `vX.Y.Z` GitHub Releases and moves rolling alias tags **`v0`** (latest v0.x.x) and **`v0.2`** (latest v0.2.x). Hubs should pin `github:antora-supplemental/facto-stack#v0.2` for patch-only float within the current minor line; pin exact `vX.Y.Z` when you need bitwise CI.

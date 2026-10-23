@@ -27,6 +27,7 @@ It documents and templates what DevCentr / antora-supplemental already reuse tog
 * **Page context** (`@antora-supplemental/page-context`) — audience / author / rights metadata from `page-*` attributes
 * **Article zones** (`@antora-supplemental/article-zones`) — after compose, move page-context lead from `[data-zone="body"]` into `[data-zone="meta"]` (Valentus 3.0.2+ zoned `article.hbs`; register before page-edit and linkinator)
 * **Page edit** (`@antora-supplemental/page-edit`) — bake View|Edit Source line into the header zone when zoned (legacy: under the title in flat `article.doc`)
+* **Related docs** (`@antora-supplemental/related-docs`) - slim top/footer link to a generated registry page of the org's other docs sites (team, partners, ...). Pack key `relatedDocs: { sites: [...] }`; `relatedDocs: { sites: none }` states there are none. Unconfigured: hidden with one info hint.
 * **Link Validator** (`@antora-supplemental/link-validator`) - outbound http(s) checks + triage page (core CLI: asciidoc-link-validator)
 * **Link-inator** (`@antora-supplemental/linkinator`) - click-time validity chrome + Wayback button
 * **Extension Lister** (`@antora-supplemental/extension-lister`) - footer / purpose / layer listing of installed supplemental extensions

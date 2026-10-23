@@ -27,4 +27,12 @@ describe('default stack extension order', () => {
   it('registers article-zones → page-edit → linkinator on demo profile', () => {
     assertPipelineOrder(DEMO_ANTORA_EXTENSIONS, 'demo')
   })
+
+  it('registers related-docs after page-edit on both profiles', () => {
+    for (const [label, stack] of [['hub', HUB_ANTORA_EXTENSIONS], ['demo', DEMO_ANTORA_EXTENSIONS]]) {
+      const edit = indexOfRequire(stack, '@antora-supplemental/page-edit')
+      const related = indexOfRequire(stack, '@antora-supplemental/related-docs')
+      assert.ok(related > edit, label + ': related-docs after page-edit')
+    }
+  })
 })
