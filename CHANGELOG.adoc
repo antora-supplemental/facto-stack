@@ -1,5 +1,10 @@
 = Changelog
 
+== 2026-10-22 — Rolling git pins (v0, v0.2)
+
+* **Release CI** — `.github/workflows/release.yml` publishes immutable `vX.Y.Z` GitHub Releases and moves rolling alias tags **`v0`** (latest v0.x.x) and **`v0.2`** (latest v0.2.x). Hubs should pin `github:antora-supplemental/facto-stack#v0.2` for patch-only float within the current minor line; pin exact `vX.Y.Z` when you need bitwise CI.
+* **`supported-lines.json`** — documents current heads for each rolling line (updated on every release).
+
 == 2026-10-21 — v0.2.64 pack release (soft-nav-page-toc v0.1.9)
 
 * **v0.2.64** — `@antora-supplemental/soft-nav-page-toc` @ `v0.1.9` (`data-page-toc-root` TOC contract; bundles page-toc runtime). Pair with Valentus **3.0.8** `site-page-toc.js`.

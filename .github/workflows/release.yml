@@ -1,0 +1,113 @@
+name: Release
+
+on:
+  push:
+    tags:
+      # Pure semver only — rolling aliases (v0, v0.2) must not re-trigger.
+      - "v[0-9]+.[0-9]+.[0-9]+"
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Semver X.Y.Z to publish (tag vX.Y.Z must exist on the remote)
+        required: true
+
+permissions:
+  contents: write
+
+env:
+  RELEASE_TAG: ${{ github.event_name == 'workflow_dispatch' && format('v{0}', inputs.version) || github.ref_name }}
+  RELEASE_VERSION: ${{ github.event_name == 'workflow_dispatch' && inputs.version || github.ref_name }}
+
+jobs:
+  release:
+    if: >
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'push' && !contains(github.ref_name, '+'))
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+          ref: ${{ env.RELEASE_TAG }}
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: "24"
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install --no-frozen-lockfile
+
+      - name: Verify package version matches tag
+        run: |
+          PACKAGE_VERSION=$(node -p "require('./package.json').version")
+          TAG_VERSION="${RELEASE_VERSION#v}"
+          TAG_VERSION="${TAG_VERSION%%+*}"
+          if [ "$PACKAGE_VERSION" != "$TAG_VERSION" ]; then
+            echo "Error: package.json version ($PACKAGE_VERSION) does not match tag version ($TAG_VERSION)"
+            exit 1
+          fi
+
+      - name: Generate changelog for release
+        id: changelog
+        run: |
+          VERSION="${RELEASE_VERSION#v}"
+          VERSION="${VERSION%%+*}"
+          if [ -f "CHANGELOG.adoc" ]; then
+            NOTES=$(awk -v v="$VERSION" '
+              $0 ~ "^== \\[" v "\\]" {flag=1; next}
+              flag && /^== \[/ {exit}
+              flag {print}' CHANGELOG.adoc)
+            if [ -z "$NOTES" ]; then
+              NOTES="Release **v${VERSION}**."
+            fi
+          else
+            NOTES="Release **v${VERSION}**."
+          fi
+          echo "$NOTES" > release_notes.md
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v3
+        with:
+          tag_name: ${{ env.RELEASE_TAG }}
+          name: ${{ env.RELEASE_TAG }}
+          body_path: release_notes.md
+          make_latest: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Resolve release commit
+        id: rel
+        run: echo "sha=$(git rev-list -n 1 "${RELEASE_TAG}")" >> "$GITHUB_OUTPUT"
+
+      - name: Update rolling release lines
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VERSION: ${{ env.RELEASE_VERSION }}
+          RELEASE_SHA: ${{ steps.rel.outputs.sha }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: node .github/scripts/post-release.mjs "${RELEASE_VERSION#v}"
+
+      - name: Commit supported-lines.json on main
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          cp supported-lines.json /tmp/supported-lines.json
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin main
+          git checkout main
+          git pull origin main
+          cp /tmp/supported-lines.json supported-lines.json
+          git add supported-lines.json
+          if git diff --staged --quiet; then
+            echo "supported-lines.json unchanged"
+          else
+            git commit -m "chore: update supported-lines.json for ${RELEASE_TAG}"
+            git push origin main
+          fi

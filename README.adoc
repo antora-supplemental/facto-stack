@@ -94,12 +94,27 @@ The extension is a package you get through the pack; `soft-nav.js` is a file the
 Valentus stays lightweight so theme-only adopters are not scared off.
 Facto is discovered **by pack name** (like a VS Code extension pack): theme + the other extensions you usually want, without folding those extras into Valentus core.
 
+== Version pins (git)
+
+Hub `package.json` should declare the compose pack once. Until npm publish, use a GitHub ref:
+
+[source,json]
+----
+"@antora-supplemental/facto-stack": "github:antora-supplemental/facto-stack#v0.2"
+----
+
+* **`#v0.2`** (recommended) — rolling **minor line**: inherit v0.2.x patches when the pack ships fixes; opt into new minors by moving the pin (for example `#v0.3`).
+* **`#v0`** — rolling **major line** within v0.x.x (minors + patches). Use when you accept minor-line moves without editing the pin.
+* **`#v0.2.64`** — exact semver for bitwise CI or release notes you must match literally.
+
+Rolling alias tags (`v0`, `v0.2`) are updated on every immutable release; see `supported-lines.json` for current heads. Immutable tags stay `vX.Y.Z`.
+
 == Quick start
 
 . Copy `playbook.fragment.yml` into your playbook (or start from `examples/minimal-playbook.yml`).
-. `pnpm add antora @antora/lunr-extension asciidoctor-emoji asciidoctor-kroki @antora-supplemental/page-context @antora-supplemental/page-edit @antora-supplemental/link-validator @antora-supplemental/build-stack @antora-supplemental/unversioned-component-urls`
+. `pnpm add github:antora-supplemental/facto-stack#v0.2 antora @antora/lunr-extension asciidoctor-emoji asciidoctor-kroki`
 +
-Until published to npm: `pnpm add github:antora-supplemental/page-context#main github:antora-supplemental/page-edit#main github:antora-supplemental/link-validator#v0.2.0 github:antora-supplemental/linkinator#v0.1.0 github:antora-supplemental/extension-lister#v0.1.0`
+Or pin members individually until you adopt the pack: `pnpm add github:antora-supplemental/page-context#main github:antora-supplemental/page-edit#main github:antora-supplemental/link-validator#v0.2.0 github:antora-supplemental/linkinator#v0.1.0 github:antora-supplemental/extension-lister#v0.1.0`
 +
 Until build-stack is on npm: `pnpm add github:antora-supplemental/build-stack#main`
 . Point `ui.bundle.url` at the Valentus `v2` release zip.
