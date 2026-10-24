@@ -1,0 +1,4 @@
+= soft navigation
+:page-glossary-synonyms: SoftNav
+
+Swapping the article in place when a reader follows a link, instead of reloading the whole page.

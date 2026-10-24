@@ -1,6 +1,6 @@
 {
   "name": "@antora-supplemental/facto-stack",
-  "version": "0.2.67",
+  "version": "0.2.68",
   "private": true,
   "description": "De-facto Antora stack composer + published stack demo: Valentus (lean) + Lunr + STEM + diagrams (client Mermaid / lightbox / SoftNav; Kroki optional)",
   "license": "MPL-2.0",
@@ -45,6 +45,7 @@
     "@antora-supplemental/build-stack": "github:antora-supplemental/build-stack#main",
     "@antora-supplemental/deep-link-contracts": "github:antora-supplemental/deep-link-contracts#v0.1.1",
     "@antora-supplemental/diagram-lightbox": "github:antora-supplemental/antora-diagram-engines#5fcae8cfd7a555e1021e2b081f50e3d78df44ca9&path:packages/diagram-lightbox",
+    "@antora-supplemental/glossary": "github:antora-supplemental/antora-glossary#v0.1.2",
     "@antora-supplemental/extension-lister": "github:antora-supplemental/extension-lister#v0.1.0",
     "@antora-supplemental/facto-stack": "link:.",
     "@antora-supplemental/antora-local-content-sources": "github:antora-supplemental/antora-local-content-sources#v0.2.12",

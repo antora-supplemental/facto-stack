@@ -1,5 +1,9 @@
 = Changelog
 
+== 2026-10-24 - v0.2.68 pack release (glossary v0.1.2)
+
+* **v0.2.68** - adds `@antora-supplemental/glossary` @ `v0.1.1` to hub and demo profiles (after link-registry). Term pages under `glossary/` get a generated letter index and whole-word highlights across the site, and every build exports `glossary.json`. Pack key `glossary: { imports: [...] }` pulls in another site's terms so a private site can highlight public ones. Does nothing on sites with no glossary pages.
+
 == 2026-10-23 - v0.2.67 pack release (link-registry v0.1.1)
 
 * **v0.2.67** - pins `@antora-supplemental/link-registry` **v0.1.1**: the extension now receives its `registry` option, and literal warnings use each component version's own `antora.yml` names (no cross-component false warnings).
