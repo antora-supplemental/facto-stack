@@ -56,6 +56,16 @@ antora:
       #     url: https://team.docs.example.org
       #     audience: team
       #     requires_login: true
+    # Named link registry: each shared outside link lives once as a {url-...} attribute.
+    # Warns on literal uses at build time and publishes _/link-registry/index.json
+    # (every outbound URL, its name, the pages that use it). CI gate: the link-registry
+    # reusable workflow as a first job (see examples/workflows/build-and-deploy.yml).
+    - require: '@antora-supplemental/link-registry'
+      # registry: ./docs/link-registry.adoc   # .adoc attributes file, injected into every component
+      # prefix: url-                          # only url-* attributes count as links
+      # warn_literals: true
+      # index: true
+      # index_path: _/link-registry/index.json
     # Outbound http(s) link validation + triage page under /link-validator/
     - require: '@antora-supplemental/link-validator'
       reportEmail: support@devcentr.org

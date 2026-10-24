@@ -35,4 +35,12 @@ describe('default stack extension order', () => {
       assert.ok(related > edit, label + ': related-docs after page-edit')
     }
   })
+
+  it('registers link-registry after related-docs on both profiles', () => {
+    for (const [label, stack] of [['hub', HUB_ANTORA_EXTENSIONS], ['demo', DEMO_ANTORA_EXTENSIONS]]) {
+      const related = indexOfRequire(stack, '@antora-supplemental/related-docs')
+      const reg = indexOfRequire(stack, '@antora-supplemental/link-registry')
+      assert.ok(reg > related, label + ': link-registry after related-docs')
+    }
+  })
 })

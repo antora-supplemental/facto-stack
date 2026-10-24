@@ -1,0 +1,59 @@
+# facto-stack hub workflow template: link-registry gate -> Antora build -> GitHub Pages deploy.
+#
+# The `links` job runs on every push to every branch (main included) and on every pull request.
+# It is a sparse, shallow checkout of AsciiDoc and attribute files with no pnpm install, so it
+# finishes in seconds. `build` needs it and `deploy` needs `build`: a failing scan stops the
+# Antora build and the Pages deploy from ever starting. Fix locally with `pnpm links:fix`.
+name: Build and deploy
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  links:
+    uses: antora-supplemental/link-registry/.github/workflows/check.yml@v0
+    # with:
+    #   args: --registry docs/link-registry.adoc
+    #   sparse-checkout: docs/link-registry.adoc
+
+  build:
+    needs: links
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "24"
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm exec antora --fetch antora-playbook.yml
+      - uses: actions/upload-pages-artifact@v5
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        with:
+          path: build/site
+
+  deploy:
+    needs: build
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5

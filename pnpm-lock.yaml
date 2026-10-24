@@ -41,6 +41,9 @@ importers:
       '@antora-supplemental/incremental':
         specifier: github:antora-supplemental/antora-incremental#v0.1.0
         version: https://codeload.github.com/antora-supplemental/antora-incremental/tar.gz/09255e09c430d31cad5bbdce8e79cb23ee22d4b3(@antora/site-generator@3.1.15)
+      '@antora-supplemental/link-registry':
+        specifier: github:antora-supplemental/link-registry#v0.1.0
+        version: https://codeload.github.com/antora-supplemental/link-registry/tar.gz/b22495ff9a08a53510a5c9ff020a80b8c0477838(@antora/site-generator@3.1.15)
       '@antora-supplemental/link-validator':
         specifier: github:antora-supplemental/link-validator#v0.2.2
         version: https://codeload.github.com/antora-supplemental/link-validator/tar.gz/f8892aaf9d9d3d2572591fe60280c55375ada160(@antora/site-generator@3.1.15)
@@ -213,6 +216,17 @@ packages:
     hasBin: true
     peerDependencies:
       '@antora/site-generator': '>=3.1.0'
+
+  '@antora-supplemental/link-registry@https://codeload.github.com/antora-supplemental/link-registry/tar.gz/b22495ff9a08a53510a5c9ff020a80b8c0477838':
+    resolution: {tarball: https://codeload.github.com/antora-supplemental/link-registry/tar.gz/b22495ff9a08a53510a5c9ff020a80b8c0477838}
+    version: 0.1.0
+    engines: {node: '>=18'}
+    hasBin: true
+    peerDependencies:
+      '@antora/site-generator': '>=3.1.0'
+    peerDependenciesMeta:
+      '@antora/site-generator':
+        optional: true
 
   '@antora-supplemental/link-validator@https://codeload.github.com/antora-supplemental/link-validator/tar.gz/f8892aaf9d9d3d2572591fe60280c55375ada160':
     resolution: {tarball: https://codeload.github.com/antora-supplemental/link-validator/tar.gz/f8892aaf9d9d3d2572591fe60280c55375ada160}
@@ -2051,6 +2065,10 @@ snapshots:
 
   '@antora-supplemental/incremental@https://codeload.github.com/antora-supplemental/antora-incremental/tar.gz/09255e09c430d31cad5bbdce8e79cb23ee22d4b3(@antora/site-generator@3.1.15)':
     dependencies:
+      '@antora/site-generator': 3.1.15
+
+  '@antora-supplemental/link-registry@https://codeload.github.com/antora-supplemental/link-registry/tar.gz/b22495ff9a08a53510a5c9ff020a80b8c0477838(@antora/site-generator@3.1.15)':
+    optionalDependencies:
       '@antora/site-generator': 3.1.15
 
   '@antora-supplemental/link-validator@https://codeload.github.com/antora-supplemental/link-validator/tar.gz/f8892aaf9d9d3d2572591fe60280c55375ada160(@antora/site-generator@3.1.15)':
