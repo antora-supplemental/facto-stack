@@ -1,5 +1,9 @@
 = Changelog
 
+== 2026-10-23 - v0.2.67 pack release (link-registry v0.1.1)
+
+* **v0.2.67** - pins `@antora-supplemental/link-registry` **v0.1.1**: the extension now receives its `registry` option, and literal warnings use each component version's own `antora.yml` names (no cross-component false warnings).
+
 == 2026-10-23 - v0.2.66 pack release (link-registry v0.1.0)
 
 * **v0.2.66** - adds `@antora-supplemental/link-registry` @ `v0.1.0` to hub and demo profiles (after related-docs). Warns at build time when a page writes a registered `{url-...}` link literally and publishes `_/link-registry/index.json`. Pack key `linkRegistry: { registry: ./docs/link-registry.adoc }`.
