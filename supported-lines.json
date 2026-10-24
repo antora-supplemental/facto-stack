@@ -1,18 +1,18 @@
 {
   "schema": 1,
-  "updated": "2026-10-24T00:37:48.525Z",
+  "updated": "2026-10-24T00:46:47.170Z",
   "product": "@antora-supplemental/facto-stack",
-  "latest": "0.2.66",
+  "latest": "0.2.67",
   "lines": {
     "0": {
       "tag": "v0",
-      "current": "0.2.66",
+      "current": "0.2.67",
       "git_pin": "github:antora-supplemental/facto-stack#v0",
       "line": "0"
     },
     "0.2": {
       "tag": "v0.2",
-      "current": "0.2.66",
+      "current": "0.2.67",
       "git_pin": "github:antora-supplemental/facto-stack#v0.2",
       "line": "0.2"
     }
