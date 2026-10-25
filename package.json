@@ -4,7 +4,14 @@
   "private": true,
   "description": "De-facto Antora stack composer and published stack demo. It wires Valentus (lean), Lunr search, STEM and client-side diagrams (Mermaid, lightbox, SoftNav) together.",
   "antoraRegistry": {
-    "longDescription": "Facto stack composes a working Antora site from Valentus (lean), Lunr search, STEM and client-side diagrams with Mermaid, a lightbox and SoftNav. The published stack demo shows the result.\n\nKroki diagram rendering is optional. The stack works without it."
+    "previews": [
+      { "url": "assets/brand/facto-logotype-light.png", "caption": "Facto logotype (light)" },
+      { "url": "assets/brand/facto-logotype-dark.png", "caption": "Facto logotype (dark)" }
+    ],
+    "longDescription": "Facto stack composes a working Antora site from Valentus (lean), Lunr search, STEM and client-side diagrams with Mermaid, a lightbox and SoftNav. The published stack demo shows the result.\n\nKroki diagram rendering is optional. The stack works without it.",
+    "previews": [
+      { "url": "assets/brand/facto-logotype.png", "caption": "Facto logotype", "svg": "assets/brand/facto-logotype.svg" }
+    ]
   },
   "license": "MPL-2.0",
   "main": "lib/extension.js",

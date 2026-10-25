@@ -18,6 +18,10 @@
 !scripts/**
 !examples/
 !examples/**
+!assets/
+!assets/brand/
+!assets/brand/facto-logotype-light.*
+!assets/brand/facto-logotype-dark.*
 !demo/
 !demo/**
 demo/build/

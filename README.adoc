@@ -1,6 +1,12 @@
 = facto-stack
 :description: De-facto Antora playbook composition — Valentus UI plus search, math, diagrams, and page-context metadata. Not Valentus core.
 
+image::assets/brand/facto-logotype.png[Facto logotype,800]
+
+Logotype source: link:assets/brand/facto-logotype.svg[assets/brand/facto-logotype.svg] (the PNG is exported from it with `node scripts/export-logotype.mjs`; see link:assets/brand/README.adoc[assets/brand/README.adoc]).
+
+image::assets/brand/facto-logotype-light.png[Facto,800]
+
 *facto-stack* (`@antora-supplemental/facto-stack`) is the **compose pack** for a sensible Antora site stack.
 Register it once in the playbook — it is a real Antora extension that loads the member stack internally so footers list the pack, not every bundled package:
 

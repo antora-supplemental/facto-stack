@@ -2,6 +2,8 @@
 
 == Unreleased
 
+* **Facto logotype** - `assets/brand/facto-logotype.svg` (source, outlined letters cut into seven white bars over an orange base bar) and its 1600 px PNG export, regenerated with `node scripts/export-logotype.mjs`. The README shows the PNG and links the SVG; `antoraRegistry.previews` lists the PNG with an `svg` field naming its source.
+* Adds a Facto logotype (`assets/brand/facto-logotype-{light,dark}.svg` with 1600px PNG exports; text converted to outlines). The README shows it at the top and `antoraRegistry.previews` points the extension registry at the PNGs.
 * Package description now states only the main behavior in full sentences. The optional Kroki rendering moved to `antoraRegistry.longDescription`, shown as the full description in the extension registry.
 
 == 2026-10-24 - v0.2.68 pack release (glossary v0.1.2)
