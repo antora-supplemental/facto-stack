@@ -1,0 +1,22 @@
+= Brand assets
+
+[cols="1,2"]
+|===
+| `facto-logotype.svg` | Source of truth. Outlined letters (no font needed), cut into bands by the `#bands` pattern mask.
+| `facto-logotype.png` | 1600 px wide export of `facto-logotype.svg`. Do not edit it by hand.
+|===
+
+== Regenerate the PNG
+
+Needs Inkscape 1.x (`inkscape` on PATH, or set `INKSCAPE` to its path).
+
+[source,shell]
+----
+node scripts/export-logotype.mjs
+# runs: inkscape assets/brand/facto-logotype.svg --export-type=png --export-width=1600 --export-filename=assets/brand/facto-logotype.png
+# add --thumb to also write build/facto-logotype-320.png for a thumbnail check
+----
+
+== Change the bands
+
+In `facto-logotype.svg`, the `#bands` pattern `height` is bar + gap (43) and its inner rect `height` is the bar (29). The pattern starts at `y="220"`, the top of the letters. The orange base bar sits one period below the last white bar.
