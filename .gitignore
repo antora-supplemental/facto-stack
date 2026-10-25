@@ -20,8 +20,10 @@
 !examples/**
 !assets/
 !assets/brand/
-!assets/brand/facto-logotype-light.*
-!assets/brand/facto-logotype-dark.*
+!assets/brand/README.adoc
+!assets/brand/facto-logotype.svg
+!assets/brand/facto-logotype-light.png
+!assets/brand/facto-logotype-dark.png
 !demo/
 !demo/**
 demo/build/
