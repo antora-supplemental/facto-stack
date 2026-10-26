@@ -58,11 +58,11 @@ jobs:
         run: |
           VERSION="${RELEASE_VERSION#v}"
           VERSION="${VERSION%%+*}"
-          if [ -f "CHANGELOG.adoc" ]; then
+          if [ -f "demo/home/modules/ROOT/pages/changelog.adoc" ]; then
             NOTES=$(awk -v v="$VERSION" '
               $0 ~ "^== \\[" v "\\]" {flag=1; next}
               flag && /^== \[/ {exit}
-              flag {print}' CHANGELOG.adoc)
+              flag {print}' demo/home/modules/ROOT/pages/changelog.adoc)
             if [ -z "$NOTES" ]; then
               NOTES="Release **v${VERSION}**."
             fi

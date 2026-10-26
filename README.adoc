@@ -224,3 +224,7 @@ Copy https://github.com/antora-supplemental/antora-ui-chassis/tree/main/packages
 * https://github.com/antora-supplemental/page-context[page-context]
 * https://docs.devcentr.org/home/publishing/antora-diagram-formats.html[DevCentr — Antora diagram formats]
 * https://docs.devcentr.org/home/publishing/antora-essential-extensions.html[DevCentr — Antora essential extensions]
+
+== Changelog
+
+See the https://antora-supplemental.github.io/facto-stack/home/changelog.html[changelog] (source: `demo/home/modules/ROOT/pages/changelog.adoc`).
