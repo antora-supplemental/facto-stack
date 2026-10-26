@@ -22,3 +22,11 @@ html.dark-theme {
   --themed-svg-facto-stack-demo-lightbox-compose-color-status-warning: #422006;
   --themed-svg-facto-stack-demo-lightbox-compose-color-status-warning-border: #facc15;
 }
+
+/* Valentus 4 host layout rule (this file replaces the bundle's site-themed-svg.css). */
+.imageblock.themed-svg themed-svg,
+.imageblock.themed-svg img {
+  display: block;
+  width: 100%;
+  height: auto;
+}

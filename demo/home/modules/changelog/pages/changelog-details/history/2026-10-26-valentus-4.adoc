@@ -1,0 +1,17 @@
+= Move to Valentus 4
+:description: Facto stack moves from the Valentus 3 UI bundle to Valentus 4.2.2.
+
+== What changed
+
+* *UI bundle* - `demo/playbook.yml` loads `https://github.com/antora-supplemental/valentus-theme/releases/download/v4.2.2/ui-bundle.zip` (was `.../download/v3/ui-bundle.zip`). Valentus 4.2.2 is release `4.2.2+antora.3`.
+* *Registry* - `antoraRegistry.requires` is `valentus-theme >=4`; `antoraRegistry.uses` is `valentus-layout-markup >=4`. Valentus 4.2.2 provides `valentus-layout-markup` `4`.
+* *Light/dark mode* - Valentus 4 no longer switches light/dark itself. Its `header-content.hbs` calls `{{> light-dark-navbar-slot}}` and `footer-content.hbs` calls `{{> light-dark-footer-slot}}`; those partials come from `@antora-supplemental/light-dark-mode` (antora-ui-chassis). Without it the build fails with _The partial light-dark-navbar-slot could not be found_. Hub and demo profiles now register `{ require: '@antora-supplemental/light-dark-mode', toggle: 'placed' }` right after chassis-compose, pinned at `light-dark-mode-v0.1.3`. Override it with pack key `lightDarkMode`.
+* *Demo overrides* - `supplemental-ui/partials/footer-content.hbs` adds `{{> light-dark-footer-slot}}` (empty unless `toggle_placement: footer`). `supplemental-ui/css/site-themed-svg.css` replaces the bundle file of the same name, so it now carries the Valentus 4 host layout rule (`display: block; width: 100%`) for themed SVG images.
+
+== Build check
+
+`antora demo/playbook.yml` finishes with exit 0. The home page and the changelog render with the sun/moon toggle in the top bar and link `color-scheme.css`, `light-dark-mode.css`, `valentus-paint.css` and `valentus-chrome.css`; `site-paint.css` is gone. link-validator still reports the same 8 cached invalid links, all from demo fixtures or older pages.
+
+== Not done
+
+`asset-fingerprint` is not in the Facto profiles, so there was no last-extension order to keep.

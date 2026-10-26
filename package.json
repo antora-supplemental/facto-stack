@@ -4,8 +4,8 @@
   "private": true,
   "description": "Facto Antora compose pack: the Valentus theme plus Lunr search with an Ask omnibox, Kroki and Mermaid diagrams with a lightbox, STEM math, page-context keywords, and diagnostics (link validation, orphan, stale-page and nav-drift checks) (and 20 more features)",
   "antoraRegistry": {
-    "requires": {"valentus-theme":">=3"},
-    "uses": {"valentus-layout-markup":">=3"},
+    "requires": {"valentus-theme":">=4"},
+    "uses": {"valentus-layout-markup":">=4"},
     "longDescription": "Facto stack composes a working Antora site from the Valentus theme (lean), Lunr search, STEM and client-side diagrams with Mermaid, a lightbox and SoftNav. The published stack demo shows the result.\n\nKroki diagram rendering is optional. The stack works without it.",
     "previews": [
       { "url": "assets/brand/facto-logotype-light.png", "caption": "Facto logotype (light)", "svg": "assets/brand/facto-logotype.svg" },
@@ -47,6 +47,7 @@
     "test": "node --test test/*.test.js"
   },
   "dependencies": {
+    "@antora-supplemental/light-dark-mode": "github:antora-supplemental/antora-ui-chassis#light-dark-mode-v0.1.3&path:packages/light-dark-mode",
     "@antora-supplemental/antora-search-chat": "github:antora-supplemental/antora-search-chat#v0.1.24",
     "@antora-supplemental/incremental": "github:antora-supplemental/antora-incremental#v0.1.0",
     "@antora-supplemental/asciidoctor-emoji-literals": "github:antora-supplemental/asciidoctor-emoji-literals#main",
