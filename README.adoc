@@ -227,4 +227,4 @@ Copy https://github.com/antora-supplemental/antora-ui-chassis/tree/main/packages
 
 == Changelog
 
-See the https://antora-supplemental.github.io/facto-stack/home/changelog.html[changelog] (source: `demo/home/modules/ROOT/pages/changelog.adoc`).
+See the https://antora-supplemental.github.io/facto-stack/home/changelog/[changelog] (source: `demo/home/modules/ROOT/pages/changelog.adoc`).
