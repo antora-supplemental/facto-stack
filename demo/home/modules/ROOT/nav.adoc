@@ -2,3 +2,4 @@
 * xref:mermaid.adoc[Client Mermaid]
 * xref:lightbox.adoc[Diagram lightbox]
 * xref:soft-nav.adoc[SoftNav]
+* xref:contrast-check-ci.adoc[Contrast check in CI]

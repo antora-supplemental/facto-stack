@@ -2,6 +2,7 @@
 
 == Unreleased
 
+* **Contrast check docs** - new demo page `home::contrast-check-ci.adoc` shows how to add the antora-ui-chassis `contrast-check` (`contrast-check-v0.2.0`) to your own CI: a GitHub Actions job, GitLab/plain CLI installed from the git tag, a `--fail-on` rollout, and a config with a suppression. `contrast-check` stays out of Facto's dependencies.
 * **Facto logotype** - `assets/brand/facto-logotype.svg` is the source: outlined "Facto" letters cut into seven bars by an editable pattern mask, over an orange base bar. `node scripts/export-logotype.mjs` exports `facto-logotype-light.png` and `facto-logotype-dark.png` (1600 px); `--bars`/`--gap` change the bands. The README shows the light PNG and links the SVG, and `antoraRegistry.previews` lists both PNGs with an `svg` field naming the source. Replaces the unsliced light/dark logotype files.
 * Package description now states only the main behavior in full sentences. The optional Kroki rendering moved to `antoraRegistry.longDescription`, shown as the full description in the extension registry.
 
