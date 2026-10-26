@@ -1,3 +1,0 @@
-= Changelog
-
-The changelog is published at https://antora-supplemental.github.io/facto-stack/home/changelog/ (source: `demo/home/modules/ROOT/pages/changelog.adoc`).
