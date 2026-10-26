@@ -1,5 +1,5 @@
 = facto-stack
-:description: De-facto Antora playbook composition — Valentus UI plus search, math, diagrams, and page-context metadata. Not Valentus core.
+:description: De-facto Antora playbook composition — Valentus theme UI plus search, math, diagrams, and page-context metadata. Not Valentus theme core.
 
 image::assets/brand/facto-logotype-light.png[Facto logotype,800]
 
