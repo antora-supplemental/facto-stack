@@ -2,6 +2,6 @@
 :hide-page:
 :navtree-parent: changelog.adoc
 
-On 2026-10-26 the full changelog moved from the repository root (`CHANGELOG.adoc`) into the demo `home` component at `demo/home/modules/ROOT/pages/changelog.adoc`, per the owned-changelog convention (Antora repos keep the changelog inside Antora). All entries were kept unchanged. The root file is now a one-line pointer to the published page, and the release workflow reads release notes from the new path.
+On 2026-10-26 the full changelog moved from the repository root (`CHANGELOG.adoc`) into the demo `home` component at `demo/home/modules/ROOT/pages/changelog.adoc`, per the owned-changelog convention (Antora repos keep the changelog inside Antora). All entries were kept unchanged. It then moved into its own `changelog` module (`demo/home/modules/changelog/pages/index.adoc`, history under `changelog-details/history/`), the root file was removed, and the release workflow reads release notes from the new path.
 
-Back to xref:changelog.adoc[Changelog].
+Back to xref:index.adoc[Changelog].

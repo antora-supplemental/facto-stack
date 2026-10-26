@@ -2,7 +2,9 @@
 
 == Unreleased
 
-* **Changelog moved into the docs** - the changelog now lives in the demo `home` component (`demo/home/modules/ROOT/pages/changelog.adoc`) and is in the nav; the root `CHANGELOG.adoc` is a short pointer. Detail and history pages go in `changelog-details/` beside it. See xref:changelog-details/history/2026-10-26-changelog-moved-into-docs.adoc[History: changelog moved into the docs].
+* **Registry contracts** - `antoraRegistry.uses` declares `valentus-layout-markup >=3`, so the registry links Facto to Valentus by contract.
+
+* **Changelog moved into the docs** - the changelog now lives in the demo `home` component `changelog` module (`demo/home/modules/changelog/pages/index.adoc`) and is in the nav; the root `CHANGELOG.adoc` is removed. Detail and history pages go in `changelog-details/` beside it. See xref:changelog-details/history/2026-10-26-changelog-moved-into-docs.adoc[History: changelog moved into the docs].
 * **Contrast check docs** - new demo page `home::contrast-check-ci.adoc` shows how to add the antora-ui-chassis `contrast-check` (`contrast-check-v0.2.0`) to your own CI: a GitHub Actions job, GitLab/plain CLI installed from the git tag, a `--fail-on` rollout, and a config with a suppression. `contrast-check` stays out of Facto's dependencies.
 * **Facto logotype** - `assets/brand/facto-logotype.svg` is the source: outlined "Facto" letters cut into seven bars by an editable pattern mask, over an orange base bar. `node scripts/export-logotype.mjs` exports `facto-logotype-light.png` and `facto-logotype-dark.png` (1600 px); `--bars`/`--gap` change the bands. The README shows the light PNG and links the SVG, and `antoraRegistry.previews` lists both PNGs with an `svg` field naming the source. Replaces the unsliced light/dark logotype files.
 * Package description now states only the main behavior in full sentences. The optional Kroki rendering moved to `antoraRegistry.longDescription`, shown as the full description in the extension registry.

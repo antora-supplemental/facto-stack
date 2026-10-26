@@ -3,4 +3,4 @@
 * xref:lightbox.adoc[Diagram lightbox]
 * xref:soft-nav.adoc[SoftNav]
 * xref:contrast-check-ci.adoc[Contrast check in CI]
-* xref:changelog.adoc[Changelog]
+* xref:changelog:index.adoc[Changelog]

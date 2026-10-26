@@ -5,6 +5,7 @@
   "description": "Facto Antora compose pack: the Valentus theme plus Lunr search with an Ask omnibox, Kroki and Mermaid diagrams with a lightbox, STEM math, page-context keywords, and diagnostics (link validation, orphan, stale-page and nav-drift checks) (and 20 more features)",
   "antoraRegistry": {
     "requires": {"valentus-theme":">=3"},
+    "uses": {"valentus-layout-markup":">=3"},
     "longDescription": "Facto stack composes a working Antora site from the Valentus theme (lean), Lunr search, STEM and client-side diagrams with Mermaid, a lightbox and SoftNav. The published stack demo shows the result.\n\nKroki diagram rendering is optional. The stack works without it.",
     "previews": [
       { "url": "assets/brand/facto-logotype-light.png", "caption": "Facto logotype (light)", "svg": "assets/brand/facto-logotype.svg" },
@@ -25,7 +26,6 @@
     "bin/**/*",
     "playbook.fragment.yml",
     "README.adoc",
-    "CHANGELOG.adoc",
     "LICENSE",
     "antora-registry.md"
   ],

@@ -2,7 +2,6 @@
 !.gitignore
 !README.adoc
 !AGENTS.md
-!CHANGELOG.adoc
 !supported-lines.json
 !package.json
 !pnpm-lock.yaml
