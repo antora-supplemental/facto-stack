@@ -1,6 +1,6 @@
 {
   "name": "@antora-supplemental/facto-stack",
-  "version": "0.2.68",
+  "version": "0.3.0",
   "private": true,
   "description": "Facto Antora compose pack: the Valentus theme plus Lunr search with an Ask omnibox, Kroki and Mermaid diagrams with a lightbox, STEM math, page-context keywords, and diagnostics (link validation, orphan, stale-page and nav-drift checks) (and 20 more features)",
   "antoraRegistry": {
