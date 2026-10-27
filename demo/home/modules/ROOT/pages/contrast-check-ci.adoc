@@ -1,64 +1,79 @@
 = Contrast check in your CI
-:description: Add the antora-ui-chassis contrast-check to a Facto site's CI, on GitHub Actions or any other CI.
+:description: Facto runs the antora-ui-chassis contrast-check on every build, in every color scheme, with the search results open.
 :navtitle: Contrast check in CI
 :page-audience: Facto stack users who build their own Antora site in CI
 :page-doc-type: how-to
 :page-orig-author: Ryan Johnson
 :page-last-author: Cursor agent on behalf of Ryan Johnson
-:page-last-edited: 2026-10-26
-:page-keywords: contrast-check, accessibility, wcag, color scheme, ci, github actions, gitlab ci
-:cc-tag: contrast-check-v0.2.0
+:page-last-edited: 2026-10-27
+:page-keywords: contrast-check, accessibility, wcag, color scheme, dark mode, search, ci, github actions, gitlab ci
+:cc-tag: contrast-check-v0.3.0
 :url-cc-repo: https://github.com/antora-supplemental/antora-ui-chassis
 :url-cc-readme: {url-cc-repo}/blob/{cc-tag}/packages/contrast-check/README.adoc
 :url-cc-docs: {url-cc-repo}/blob/{cc-tag}/docs/modules/ROOT/pages/contrast-check.adoc
 
 == Why
 
-Facto ships the Valentus theme with several color schemes, and your own paint or supplemental CSS can break contrast in one scheme while the others look fine.
-`contrast-check` loads your built site in Chrome once per color scheme the paint declares and reports WCAG AA failures as errors and near misses as warnings, each with a suggested color.
+Facto ships the Valentus theme with several color schemes, and extensions add their own CSS and dynamic UI, such as the search dropdown.
+A problem can show up in one scheme or one UI state while everything else looks fine.
+`contrast-check` loads the built site in Chrome once per color scheme the paint declares, opens dynamic UI such as search results, and reports WCAG AA failures as errors and near misses as warnings, each with a suggested color.
 
-`contrast-check` is *not* part of Facto and is not a Facto dependency.
-It is a build-time test from the `antora-ui-chassis` monorepo (`packages/contrast-check`), so you add it to *your* CI, after your Antora build.
+== Built into Facto (since v0.4.0)
+
+`contrast-check` ({cc-tag}) is a Facto dependency.
+The facto-stack extension runs it on the published site after every `antora` build, so you do not add a CI step.
 Full reference: {url-cc-docs}[chassis contrast-check docs] and the {url-cc-readme}[package README].
 
-== GitHub Actions
+What the default run does:
 
-Run the Action on the built site.
-Leave `schemes` empty to check every scheme in the paint's manifest.
-GitHub-hosted Ubuntu runners already have Chrome.
+* *Every color scheme* the paint declares (light and dark for Valentus).
+* *Dynamic states* `search-results` and `fixtures`: after the static check, each page is reloaded, a query is typed into the search box (antora-search-chat registers the sample state), and the open dropdown is checked. Motion is reduced and transitions are off, so the end state is what gets measured.
+* *Up to 20 pages* (`maxPages: 20`). Each page costs about 10-15 s per scheme with both states, so 20 pages is roughly 8 minutes on a GitHub-hosted runner. Raise it for a nightly run, or list key pages with `pages`.
+* *Fail scope `dark-and-states`*: the build fails on WCAG AA *errors* in dark mode, and on errors a dynamic state introduces (a state re-checks the whole page, so a light-mode issue already on the static page is not counted twice).
+  Every other finding, light-mode static pages and all warnings, is printed as a report and does not fail the build.
+* *Default suppressions* from `lib/contrast-check.suppress.json`, each with a reason and an expiry date.
+* *Chrome*: found at the usual Linux, macOS or Windows paths, or set `CONTRAST_CHECK_CHROME`. Without a browser the check is skipped with a warning locally, and fails the build when `CI` is set.
 
-[source,yaml,subs=attributes+]
+=== Per-site override
+
+Set the pack key `contrastCheck` in the facto-stack extension entry of your playbook:
+
+[source,yaml]
 ----
-jobs:
-  contrast:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-node@v7
-        with:
-          node-version: "20"
-      - name: Build Antora site
+antora:
+  extensions:
+    - require: '@antora-supplemental/facto-stack'
+      contrastCheck:
+        failOn: error              # error (default) | warning | none
+        failScope: dark-and-states # default; `all` also fails light-mode static errors
+        maxPages: 20               # default 20
+        pages: "index.html,guides/**/*.html"
+        schemes: "light,dark"      # default: every scheme
+        states: [search-results, fixtures]   # add reveal-hidden for a stricter (noisier) pass
+        config: contrast-check.config.json   # default: picked up from the playbook dir
+        suppress: contrast-check.suppress.yaml
+        json: build/contrast-check.json      # keep the full report
+        defaultSuppressions: true            # false drops Facto's reviewed suppressions
+        requireBrowser: false                # default: true when CI is set
+----
+
+Turn it off with `contrastCheck: false` (or `enabled: false`).
+Environment overrides: `FACTO_CONTRAST_CHECK=0` skips the check, `FACTO_CONTRAST_CHECK_FAIL_ON` sets `failOn` and `FACTO_CONTRAST_CHECK_FAIL_SCOPE` sets `failScope`.
+
+A practical rollout for a site that wants a stricter gate: keep the default until dark mode is clean, then set `failScope: all`, and move to `failOn: warning` only if near misses should fail too.
+
+=== GitHub Actions
+
+GitHub-hosted Ubuntu runners already have Chrome, and the check runs inside your existing build step:
+
+[source,yaml]
+----
+      - name: Build Antora site (includes the contrast check)
         run: |
           npm install
-          npx antora antora-playbook.yml   # writes build/site
-      - name: Contrast check (every color scheme)
-        uses: antora-supplemental/antora-ui-chassis/packages/contrast-check@{cc-tag}
-        with:
-          site: build/site
-          pages: "index.html,**/*.html"
-          max-pages: "50"
-          schemes: ""            # empty = every scheme the paint declares
-          fail-on: none          # report only; move to warning, then error
-          suppress: contrast-check.suppress.yaml   # optional
-          show-suppressed: "true"
-          json: contrast-check.json
+          npx antora antora-playbook.yml
 ----
-
-Inputs: `site`, `pages`, `max-pages`, `schemes`, `paint`, `config`, `fail-on`, `suppress`, `show-suppressed`, `fail-on-stale`, `json`, `args`.
-The step writes `::error` / `::warning` annotations and a summary table to the job summary, and the JSON report path is the `report` output.
-`config` defaults to `./contrast-check.config.json` when that file exists.
-
-== Other CI (GitLab CI and others)
+== Running it outside Facto (GitLab CI and others)
 
 The CLI needs Node.js 20 or later and Chrome or Chromium.
 It finds `/usr/bin/google-chrome`, `/usr/bin/chromium` or Chrome on Windows; otherwise set `CONTRAST_CHECK_CHROME` to the browser path.
@@ -105,7 +120,7 @@ contrast-check:
 Common flags: `--pages <list>`, `--max-pages <n>`, `--schemes <ids>` (default every scheme), `--paint <file.css>`, `--config <file>`, `--suppress <file>`, `--show-suppressed`, `--fail-on-stale`, `--json=<file>`, `--quiet`.
 Exit codes: 0 clean (under `--fail-on`), 1 failed, 2 usage or setup error.
 
-== Roll out with --fail-on
+=== Roll out with --fail-on
 
 [cols="1,3"]
 |===
@@ -118,7 +133,7 @@ A practical order: `none` while you fix or suppress the first report, then `erro
 Move to `warning` only if you also want near misses to fail.
 The config key `failOn` sets the same thing.
 
-== Config and suppressions
+== Config and suppressions (standalone CLI)
 
 Put `contrast-check.config.json` in the directory the check runs from (it is picked up by default), or pass `--config` / the `config` input.
 Unknown keys are an error.

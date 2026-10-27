@@ -1,0 +1,23 @@
+[
+  {
+    "id": "facto-search-input-boundary",
+    "rule": "control-boundary",
+    "selector": "#search-input",
+    "reason": "The Valentus search compound draws the field boundary on .valentus-search-compound, not on #search-input; its rim (#acced2 light, #3a4454 dark) is under 3:1 and changing it alters light mode. Follow-up: raise the rim in antora-search-chat.",
+    "expires": "2027-01-31"
+  },
+  {
+    "id": "facto-nav-tree-filter-control-boundary",
+    "rule": "control-boundary",
+    "selector": "input.nav-tree-filter-input",
+    "reason": "site-nav-tree filter field: border/focus ring is ~1.2:1 in both schemes; the fix changes light mode and needs sign-off. Follow-up in site-nav-tree.",
+    "expires": "2027-01-31"
+  },
+  {
+    "id": "facto-nav-tree-filter-focus-indicator",
+    "rule": "focus-indicator",
+    "selector": "input.nav-tree-filter-input",
+    "reason": "site-nav-tree filter field: border/focus ring is ~1.2:1 in both schemes; the fix changes light mode and needs sign-off. Follow-up in site-nav-tree.",
+    "expires": "2027-01-31"
+  }
+]

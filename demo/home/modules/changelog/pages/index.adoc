@@ -1,7 +1,10 @@
 = Changelog
 
-== Unreleased
+== 2026-10-27 - v0.4.0 built-in contrast check
 
+* **Built-in contrast check** - Facto now depends on `@antora-supplemental/contrast-check` (`contrast-check-v0.3.0`) and runs it after every build on the published site, across every color scheme, with the search results open (`search-results` and `fixtures` states). By default the build fails only on WCAG AA errors in dark mode or ones a dynamic state introduces; everything else (light-mode static pages, warnings) is reported without failing. `maxPages` defaults to 20. Per-site override with pack key `contrastCheck` (`false`, `failOn`, `failScope: all`, `maxPages`, `schemes`, `states`, suppressions); env `FACTO_CONTRAST_CHECK=0` skips it. In CI a missing Chrome is an error. See xref:ROOT:contrast-check-ci.adoc[Contrast check in CI].
+* **Search dropdown in dark mode** - pins `@antora-supplemental/antora-search-chat` `v0.1.25`, which gives the Lunr result dropdown dark-mode ink (component header, document title, section title and highlights were 1.04-1.59:1, now 6.88-14.64:1). Light mode is unchanged.
+* **Default suppressions** - `lib/contrast-check.suppress.json` accepts three known findings until 2027-01-31: the `#search-input` boundary and the site-nav-tree filter field's boundary and focus ring. Fixing them changes light mode; they are follow-ups.
 * **Demo bundle** - `demo/playbook.yml` loads Valentus `v4.3.1` (current breadcrumb no longer underlined).
 == 2026-10-26 - v0.3.1 diagram-engines tags, Valentus 4.3.0 demo
 
