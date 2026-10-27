@@ -2,6 +2,7 @@
 
 == Unreleased
 
+* **Demo bundle** - `demo/playbook.yml` loads Valentus `v4.3.1` (current breadcrumb no longer underlined).
 == 2026-10-26 - v0.3.1 diagram-engines tags, Valentus 4.3.0 demo
 
 * **Diagram pins** - `@antora-supplemental/mermaid-client` and `@antora-supplemental/diagram-lightbox` move from commit `5fcae8c` to tags `mermaid-client-v0.2.2` / `diagram-lightbox-v0.2.2`. The Mermaid config element is now `#valentus-mermaid-config` (legacy `#adt-mermaid-config` is still read) and diagram/lightbox classes are `valentus-*`.
