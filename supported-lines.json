@@ -1,12 +1,12 @@
 {
   "schema": 1,
-  "updated": "2026-10-26T23:52:46.116Z",
+  "updated": "2026-10-27T05:40:48.213Z",
   "product": "@antora-supplemental/facto-stack",
-  "latest": "0.3.1",
+  "latest": "0.4.0",
   "lines": {
     "0": {
       "tag": "v0",
-      "current": "0.3.1",
+      "current": "0.4.0",
       "git_pin": "github:antora-supplemental/facto-stack#v0",
       "line": "0"
     },
@@ -21,6 +21,12 @@
       "current": "0.3.1",
       "git_pin": "github:antora-supplemental/facto-stack#v0.3",
       "line": "0.3"
+    },
+    "0.4": {
+      "tag": "v0.4",
+      "current": "0.4.0",
+      "git_pin": "github:antora-supplemental/facto-stack#v0.4",
+      "line": "0.4"
     }
   },
   "notes": "Git tags remain pure semver (vX.Y.Z). Rolling aliases vX and vX.Y are git refs for pnpm/github: pins — not npm registry ranges."
