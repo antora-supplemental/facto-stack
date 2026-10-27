@@ -1,5 +1,9 @@
 = Changelog
 
+== 2026-10-27 - v0.4.1 search box corners
+
+* **Search box corners** - pins `@antora-supplemental/antora-search-chat` `v0.1.26`. The square wrapper around the rounded search box no longer paints the search surface color, so it stops showing in the box corners in light and dark mode.
+
 == 2026-10-27 - v0.4.0 built-in contrast check
 
 * **Built-in contrast check** - Facto now depends on `@antora-supplemental/contrast-check` (`contrast-check-v0.3.0`) and runs it after every build on the published site, across every color scheme, with the search results open (`search-results` and `fixtures` states). By default the build fails only on WCAG AA errors in dark mode or ones a dynamic state introduces; everything else (light-mode static pages, warnings) is reported without failing. `maxPages` defaults to 20. Per-site override with pack key `contrastCheck` (`false`, `failOn`, `failScope: all`, `maxPages`, `schemes`, `states`, suppressions); env `FACTO_CONTRAST_CHECK=0` skips it. In CI a missing Chrome is an error. See xref:ROOT:contrast-check-ci.adoc[Contrast check in CI].
