@@ -12,12 +12,5 @@
     "selector": "input.nav-tree-filter-input",
     "reason": "site-nav-tree filter field: border/focus ring is ~1.2:1 in both schemes; the fix changes light mode and needs sign-off. Follow-up in site-nav-tree.",
     "expires": "2027-01-31"
-  },
-  {
-    "id": "facto-nav-tree-filter-focus-indicator",
-    "rule": "focus-indicator",
-    "selector": "input.nav-tree-filter-input",
-    "reason": "site-nav-tree filter field: border/focus ring is ~1.2:1 in both schemes; the fix changes light mode and needs sign-off. Follow-up in site-nav-tree.",
-    "expires": "2027-01-31"
   }
 ]

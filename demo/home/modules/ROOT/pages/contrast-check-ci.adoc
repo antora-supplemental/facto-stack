@@ -7,7 +7,7 @@
 :page-last-author: Cursor agent on behalf of Ryan Johnson
 :page-last-edited: 2026-10-27
 :page-keywords: contrast-check, accessibility, wcag, color scheme, dark mode, search, ci, github actions, gitlab ci
-:cc-tag: contrast-check-v0.3.0
+:cc-tag: contrast-check-v0.3.1
 :url-cc-repo: https://github.com/antora-supplemental/antora-ui-chassis
 :url-cc-readme: {url-cc-repo}/blob/{cc-tag}/packages/contrast-check/README.adoc
 :url-cc-docs: {url-cc-repo}/blob/{cc-tag}/docs/modules/ROOT/pages/contrast-check.adoc

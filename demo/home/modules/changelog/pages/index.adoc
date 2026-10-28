@@ -1,5 +1,12 @@
 = Changelog
 
+== 2026-10-28 - v0.4.2 contrast fixes at the source
+
+* **page-context** - pins `@antora-supplemental/page-context` `v0.7.3`. The source line under a page now gets the page-context text tokens (it fell back to 3.92:1 in dark mode), and the muted text is opaque, so the source label, byline, time and table headers pass 4.5:1 in both modes.
+* **Contrast check** - pins `@antora-supplemental/contrast-check` `contrast-check-v0.3.1`. The focus check judges the strongest focus indicator instead of the first one found, so a solid accent border next to a faint halo is no longer a failure.
+* **Suppressions** - removes `facto-nav-tree-filter-focus-indicator`; the site-nav-tree filter's accent border change passes on its own. The two `control-boundary` suppressions stay.
+* **Demo bundle** - `demo/playbook.yml` loads Valentus `v4.3.2` (paint slot in `head-styles.hbs`, so a hub's own `head-meta.hbs` override no longer drops the paint; solid search focus ring; `--adt-*` fallbacks).
+
 == 2026-10-27 - v0.4.1 search box corners
 
 * **Search box corners** - pins `@antora-supplemental/antora-search-chat` `v0.1.26`. The square wrapper around the rounded search box no longer paints the search surface color, so it stops showing in the box corners in light and dark mode.
