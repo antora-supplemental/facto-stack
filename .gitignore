@@ -31,3 +31,6 @@ examples/build/
 !.github/**
 !/.editorconfig
 !/.gitattributes
+
+.contrast-check-baseline.json
+**/.contrast-check-baseline.json

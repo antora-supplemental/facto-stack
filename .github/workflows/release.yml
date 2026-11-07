@@ -60,8 +60,9 @@ jobs:
           VERSION="${VERSION%%+*}"
           if [ -f "demo/home/modules/changelog/pages/index.adoc" ]; then
             NOTES=$(awk -v v="$VERSION" '
+              $0 ~ "^=== v" v "([ +]|$)" {flag=1; next}
               $0 ~ "^== \\[" v "\\]" {flag=1; next}
-              flag && /^== \[/ {exit}
+              flag && /^==[= ]/ {exit}
               flag {print}' demo/home/modules/changelog/pages/index.adoc)
             if [ -z "$NOTES" ]; then
               NOTES="Release **v${VERSION}**."

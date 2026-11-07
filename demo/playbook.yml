@@ -39,7 +39,7 @@ content:
 
 ui:
   bundle:
-    url: https://github.com/antora-supplemental/valentus-theme/releases/download/v4.3.2/ui-bundle.zip
+    url: https://github.com/antora-supplemental/valentus-theme/releases/download/v4.3.3/ui-bundle.zip
     snapshot: true
   supplemental_files: ./supplemental-ui
 
@@ -48,6 +48,9 @@ antora:
     - ./lib/verify-themed-svg-dark-mode.js
     - require: '@antora-supplemental/facto-stack'
       profile: demo
+      contrastCheck:
+        maxPages: 6
+        pages: [home/index.html, demo-pages/code-blocks/index.html, demo-pages/extensions/interactive-elements/index.html]
       siteNavTree:
         enabled: true
         include: [home, demo-pages]

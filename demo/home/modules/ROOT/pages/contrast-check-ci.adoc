@@ -191,3 +191,18 @@ Mark an element (or an ancestor) in your templates or content:
 The value lists rule ids, aliases or globs; an empty value suppresses every rule.
 These show as suppressed by `inline`.
 Paint and token findings have no element and need a `suppress` entry.
+== Source-aware page selection (Facto 0.5.0)
+
+Keep a successful-run baseline per content source, then select every changed/new page plus one representative per discovered layout and your configured extension representatives. The selection is sorted identically on Windows and Linux. A changed shared include, image, example, nav or component descriptor expands that source to all its pages. New pages remain mandatory even when old Git history is no longer available.
+
+[source,yaml]
+----
+contrastCheck:
+  maxPages: 20
+  pages: [home/index.html, home/glossary/index.html]
+  sampling:
+    baseline: build/contrast-check-baseline.json
+    # baseRef: origin/main # optional explicit comparison base
+----
+
+Restore the baseline from the last successful CI/deploy and save it only when the whole workflow succeeds. The checker writes a candidate baseline after contrast passes; CI must not cache it from a failed deployment. A missing/unresolvable source base uses the sorted broad fallback budget plus layout/configured representatives; known changes and new pages are never capped. Without a saved baseline, sampling.baseRef or FACTO_CONTRAST_BASE_REF can provide the Git base. To reproduce CI locally, use the same baseline and source revisions. Set sampling: false only to explicitly opt out and restore the legacy page-cap behavior.
