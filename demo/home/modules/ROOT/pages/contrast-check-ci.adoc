@@ -52,7 +52,8 @@ antora:
         states: [search-results, fixtures]   # add reveal-hidden for a stricter (noisier) pass
         config: contrast-check.config.json   # default: picked up from the playbook dir
         suppress: contrast-check.suppress.yaml
-        json: build/contrast-check.json      # keep the full report
+        json: build/contrast-check/report.json  # default; full report incl. every exempted finding
+        exempted: summary                    # exempted findings as info lines: summary (default), all, none
         defaultSuppressions: true            # false drops Facto's reviewed suppressions
         requireBrowser: false                # default: true when CI is set
 ----
@@ -117,7 +118,7 @@ contrast-check:
     paths: [contrast-check.json]
 ----
 
-Common flags: `--pages <list>`, `--max-pages <n>`, `--schemes <ids>` (default every scheme), `--paint <file.css>`, `--config <file>`, `--suppress <file>`, `--show-suppressed`, `--fail-on-stale`, `--json=<file>`, `--quiet`.
+Common flags: `--pages <list>`, `--max-pages <n>`, `--schemes <ids>` (default every scheme), `--paint <file.css>`, `--config <file>`, `--suppress <file>`, `--exempted summary|all|none`, `--show-suppressed`, `--fail-on-stale`, `--json=<file>`, `--quiet`.
 Exit codes: 0 clean (under `--fail-on`), 1 failed, 2 usage or setup error.
 
 === Roll out with --fail-on
@@ -132,6 +133,23 @@ Exit codes: 0 clean (under `--fail-on`), 1 failed, 2 usage or setup error.
 A practical order: `none` while you fix or suppress the first report, then `error` to gate merges.
 Move to `warning` only if you also want near misses to fail.
 The config key `failOn` sets the same thing.
+
+== Exempted findings in the log
+
+Suppressed findings are not hidden. The check prints an info block on stdout (so it shows even with Antora `--log-level warn`): one line per suppression entry with its expiry, reason and error/warning counts, then up to three example lines such as
+
+----
+info  exempted by devcentr-accent-links-light until 2027-01-31: 412 finding(s) (412 error, 0 warning): brand accent ...
+        exempted: color-contrast light/light a #178f80 on #f3f5f8 until 2027-01-31 (devcentr-accent-links-light: ...)
+----
+
+In GitHub Actions each entry is also a `::notice` and the step summary has an exempted table. Facto's closing line separates what is left:
+
+----
+contrast-check: 89 finding(s) reported only (outside fail scope dark-and-states / level error): 32 unexempted error(s), 57 unexempted warning(s); 0 exempted by suppressions; report build/contrast-check/report.json
+----
+
+The full JSON report (every finding and every exempted finding with `suppressedBy`, `suppressReason` and `suppressExpires`) is kept at `build/contrast-check/report.json`; upload it as a CI artifact.
 
 == Config and suppressions (standalone CLI)
 

@@ -42,3 +42,16 @@ test('contrast-check per-site override and opt-out', () => {
   assert.equal(c.failOn, 'warning')
   assert.ok(a.includes('--schemes') && !a.some((x) => String(x).endsWith('contrast-check.suppress.json')))
 })
+
+test('contrast-check gates merged multi-scheme findings that include dark', () => {
+  const F = [{ level: 'error', schemes: ['light/light', 'dark/dark'], rule: 'focus-not-visible' }, { level: 'error', schemes: ['light/light'], rule: 'x' }]
+  assert.equal(gating(F, normalize(undefined)).length, 1)
+})
+
+test('contrast-check summary line counts unexempted errors and exempted findings', () => {
+  const { summaryLine } = require('../lib/contrast-check')
+  const F = [{ level: 'error', scheme: 'light', mode: 'light' }, { level: 'warning', scheme: 'light', mode: 'light' }, { level: 'warning', scheme: 'light', mode: 'light' }]
+  const s = summaryLine(F, [], [{}, {}, {}], normalize(undefined), 'build/contrast-check/report.json')
+  assert.match(s, /3 finding\(s\) reported only .*: 1 unexempted error\(s\), 2 unexempted warning\(s\); 3 exempted by suppressions; report build\/contrast-check\/report\.json/)
+  assert.ok(args('/s', normalize(undefined), '/pb').join(' ').includes('--exempted summary'))
+})
