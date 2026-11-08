@@ -191,14 +191,15 @@ Mark an element (or an ancestor) in your templates or content:
 The value lists rule ids, aliases or globs; an empty value suppresses every rule.
 These show as suppressed by `inline`.
 Paint and token findings have no element and need a `suppress` entry.
-== Source-aware page selection (Facto 0.5.0)
+== Source-aware page selection (Facto 0.5.1)
 
-Keep a successful-run baseline per content source, then select every changed/new page plus one representative per discovered layout and your configured extension representatives. The selection is sorted identically on Windows and Linux. A changed shared include, image, example, nav or component descriptor expands that source to all its pages. New pages remain mandatory even when old Git history is no longer available.
+Keep a successful-run baseline per content source, then select every changed/new page plus one representative per discovered layout and your configured extension representatives. The selection is sorted identically on Windows and Linux. A changed include selects only its transitive page dependents. Navigation, component descriptors, images, theme/UI and preprocessor changes use the representative set, not every page. New pages remain mandatory even when old Git history is no longer available.
 
 [source,yaml]
 ----
 contrastCheck:
   maxPages: 20
+  maxDurationMs: 600000 # total audit budget, not per page
   pages: [home/index.html, home/glossary/index.html]
   sampling:
     baseline: build/contrast-check-baseline.json
@@ -206,3 +207,11 @@ contrastCheck:
 ----
 
 Restore the baseline from the last successful CI/deploy and save it only when the whole workflow succeeds. The checker writes a candidate baseline after contrast passes; CI must not cache it from a failed deployment. A missing/unresolvable source base uses the sorted broad fallback budget plus layout/configured representatives; known changes and new pages are never capped. Without a saved baseline, sampling.baseRef or FACTO_CONTRAST_BASE_REF can provide the Git base. To reproduce CI locally, use the same baseline and source revisions. Set sampling: false only to explicitly opt out and restore the legacy page-cap behavior.
+
+=== Source-only changes and total audit budget
+
+Facto 0.5.1 no longer expands navigation, images, theme, UI or preprocessor edits into every page in a source. Changed pages are the source pages whose own content changed, plus transitive include dependents (partials, examples or included pages). Escaped include examples do not count; conditional references are conservatively tracked. Capturing the original catalog before conversion keeps rendered navigation out of the diff.
+
+`contrastCheck.pages` defines fixed extension representatives; one page per discovered layout is also selected. Every selected path logs its reason. The JSON report preserves those reasons in `meta.selection.reasons`. Unknown bases still use the broad fallback, and new source pages are always included.
+
+`contrastCheck.maxDurationMs` defaults to 600000 (ten minutes total, across all pages, schemes and states). The underlying CLI accepts `--max-duration-ms`; its config key is `maxDurationMs`. Expiry is a failed, incomplete audit, even with `failOn: none`; the successful baseline is not advanced. Browser cleanup allows up to five additional seconds. For a deliberate bulk edit, increase the budget explicitly instead of silently truncating changed pages.

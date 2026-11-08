@@ -229,7 +229,7 @@ Copy https://github.com/antora-supplemental/antora-ui-chassis/tree/main/packages
 
 See the https://antora-supplemental.github.io/facto-stack/home/changelog/[changelog] (source: `demo/home/modules/changelog/pages/index.adoc`).
 
-=== Source-aware contrast sampling (0.5.0)
+=== Source-aware contrast sampling (0.5.1)
 
 For maintainers, the default sample is every changed/new source page since the last successful run, plus one page per discovered layout and a configurable representative page for each extension surface. Changed pages are never cut off by the page budget. Antora's catalog maps source files to output paths, so indexify, component versions and Windows/Linux separators use the same mapping.
 
@@ -238,13 +238,16 @@ For maintainers, the default sample is every changed/new source page since the l
 contrastCheck:
   pages: [home/index.html, home/search/index.html] # site-relative representatives; choose real output pages
   maxPages: 20 # broad fallback budget only; never a cap on changed pages
+  maxDurationMs: 600000 # total audit deadline across startup/pages/schemes/states
   sampling:
     baseline: .contrast-check-baseline.json
     # baseRef: origin/main # optional explicit git base (or FACTO_CONTRAST_BASE_REF)
 ----
 
-The baseline records a revision per content repository/component/version, not only the hub commit. Each run diffs those revisions with git, includes uncommitted/untracked local pages, and expands changed partials, images or nav to all pages in that source. New generated pages are included too. An unknown/missing base falls back to the sorted broad sample plus all representative layouts/pages. An explicit base applies only where git can resolve it; other sources fall back broadly. Set sampling: false to retain the old capped selection.
+The baseline records a revision per content repository/component/version, not only the hub commit. Each run diffs those revisions with git, includes uncommitted/untracked local pages, and selects source pages whose own content changed, plus only pages that transitively include a changed partial/example/page. Original source is captured before conversion; rendered HTML is never diffed. Includes resolve through the Antora catalog, including resource IDs, nested references, header attributes and cross-source includes. Escaped include examples are ignored; conditional include references are conservatively tracked. Previous-green dependencies also cover deleted/retargeted includes. Nav, descriptors, images, theme/UI and preprocessor changes are exercised through the representative set instead of expanding every page. New source pages remain mandatory. An unknown/missing base falls back to the sorted broad sample plus all representative layouts/pages. An explicit base applies only where git can resolve it; other sources fall back broadly. Set sampling: false to retain the old capped selection.
 
 Persist the baseline between successful CI jobs (restore an Actions cache before the build, save only on success, using a unique per-run key and a shared restore prefix). Include the baseline in a report artifact for local reproduction. For an identical local/CI selection, restore the same baseline artifact and use the same content revisions/config. Source identity normalizes SSH/HTTPS remotes and does not use absolute machine paths. A failed contrast check never advances the baseline.
 
 Fresh shallow Antora caches fetch the saved base tree (bounded, noninteractive Git request) before diffing. If it is genuinely unavailable, the checker reports a broad fallback while retaining every page not present in the saved page catalog. GitHub source identities normalize HTTPS/SSH and case and never store credentials or local machine paths.
+
+The sample line reports source changes, include dependents, representative coverage, other/site-wide changes and the total time budget; each selected path has a reason line and JSON `meta.selection.reasons`. `contrastCheck.pages` supplies fixed extension representatives; the lexicographically first page of every discovered layout is always added. An incomplete audit fails even in report-only mode, never advances the baseline, and names `contrastCheck.maxDurationMs` as the explicit budget override (10 minutes by default, plus up to 5 seconds cleanup).

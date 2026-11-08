@@ -1,6 +1,13 @@
 = Changelog
 :toclevels: 3
 
+== 2026-11-08
+
+=== v0.5.1 bounded source-only contrast sampling
+
+* Fix source-wide expansion: navigation, images, UI/theme and preprocessor edits use representatives, not every page. Follow only direct source changes and transitive include dependents; preserve new-page coverage and explain each selected path.
+* Contrast Check 0.4.2 enforces a configurable ten-minute total audit deadline; incomplete audits fail and never advance the successful baseline.
+
 == 2026-11-07
 
 === v0.5.0 source-aware contrast checks

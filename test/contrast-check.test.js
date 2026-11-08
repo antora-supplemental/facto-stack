@@ -55,3 +55,8 @@ test('contrast-check summary line counts unexempted errors and exempted findings
   assert.match(s, /3 finding\(s\) reported only .*: 1 unexempted error\(s\), 2 unexempted warning\(s\); 3 exempted by suppressions; report build\/contrast-check\/report\.json/)
   assert.ok(args('/s', normalize(undefined), '/pb').join(' ').includes('--exempted summary'))
 })
+test('total audit guard is validated and passed to the source CLI', () => {
+ assert.equal(normalize(undefined).maxDurationMs,600000)
+ assert.ok(args('/s',normalize({maxdurationms:1234}),'/pb').join(' ').includes('--max-duration-ms 1234'))
+ for(const n of [0,-1,'bad',Infinity]) assert.throws(()=>normalize({maxDurationMs:n}),/maxDurationMs/)
+})

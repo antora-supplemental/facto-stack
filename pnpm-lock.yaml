@@ -27,8 +27,8 @@ importers:
         specifier: github:antora-supplemental/antora-ui-chassis#chassis-compose-v0.1.4&path:packages/chassis-compose
         version: https://codeload.github.com/antora-supplemental/antora-ui-chassis/tar.gz/8410b3d8c18bc4dccd177584d1f314fdc9c31a3e#path:packages/chassis-compose(@antora/site-generator@3.1.15)
       '@antora-supplemental/contrast-check':
-        specifier: github:antora-supplemental/antora-ui-chassis#contrast-check-v0.4.1&path:packages/contrast-check
-        version: https://codeload.github.com/antora-supplemental/antora-ui-chassis/tar.gz/aca65338024719e5587f6fba60932e1cd7fdd111#path:packages/contrast-check
+        specifier: github:antora-supplemental/antora-ui-chassis#contrast-check-v0.4.2&path:packages/contrast-check
+        version: https://codeload.github.com/antora-supplemental/antora-ui-chassis/tar.gz/d5b20c27a3b1c96f76c1d0d9f91bb6751dcb33bc#path:packages/contrast-check
       '@antora-supplemental/deep-link-contracts':
         specifier: github:antora-supplemental/deep-link-contracts#v0.1.1
         version: https://codeload.github.com/antora-supplemental/deep-link-contracts/tar.gz/1e44a79d2d17c9106dab9660da181039ae701ae6
@@ -191,9 +191,9 @@ packages:
     resolution: {path: packages/color-scheme, tarball: https://codeload.github.com/antora-supplemental/antora-ui-chassis/tar.gz/ecf83e69ec7bfac298bc01f8c388ac7acc1c9481}
     version: 0.5.3
 
-  '@antora-supplemental/contrast-check@https://codeload.github.com/antora-supplemental/antora-ui-chassis/tar.gz/aca65338024719e5587f6fba60932e1cd7fdd111#path:packages/contrast-check':
-    resolution: {path: packages/contrast-check, tarball: https://codeload.github.com/antora-supplemental/antora-ui-chassis/tar.gz/aca65338024719e5587f6fba60932e1cd7fdd111}
-    version: 0.4.1
+  '@antora-supplemental/contrast-check@https://codeload.github.com/antora-supplemental/antora-ui-chassis/tar.gz/d5b20c27a3b1c96f76c1d0d9f91bb6751dcb33bc#path:packages/contrast-check':
+    resolution: {path: packages/contrast-check, tarball: https://codeload.github.com/antora-supplemental/antora-ui-chassis/tar.gz/d5b20c27a3b1c96f76c1d0d9f91bb6751dcb33bc}
+    version: 0.4.2
     engines: {node: '>=20'}
     hasBin: true
 
@@ -2086,7 +2086,7 @@ snapshots:
 
   '@antora-supplemental/color-scheme@https://codeload.github.com/antora-supplemental/antora-ui-chassis/tar.gz/ecf83e69ec7bfac298bc01f8c388ac7acc1c9481#path:packages/color-scheme': {}
 
-  '@antora-supplemental/contrast-check@https://codeload.github.com/antora-supplemental/antora-ui-chassis/tar.gz/aca65338024719e5587f6fba60932e1cd7fdd111#path:packages/contrast-check':
+  '@antora-supplemental/contrast-check@https://codeload.github.com/antora-supplemental/antora-ui-chassis/tar.gz/d5b20c27a3b1c96f76c1d0d9f91bb6751dcb33bc#path:packages/contrast-check':
     dependencies:
       axe-core: 4.14.0
       playwright-core: 1.64.1
