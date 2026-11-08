@@ -41,6 +41,9 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - name: Unit and sampling regression tests
+        run: pnpm test
+
       - name: Verify demo PlantUML Themed SVG artifacts
         run: node scripts/build-demo-plantuml.mjs --check
 
