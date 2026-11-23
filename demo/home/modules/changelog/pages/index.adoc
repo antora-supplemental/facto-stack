@@ -1,6 +1,12 @@
 = Changelog
 :toclevels: 3
 
+== 2026-11-23
+
+=== v0.5.2 Linkinator skips archive links by default
+
+* Pins `@antora-supplemental/linkinator` `v0.1.14`: skips `archive.org` (and subdomains) by default, adds configurable `archiveProviders` / `extraArchiveProviders` / `excludeUrls` domain and URL-prefix exclusions, and uses the single semantic `role=archival` opt-out (no aliases).
+
 == 2026-11-08
 
 === v0.5.1 bounded source-only contrast sampling

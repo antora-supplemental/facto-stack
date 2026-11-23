@@ -57,8 +57,8 @@ importers:
         specifier: github:antora-supplemental/link-validator#v0.2.3
         version: https://codeload.github.com/antora-supplemental/link-validator/tar.gz/1447da339198c2c74dc4456ab7aa3fd567c63304(@antora/site-generator@3.1.15)
       '@antora-supplemental/linkinator':
-        specifier: github:antora-supplemental/linkinator#v0.1.12
-        version: https://codeload.github.com/antora-supplemental/linkinator/tar.gz/f91c7b6baae83b5e7846198895ac5d1c7aba2c9c(@antora/site-generator@3.1.15)
+        specifier: github:antora-supplemental/linkinator#v0.1.14
+        version: https://codeload.github.com/antora-supplemental/linkinator/tar.gz/38d169f37935bbabb3a1b6965a611ddb2bb48c18(@antora/site-generator@3.1.15)
       '@antora-supplemental/mermaid-client':
         specifier: github:antora-supplemental/antora-diagram-engines#mermaid-client-v0.2.2&path:packages/mermaid-client
         version: https://codeload.github.com/antora-supplemental/antora-diagram-engines/tar.gz/ada000d1e93ca9c25559fffd0116a12558e1f1b8#path:packages/mermaid-client(@antora/site-generator@3.1.15)
@@ -266,9 +266,9 @@ packages:
       '@antora/site-generator':
         optional: true
 
-  '@antora-supplemental/linkinator@https://codeload.github.com/antora-supplemental/linkinator/tar.gz/f91c7b6baae83b5e7846198895ac5d1c7aba2c9c':
-    resolution: {tarball: https://codeload.github.com/antora-supplemental/linkinator/tar.gz/f91c7b6baae83b5e7846198895ac5d1c7aba2c9c}
-    version: 0.1.12
+  '@antora-supplemental/linkinator@https://codeload.github.com/antora-supplemental/linkinator/tar.gz/38d169f37935bbabb3a1b6965a611ddb2bb48c18':
+    resolution: {tarball: https://codeload.github.com/antora-supplemental/linkinator/tar.gz/38d169f37935bbabb3a1b6965a611ddb2bb48c18}
+    version: 0.1.14
     engines: {node: '>=18'}
     peerDependencies:
       '@antora/site-generator': '>=3.1.0'
@@ -2130,7 +2130,7 @@ snapshots:
     optionalDependencies:
       '@antora/site-generator': 3.1.15
 
-  '@antora-supplemental/linkinator@https://codeload.github.com/antora-supplemental/linkinator/tar.gz/f91c7b6baae83b5e7846198895ac5d1c7aba2c9c(@antora/site-generator@3.1.15)':
+  '@antora-supplemental/linkinator@https://codeload.github.com/antora-supplemental/linkinator/tar.gz/38d169f37935bbabb3a1b6965a611ddb2bb48c18(@antora/site-generator@3.1.15)':
     optionalDependencies:
       '@antora/site-generator': 3.1.15
 
