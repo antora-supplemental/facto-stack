@@ -60,3 +60,13 @@ test('total audit guard is validated and passed to the source CLI', () => {
  assert.ok(args('/s',normalize({maxdurationms:1234}),'/pb').join(' ').includes('--max-duration-ms 1234'))
  for(const n of [0,-1,'bad',Infinity]) assert.throws(()=>normalize({maxDurationMs:n}),/maxDurationMs/)
 })
+
+test('soft budget defaults to 85% of the total limit, can be turned off, and selections travel in a file', () => {
+ assert.equal(normalize(undefined).budgetMs, 510000)
+ assert.equal(normalize({ maxDurationMs: 1000 }).budgetMs, 850)
+ assert.equal(normalize({ budgetMs: 0 }).budgetMs, 0)
+ for (const n of [-1, 1.5, 600001, 'x']) assert.throws(() => normalize({ budgetMs: n }), /budgetMs/)
+ const a = args('/s', { ...normalize(undefined), pages: ['a.html'], selectionFile: '/b/selection.json' }, '/pb')
+ assert.ok(a.join(' ').includes('--budget-ms 510000') && a.join(' ').includes('--selection /b/selection.json') && !a.includes('--pages'))
+ assert.ok(!args('/s', normalize({ budgetMs: 0 }), '/pb').includes('--budget-ms'))
+})

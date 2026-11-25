@@ -1,6 +1,16 @@
 = Changelog
 :toclevels: 3
 
+== 2026-11-25
+
+=== v0.5.3 contrast budget with carry-over
+
+* Fix a CI loop: when the pages changed since the last green run did not fit in the ten-minute contrast limit, the run failed and kept the old baseline, so every later run had more pages to check. Pages now run in priority order (representatives, page-group representatives, carried-over pages, then most recently changed). The audit stops at a soft budget (`budgetMs`, default 85% of `maxDurationMs`), passes if the audited pages pass, and saves unchecked pages as `pending` for the next run.
+* Changed pages get content checks only (axe and text probe in every scheme). Representatives keep focus, hover and dynamic states. `sampling.contentOnly: false` restores full audits.
+* `sampling.groups` (default `**/changelog-details/**`) audits one changed page per group of same-template pages.
+* A content source added since the last green run no longer triggers the broad fallback for the whole site. An unresolvable base falls back for its own source only.
+* Pins Contrast Check `contrast-check-v0.4.3` (soft budget, page-by-page audits, content-only pages, `--selection` file).
+
 == 2026-11-23
 
 === v0.5.2 Linkinator skips archive links by default

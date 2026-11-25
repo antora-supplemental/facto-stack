@@ -208,10 +208,16 @@ contrastCheck:
 
 Restore the baseline from the last successful CI/deploy and save it only when the whole workflow succeeds. The checker writes a candidate baseline after contrast passes; CI must not cache it from a failed deployment. A missing/unresolvable source base uses the sorted broad fallback budget plus layout/configured representatives; known changes and new pages are never capped. Without a saved baseline, sampling.baseRef or FACTO_CONTRAST_BASE_REF can provide the Git base. To reproduce CI locally, use the same baseline and source revisions. Set sampling: false only to explicitly opt out and restore the legacy page-cap behavior.
 
+=== Budget and carry-over
+
+Facto 0.5.3 audits pages in priority order: layout and configured representatives, one representative per page group, carried-over pages, then changed pages, most recently changed first. `contrastCheck.budgetMs` (default 85% of `maxDurationMs`) is a soft budget. The audit stops before a page that would not finish in time. If every audited page passes, the build passes, and the unchecked pages are saved with the baseline as `pending`. The next run checks them right after the representatives. A large edit therefore takes several green runs to audit fully, instead of failing every run and growing the backlog.
+
+Representatives keep the full audit, with focus, hover and dynamic states. Changed and carried-over pages get axe and the text probe in every scheme (`sampling.contentOnly: false` audits them fully). `sampling.groups` (default `['**/changelog-details/**']`) audits one changed page per group of same-template prose pages. A source added since the last green run needs no broad fallback. An unresolvable base falls back to that source's pages only.
+
 === Source-only changes and total audit budget
 
 Facto 0.5.1 no longer expands navigation, images, theme, UI or preprocessor edits into every page in a source. Changed pages are the source pages whose own content changed, plus transitive include dependents (partials, examples or included pages). Escaped include examples do not count; conditional references are conservatively tracked. Capturing the original catalog before conversion keeps rendered navigation out of the diff.
 
 `contrastCheck.pages` defines fixed extension representatives; one page per discovered layout is also selected. Every selected path logs its reason. The JSON report preserves those reasons in `meta.selection.reasons`. Unknown bases still use the broad fallback, and new source pages are always included.
 
-`contrastCheck.maxDurationMs` defaults to 600000 (ten minutes total, across all pages, schemes and states). The underlying CLI accepts `--max-duration-ms`; its config key is `maxDurationMs`. Expiry is a failed, incomplete audit, even with `failOn: none`; the successful baseline is not advanced. Browser cleanup allows up to five additional seconds. For a deliberate bulk edit, increase the budget explicitly instead of silently truncating changed pages.
+`contrastCheck.maxDurationMs` defaults to 600000 (ten minutes total, across all pages, schemes and states). The underlying CLI accepts `--max-duration-ms`; its config key is `maxDurationMs`. Since 0.5.3 the soft `budgetMs` stops first and carries pages over. Hitting the hard limit before the first page finishes is a failed, incomplete audit, even with `failOn: none`; the successful baseline is not advanced. Browser cleanup allows up to five additional seconds. For a deliberate bulk edit, increase the budget explicitly instead of silently truncating changed pages.
